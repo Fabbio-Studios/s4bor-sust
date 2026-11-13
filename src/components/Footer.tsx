@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="border-t-2 border-[#20231F] bg-[#FFFFFF] mt-16">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Brand & Description */}
           <div className="md:col-span-6 space-y-3">
@@ -61,6 +61,15 @@ export const Footer: React.FC = () => {
                   <MaterialIcon name="menu_book" size={17} />
                   <span>Receitas</span>
                 </a>
+              </li>
+              <li>
+                <Link
+                  to="/salvas"
+                  className="inline-flex items-center gap-1.5 text-[#20231F]/80 hover:text-[#20231F] hover:underline underline-offset-4"
+                >
+                  <MaterialIcon name="bookmark" size={17} />
+                  <span>Receitas salvas</span>
+                </Link>
               </li>
               <li>
                 <Link

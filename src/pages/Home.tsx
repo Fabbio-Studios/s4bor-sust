@@ -5,9 +5,52 @@ import { SearchBar } from '../components/SearchBar';
 import { RecipeFilters } from '../components/RecipeFilters';
 import { RecipeGrid } from '../components/RecipeGrid';
 import { MaterialIcon } from '../components/MaterialIcon';
-import { LeafClusterIllustration, TomatoIllustration } from '../components/FoodIllustrations';
+import {
+  BroccoliIllustration,
+  CarrotIllustration,
+  CitrusIllustration,
+  LeafClusterIllustration,
+  PotIllustration,
+  TomatoIllustration,
+} from '../components/FoodIllustrations';
 import { RECIPE_CATEGORIES, recipes } from '../data/recipes';
-import { RecipeCategory } from '../types/recipe';
+import { Recipe, RecipeCategory } from '../types/recipe';
+
+type IngredientSpotlightId = 'todos' | 'cascas' | 'talos' | 'frutas' | 'raizes';
+
+interface IngredientSpotlight {
+  id: IngredientSpotlightId;
+  label: string;
+  matcher: (recipe: Recipe) => boolean;
+}
+
+const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
+  {
+    id: 'todos',
+    label: 'Tudo',
+    matcher: () => true,
+  },
+  {
+    id: 'cascas',
+    label: 'Cascas',
+    matcher: (r) => ['1', '3', '6', '9'].includes(r.id),
+  },
+  {
+    id: 'talos',
+    label: 'Talos & folhas',
+    matcher: (r) => ['2', '5', '7'].includes(r.id),
+  },
+  {
+    id: 'frutas',
+    label: 'Frutas',
+    matcher: (r) => ['1', '3', '6', '8'].includes(r.id),
+  },
+  {
+    id: 'raizes',
+    label: 'Raízes & grãos',
+    matcher: (r) => ['4', '5', '7', '9'].includes(r.id),
+  },
+];
 
 function normalizeText(text: string): string {
   return text
@@ -20,6 +63,7 @@ function normalizeText(text: string): string {
 export const Home: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<RecipeCategory>('Todas');
+  const [selectedSpotlight, setSelectedSpotlight] = useState<IngredientSpotlightId>('todos');
   const location = useLocation();
 
   useEffect(() => {
@@ -56,6 +100,8 @@ export const Home: React.FC = () => {
 
   const filteredRecipes = useMemo(() => {
     const normalizedQuery = normalizeText(searchQuery);
+    const activeSpotlight =
+      INGREDIENT_SPOTLIGHTS.find((s) => s.id === selectedSpotlight) ?? INGREDIENT_SPOTLIGHTS[0];
 
     return recipes.filter((recipe) => {
       const matchesCategory =
@@ -67,15 +113,37 @@ export const Home: React.FC = () => {
         normalizedQuery.length === 0 ||
         normalizeText(recipe.title).includes(normalizedQuery);
 
-      return matchesCategory && matchesSearch;
-    });
-  }, [searchQuery, selectedCategory]);
+      const matchesSpotlight = activeSpotlight.matcher(recipe);
 
-  const hasActiveFilters = searchQuery.trim().length > 0 || selectedCategory !== 'Todas';
+      return matchesCategory && matchesSearch && matchesSpotlight;
+    });
+  }, [searchQuery, selectedCategory, selectedSpotlight]);
+
+  const hasActiveFilters =
+    searchQuery.trim().length > 0 ||
+    selectedCategory !== 'Todas' ||
+    selectedSpotlight !== 'todos';
 
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('Todas');
+    setSelectedSpotlight('todos');
+  };
+
+  const renderSpotlightIllustration = (id: IngredientSpotlightId) => {
+    switch (id) {
+      case 'cascas':
+        return <CitrusIllustration className="w-12 h-12" />;
+      case 'talos':
+        return <BroccoliIllustration className="w-12 h-12" />;
+      case 'frutas':
+        return <TomatoIllustration className="w-12 h-12" />;
+      case 'raizes':
+        return <CarrotIllustration className="w-12 h-12" />;
+      case 'todos':
+      default:
+        return <PotIllustration className="w-12 h-12" />;
+    }
   };
 
   return (
@@ -86,12 +154,12 @@ export const Home: React.FC = () => {
       <section
         id="recipe-book"
         aria-labelledby="recipe-book-title"
-        className="py-12 sm:py-16 scroll-mt-20"
+        className="py-10 sm:py-16 scroll-mt-16 md:scroll-mt-20"
       >
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
+            <div className="space-y-2.5 max-w-2xl">
               <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider text-[#20231F] bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
                 <MaterialIcon name="menu_book" size={16} />
                 <span>Livro de Receitas Digital</span>
@@ -109,15 +177,14 @@ export const Home: React.FC = () => {
               </p>
             </div>
 
-            {/* Subtle decorative food pair on desktop */}
             <div className="hidden md:flex items-center gap-2 shrink-0" aria-hidden="true">
               <TomatoIllustration className="w-14 h-14 animate-float-slow" />
               <LeafClusterIllustration className="w-14 h-14 animate-sway-gentle" />
             </div>
           </div>
 
-          {/* Search & Filter Toolbar */}
-          <div className="neo-box bg-[#FFFFFF] p-5 sm:p-6 space-y-5">
+          {/* Search, Mobile Ingredient Spotlight Cards & Category Filters */}
+          <div className="neo-box bg-[#FFFFFF] p-4 sm:p-6 space-y-5">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <SearchBar value={searchQuery} onChange={setSearchQuery} />
 
@@ -134,7 +201,7 @@ export const Home: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleClearFilters}
-                    className="inline-flex items-center gap-1.5 text-sm font-display font-bold text-[#20231F] bg-[#FF8065] hover:bg-[#ff7052] border-2 border-[#20231F] rounded-lg px-3 py-1.5 shadow-[2px_2px_0px_#20231F] cursor-pointer transition-transform active:translate-x-[1px] active:translate-y-[1px]"
+                    className="inline-flex items-center gap-1.5 text-sm font-display font-bold text-[#20231F] bg-[#FF8065] hover:bg-[#ff7052] border-2 border-[#20231F] rounded-lg px-3 py-1.5 min-h-[40px] shadow-[2px_2px_0px_#20231F] cursor-pointer transition-transform active:translate-x-[1px] active:translate-y-[1px]"
                   >
                     <MaterialIcon name="close" size={16} />
                     <span>Limpar filtros</span>
@@ -143,7 +210,43 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-1 border-t-2 border-[#20231F]/10">
+            {/* Mobile-inspired horizontal Ingredient Spotlight Cards */}
+            <div className="space-y-2">
+              <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
+                Explorar por tipo de ingrediente
+              </p>
+              <div
+                className="flex items-stretch gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x"
+                role="group"
+                aria-label="Filtrar por tipo de ingrediente"
+              >
+                {INGREDIENT_SPOTLIGHTS.map((item) => {
+                  const isActive = selectedSpotlight === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => setSelectedSpotlight(item.id)}
+                      aria-pressed={isActive}
+                      className={`snap-start shrink-0 min-w-[104px] sm:min-w-[116px] flex flex-col items-center justify-between gap-2 p-3 rounded-[14px] border-2 border-[#20231F] transition-[transform,box-shadow,background-color] duration-150 cursor-pointer ${
+                        isActive
+                          ? 'bg-[#FF8065] text-[#20231F] shadow-[2px_2px_0px_#20231F] translate-x-[1px] translate-y-[1px]'
+                          : 'bg-[#F7F5ED] text-[#20231F] shadow-[3px_3px_0px_#20231F] hover:bg-[#FFD66B]'
+                      }`}
+                    >
+                      <div className="bg-[#FFFFFF] border-2 border-[#20231F] rounded-xl p-1.5 flex items-center justify-center">
+                        {renderSpotlightIllustration(item.id)}
+                      </div>
+                      <span className="font-display text-xs font-bold whitespace-nowrap">
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="pt-2 border-t-2 border-[#20231F]/10">
               <RecipeFilters
                 categories={RECIPE_CATEGORIES}
                 selectedCategory={selectedCategory}

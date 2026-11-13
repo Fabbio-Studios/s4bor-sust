@@ -7,20 +7,15 @@ import { RecipeCard } from '../components/RecipeCard';
 import { MaterialIcon } from '../components/MaterialIcon';
 import { CitrusIllustration } from '../components/FoodIllustrations';
 
+import { useSavedRecipes } from '../hooks/useSavedRecipes';
+
 export const RecipeDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const recipe = slug ? getRecipeBySlug(slug) : undefined;
 
   const [checkedIngredients, setCheckedIngredients] = useState<Record<string, boolean>>({});
   const [imageFailed, setImageFailed] = useState(false);
-  const [savedRecipes, setSavedRecipes] = useState<string[]>(() => {
-    try {
-      const stored = localStorage.getItem('sabor-sustentavel-saved');
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
+  const { isSaved: checkSaved, toggleSave } = useSavedRecipes();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -53,20 +48,10 @@ export const RecipeDetail: React.FC = () => {
   }
 
   const author = getAuthorById(recipe.authorId);
-  const isSaved = savedRecipes.includes(recipe.id);
+  const isSaved = checkSaved(recipe.id);
 
   const toggleSaveRecipe = () => {
-    setSavedRecipes((prev) => {
-      const next = prev.includes(recipe.id)
-        ? prev.filter((id) => id !== recipe.id)
-        : [...prev, recipe.id];
-      try {
-        localStorage.setItem('sabor-sustentavel-saved', JSON.stringify(next));
-      } catch {
-        // Ignore storage errors
-      }
-      return next;
-    });
+    toggleSave(recipe.id);
   };
 
   const toggleIngredient = (id: string) => {

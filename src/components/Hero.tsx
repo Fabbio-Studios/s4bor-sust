@@ -9,11 +9,11 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   return (
-    <section className="relative pt-8 pb-10 sm:pt-12 sm:pb-14 border-b-2 border-[#20231F]">
+    <section className="relative pt-6 pb-8 sm:pt-10 sm:pb-12 border-b-2 border-[#20231F]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
           {/* Left Column: Editorial Headline & Actions */}
-          <div className="lg:col-span-7 space-y-5">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             <p
               className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/85 animate-fade-up"
               style={{ animationDelay: '0ms' }}
@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             </p>
 
             <h1
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-[#20231F] text-balance animate-fade-up"
+              className="font-display font-bold text-3xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-[#20231F] text-balance animate-fade-up"
               style={{ animationDelay: '60ms' }}
             >
               Pequenas escolhas.{' '}
@@ -43,13 +43,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             </p>
 
             <div
-              className="flex flex-wrap items-center gap-4 pt-2 animate-fade-up"
+              className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2 animate-fade-up"
               style={{ animationDelay: '180ms' }}
             >
               <button
                 type="button"
                 onClick={onExploreClick}
-                className="neo-btn bg-[#FF8065] hover:bg-[#ff7052] text-[#20231F] px-6 py-3.5 text-base"
+                className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
               >
                 <span>Explorar receitas</span>
                 <MaterialIcon name="arrow_forward" size={20} />
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
 
               <Link
                 to="/sobre"
-                className="neo-btn bg-[#FFFFFF] hover:bg-[#F7F5ED] text-[#20231F] px-6 py-3.5 text-base"
+                className="neo-btn bg-[#FFFFFF] hover:bg-[#F7F5ED] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
               >
                 <MaterialIcon name="groups" size={20} />
                 <span>Conheça o projeto</span>
@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             </div>
           </div>
 
-          {/* Right Column: Asymmetric Food Illustrations Composition */}
+          {/* Right Column: Asymmetric Food & Harvest Illustrations Composition */}
           <div className="lg:col-span-5 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <HeroVisualComposition />
           </div>
