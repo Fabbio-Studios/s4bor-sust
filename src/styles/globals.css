@@ -224,7 +224,7 @@
 }
 
 .animate-fade-up {
-  animation: subtleFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: subtleFadeIn 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

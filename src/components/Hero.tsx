@@ -14,11 +14,17 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Editorial Headline & Actions */}
           <div className="lg:col-span-7 space-y-5">
-            <p className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/85">
+            <p
+              className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/85 animate-fade-up"
+              style={{ animationDelay: '0ms' }}
+            >
               Alimentação consciente • Criatividade • Sustentabilidade
             </p>
 
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-[#20231F] text-balance">
+            <h1
+              className="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-[#20231F] text-balance animate-fade-up"
+              style={{ animationDelay: '60ms' }}
+            >
               Pequenas escolhas.{' '}
               <span className="inline-block bg-[#B8E36A] border-2 border-[#20231F] px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F] my-1">
                 Grandes transformações
@@ -28,12 +34,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#20231F]/85 max-w-xl leading-relaxed">
+            <p
+              className="text-base sm:text-lg text-[#20231F]/85 max-w-xl leading-relaxed animate-fade-up"
+              style={{ animationDelay: '120ms' }}
+            >
               Descubra receitas criativas, aproveite melhor os alimentos e transforme ingredientes
               simples em novas possibilidades.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div
+              className="flex flex-wrap items-center gap-4 pt-2 animate-fade-up"
+              style={{ animationDelay: '180ms' }}
+            >
               <button
                 type="button"
                 onClick={onExploreClick}
@@ -54,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           </div>
 
           {/* Right Column: Asymmetric Food Illustrations Composition */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <HeroVisualComposition />
           </div>
         </div>

@@ -300,9 +300,9 @@ export const HeroVisualComposition: React.FC = () => {
 
           {/* Top-right cell: Carrot & Broccoli */}
           <div className="bg-[#B8E36A] border-2 border-[#20231F] rounded-[14px] p-4 flex flex-col items-center justify-center min-h-[155px] relative">
-            <div className="flex items-center justify-center -space-x-3">
-              <CarrotIllustration className="w-20 h-20 animate-float-slow" />
-              <BroccoliIllustration className="w-20 h-20 animate-float-delayed" />
+            <div className="flex items-center justify-center -space-x-3 animate-float-slow">
+              <CarrotIllustration className="w-20 h-20 animate-float-slow transition-transform duration-200 hover:scale-105" />
+              <BroccoliIllustration className="w-20 h-20 animate-float-delayed transition-transform duration-200 hover:scale-105" />
             </div>
             <span className="mt-1 font-display text-xs font-bold text-[#20231F]">
               Ramas &amp; Talos
@@ -311,10 +311,10 @@ export const HeroVisualComposition: React.FC = () => {
 
           {/* Bottom wide strip: Tomato, Citrus & Leaves */}
           <div className="col-span-2 bg-[#FFD66B] border-2 border-[#20231F] rounded-[14px] px-4 py-3.5 flex items-center justify-around gap-2">
-            <TomatoIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-float-delayed" />
-            <CitrusIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-sway-gentle" />
-            <EggplantIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-float-slow" />
-            <LeafClusterIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-sway-gentle" />
+            <TomatoIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-float-delayed transition-transform duration-200 hover:scale-105" />
+            <CitrusIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-sway-gentle transition-transform duration-200 hover:scale-105" />
+            <EggplantIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-float-slow transition-transform duration-200 hover:scale-105" />
+            <LeafClusterIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-sway-gentle transition-transform duration-200 hover:scale-105" />
           </div>
         </div>
 
