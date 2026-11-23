@@ -108,70 +108,73 @@ export const About: React.FC = () => {
 
       {/* Section 2: A turma por trás do projeto */}
       <section aria-labelledby="about-team-title">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-              <MaterialIcon name="groups" size={16} />
-              <span>Construção coletiva</span>
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            <div className="lg:col-span-6 space-y-5">
+              <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
+                <MaterialIcon name="groups" size={16} />
+                <span>Construção coletiva</span>
+              </div>
+
+              <h2
+                id="about-team-title"
+                className="font-display font-bold text-3xl sm:text-4xl leading-tight text-[#20231F] text-balance"
+              >
+                Por trás dessa ideia, existe uma turma inteira.
+              </h2>
+
+              <p className="text-base sm:text-lg text-[#20231F]/85 leading-relaxed">
+                Este projeto foi desenvolvido de forma colaborativa, reunindo estudantes e
+                educadores interessados em pesquisar receitas, organizar conteúdos e testar soluções
+                digitais para incentivar o aproveitamento integral nas cozinhas escolares e
+                familiares.
+              </p>
+
+              <div className="neo-box-sm bg-[#B8E36A] p-4 sm:p-5 space-y-1.5">
+                <p className="font-display font-bold text-sm sm:text-base text-[#20231F]">
+                  Trabalho em equipe na prática
+                </p>
+                <p className="text-sm text-[#20231F]/85 leading-relaxed">
+                  Enquanto a parte de programação deu vida à interface para celular, os estudantes
+                  pesquisaram, organizaram e alimentaram o livro com receitas reais de
+                  aproveitamento integral, sob orientação docente.
+                </p>
+              </div>
             </div>
 
-            <h2
-              id="about-team-title"
-              className="font-display font-bold text-3xl sm:text-4xl leading-tight text-[#20231F] text-balance"
-            >
-              Por trás dessa ideia, existe uma turma inteira.
-            </h2>
-
-            <p className="text-base sm:text-lg text-[#20231F]/85 leading-relaxed">
-              Este projeto foi desenvolvido de forma colaborativa, reunindo estudantes e educadores
-              interessados em pesquisar receitas, organizar conteúdos e testar soluções digitais
-              para incentivar o aproveitamento integral nas cozinhas escolares e familiares.
-            </p>
-          </div>
-
-          {/* Wide Real Photo Slot (/public/images/turma.jpg -> /images/turma.jpg) with clean designed placeholder */}
-          <figure className="neo-box bg-[#FFFFFF] overflow-hidden">
-            {!groupPhotoMissing ? (
-              <img
-                src="/images/turma.jpg"
-                alt="Fotografia da turma responsável pelo desenvolvimento do projeto Sabor Sustentável"
-                onError={() => setGroupPhotoMissing(true)}
-                className="w-full aspect-[16/9] max-h-[520px] object-cover"
-              />
-            ) : (
-              <div className="w-full aspect-[16/9] min-h-[280px] sm:min-h-[380px] bg-[#F7F5ED] p-6 sm:p-10 flex flex-col items-center justify-center text-center relative">
-                <div className="flex items-center justify-center gap-4 mb-5">
-                  <TomatoIllustration className="w-16 h-16 animate-float-slow" />
-                  <CitrusIllustration className="w-16 h-16 animate-sway-gentle" />
-                  <CarrotIllustration className="w-16 h-16 animate-float-delayed" />
-                  <LeafClusterIllustration className="w-16 h-16 animate-sway-gentle" />
-                </div>
-
-                <div className="max-w-lg space-y-2.5 bg-[#FFFFFF] border-2 border-[#20231F] rounded-[14px] shadow-[4px_4px_0px_#20231F] p-5 sm:p-6">
-                  <div className="inline-flex items-center gap-2 font-display font-bold text-sm text-[#20231F] bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg">
-                    <MaterialIcon name="groups" size={18} />
-                    <span>Espaço para fotografia da turma</span>
+            {/* Class Group Portrait Frame */}
+            <div className="lg:col-span-6">
+              <figure className="neo-box bg-[#FFFFFF] overflow-hidden max-w-[480px] mx-auto">
+                {!groupPhotoMissing ? (
+                  <img
+                    src="/assets/aistudio/31f8e28d-1996-4993-bcbf-8493d9e5ffdd.jpg_fd9b29bd_2K_c3e34fd9.jpg"
+                    alt="Fotografia da turma responsável pelo projeto Sabor Sustentável"
+                    referrerPolicy="no-referrer"
+                    onError={() => setGroupPhotoMissing(true)}
+                    className="w-full aspect-[3/4] object-cover object-center"
+                  />
+                ) : (
+                  <div className="w-full aspect-[3/4] bg-[#F7F5ED] p-6 sm:p-10 flex flex-col items-center justify-center text-center">
+                    <div className="flex items-center justify-center gap-4 mb-5">
+                      <TomatoIllustration className="w-14 h-14 animate-float-slow" />
+                      <CitrusIllustration className="w-14 h-14 animate-sway-gentle" />
+                      <CarrotIllustration className="w-14 h-14 animate-float-delayed" />
+                      <LeafClusterIllustration className="w-14 h-14 animate-sway-gentle" />
+                    </div>
+                    <p className="font-display font-bold text-lg text-[#20231F]">
+                      Turma colaboradora do projeto Sabor Sustentável
+                    </p>
                   </div>
-                  <p className="font-display font-bold text-lg text-[#20231F]">
-                    A imagem real da equipe será exibida aqui
-                  </p>
-                  <p className="text-sm text-[#20231F]/80">
-                    Para exibir a foto oficial do grupo, adicione o arquivo em{' '}
-                    <code className="font-mono bg-[#F7F5ED] border border-[#20231F]/30 px-1.5 py-0.5 rounded text-xs">
-                      /public/images/turma.jpg
-                    </code>
-                    .
-                  </p>
-                </div>
-              </div>
-            )}
-            <figcaption className="px-5 py-3.5 bg-[#FFFFFF] border-t-2 border-[#20231F] text-sm font-medium text-[#20231F]/80 flex items-center justify-between gap-4 flex-wrap">
-              <span>Turma colaboradora do projeto Sabor Sustentável</span>
-              <span className="font-display text-xs font-bold text-[#20231F]">
-                Educação • Tecnologia • Sustentabilidade
-              </span>
-            </figcaption>
-          </figure>
+                )}
+                <figcaption className="px-5 py-3.5 bg-[#FFFFFF] border-t-2 border-[#20231F] text-sm font-medium text-[#20231F]/80 flex items-center justify-between gap-4 flex-wrap">
+                  <span>Turma colaboradora do Sabor Sustentável</span>
+                  <span className="font-display text-xs font-bold text-[#20231F]">
+                    Educação • Tecnologia • Sustentabilidade
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </section>
 
