@@ -66,12 +66,12 @@ export const RecipeDetail: React.FC = () => {
   const relatedRecipes = recipes.filter((r) => r.id !== recipe.id).slice(0, 3);
 
   return (
-    <article className="py-8 sm:py-12">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <article className="py-6 sm:py-12">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7 sm:space-y-10">
         {/* Top Breadcrumb & Back Action */}
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <nav aria-label="Caminho de navegação" className="text-sm font-medium text-[#20231F]/80">
-            <ol className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+          <nav aria-label="Caminho de navegação" className="text-xs sm:text-sm font-medium text-[#20231F]/80">
+            <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               <li>
                 <Link to="/" className="hover:underline underline-offset-4 text-[#20231F]">
                   Início
@@ -95,7 +95,7 @@ export const RecipeDetail: React.FC = () => {
 
           <Link
             to="/#recipe-book"
-            className="neo-btn bg-[#FFFFFF] hover:bg-[#FFD66B] text-[#20231F] px-4 py-2 text-sm"
+            className="neo-btn bg-[#FFFFFF] hover:bg-[#FFD66B] text-[#20231F] px-4 py-2 min-h-[44px] text-sm"
           >
             <MaterialIcon name="arrow_back" size={18} />
             <span>Voltar às receitas</span>
@@ -129,32 +129,32 @@ export const RecipeDetail: React.FC = () => {
 
             {/* Quick Info Cards & Bookmark Action */}
             <div className="space-y-4">
-              <div className="grid grid-cols-3 gap-3">
-                <div className="neo-box-sm bg-[#FFFFFF] p-3.5 text-center">
-                  <MaterialIcon name="schedule" size={22} className="text-[#20231F] mb-1" />
-                  <p className="text-xs font-medium text-[#20231F]/70">Preparo</p>
-                  <p className="font-display font-bold text-sm sm:text-base text-[#20231F] tabular-nums">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                <div className="neo-box-sm bg-[#FFFFFF] p-2.5 sm:p-3.5 text-center flex flex-col items-center justify-center">
+                  <MaterialIcon name="schedule" size={20} className="text-[#20231F] mb-1" />
+                  <p className="text-[11px] sm:text-xs font-medium text-[#20231F]/70">Preparo</p>
+                  <p className="font-display font-bold text-xs sm:text-base text-[#20231F] tabular-nums">
                     {recipe.prepTimeMinutes} min
                   </p>
                   {recipe.prepTimeNote && (
-                    <p className="text-[11px] font-medium text-[#20231F]/70 leading-tight mt-0.5">
+                    <p className="text-[10px] sm:text-[11px] font-medium text-[#20231F]/70 leading-tight mt-0.5">
                       {recipe.prepTimeNote}
                     </p>
                   )}
                 </div>
 
-                <div className="neo-box-sm bg-[#FFFFFF] p-3.5 text-center">
-                  <MaterialIcon name="local_dining" size={22} className="text-[#20231F] mb-1" />
-                  <p className="text-xs font-medium text-[#20231F]/70">Rendimento</p>
-                  <p className="font-display font-bold text-sm sm:text-base text-[#20231F] tabular-nums">
+                <div className="neo-box-sm bg-[#FFFFFF] p-2.5 sm:p-3.5 text-center flex flex-col items-center justify-center">
+                  <MaterialIcon name="local_dining" size={20} className="text-[#20231F] mb-1" />
+                  <p className="text-[11px] sm:text-xs font-medium text-[#20231F]/70">Rendimento</p>
+                  <p className="font-display font-bold text-xs sm:text-base text-[#20231F] tabular-nums leading-tight">
                     {recipe.servingsLabel ?? `${recipe.servings} porções`}
                   </p>
                 </div>
 
-                <div className="neo-box-sm bg-[#FFFFFF] p-3.5 text-center">
-                  <MaterialIcon name="restaurant" size={22} className="text-[#20231F] mb-1" />
-                  <p className="text-xs font-medium text-[#20231F]/70">Ingredientes</p>
-                  <p className="font-display font-bold text-sm sm:text-base text-[#20231F] tabular-nums">
+                <div className="neo-box-sm bg-[#FFFFFF] p-2.5 sm:p-3.5 text-center flex flex-col items-center justify-center">
+                  <MaterialIcon name="restaurant" size={20} className="text-[#20231F] mb-1" />
+                  <p className="text-[11px] sm:text-xs font-medium text-[#20231F]/70">Ingredientes</p>
+                  <p className="font-display font-bold text-xs sm:text-base text-[#20231F] tabular-nums">
                     {recipe.ingredientsCount} itens
                   </p>
                 </div>
@@ -165,7 +165,7 @@ export const RecipeDetail: React.FC = () => {
                   type="button"
                   onClick={toggleSaveRecipe}
                   aria-pressed={isSaved}
-                  className={`neo-btn px-4 py-2.5 text-sm ${
+                  className={`neo-btn w-full sm:w-auto px-4 py-2.5 min-h-[46px] text-sm ${
                     isSaved
                       ? 'bg-[#B8E36A] text-[#20231F]'
                       : 'bg-[#FFFFFF] hover:bg-[#F7F5ED] text-[#20231F]'
@@ -180,17 +180,17 @@ export const RecipeDetail: React.FC = () => {
 
           {/* Highlighted Dish Photo */}
           <div className="lg:col-span-6">
-            <div className="neo-box overflow-hidden bg-[#FFFFFF] h-full min-h-[260px]">
+            <div className="neo-box overflow-hidden bg-[#FFFFFF] h-full min-h-[220px] sm:min-h-[260px]">
               {!imageFailed ? (
                 <img
                   src={recipe.image}
                   alt={recipe.imageAlt}
                   referrerPolicy="no-referrer"
                   onError={() => setImageFailed(true)}
-                  className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+                  className="w-full aspect-[4/3] lg:h-full lg:aspect-auto object-cover"
                 />
               ) : (
-                <div className="w-full h-full min-h-[280px] flex flex-col items-center justify-center p-8 bg-[#FFD66B]/40 text-center">
+                <div className="w-full h-full min-h-[240px] flex flex-col items-center justify-center p-8 bg-[#FFD66B]/40 text-center">
                   <MaterialIcon name="local_dining" size={48} className="text-[#20231F] mb-3" />
                   <p className="font-display font-bold text-lg text-[#20231F]">{recipe.title}</p>
                 </div>
@@ -200,16 +200,16 @@ export const RecipeDetail: React.FC = () => {
         </header>
 
         {/* Main Content Grid: Ingredients + Preparation Steps */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Interactive Ingredients Checklist */}
           <section
             aria-labelledby="ingredients-heading"
-            className="lg:col-span-5 neo-box bg-[#FFFFFF] p-6 sm:p-7 space-y-5"
+            className="lg:col-span-5 neo-box bg-[#FFFFFF] p-5 sm:p-7 space-y-5"
           >
             <div className="flex items-center justify-between gap-3 border-b-2 border-[#20231F] pb-3.5">
               <div className="flex items-center gap-2">
                 <MaterialIcon name="restaurant" size={22} />
-                <h2 id="ingredients-heading" className="font-display font-bold text-2xl">
+                <h2 id="ingredients-heading" className="font-display font-bold text-xl sm:text-2xl">
                   Ingredientes
                 </h2>
               </div>
@@ -228,7 +228,7 @@ export const RecipeDetail: React.FC = () => {
                 return (
                   <li key={ingredient.id}>
                     <label
-                      className={`flex items-start gap-3 p-3 rounded-[12px] border-2 transition-colors duration-150 cursor-pointer select-none ${
+                      className={`flex items-start gap-3 p-3.5 min-h-[48px] rounded-[12px] border-2 transition-colors duration-150 cursor-pointer select-none ${
                         isChecked
                           ? 'bg-[#B8E36A]/35 border-[#20231F]'
                           : 'bg-[#F7F5ED]/65 border-[#20231F]/25 hover:border-[#20231F]'
@@ -269,7 +269,7 @@ export const RecipeDetail: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setCheckedIngredients({})}
-                className="text-xs font-display font-bold underline underline-offset-4 text-[#20231F]/80 hover:text-[#20231F] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center text-xs font-display font-bold underline underline-offset-4 text-[#20231F]/80 hover:text-[#20231F] cursor-pointer"
               >
                 Desmarcar ingredientes
               </button>
@@ -279,7 +279,7 @@ export const RecipeDetail: React.FC = () => {
           {/* Preparation Steps */}
           <section
             aria-labelledby="steps-heading"
-            className="lg:col-span-7 neo-box bg-[#FFFFFF] p-6 sm:p-8 space-y-6"
+            className="lg:col-span-7 neo-box bg-[#FFFFFF] p-5 sm:p-8 space-y-6"
           >
             <div className="flex items-center justify-between gap-3 border-b-2 border-[#20231F] pb-3.5">
               <div className="flex items-center gap-2">

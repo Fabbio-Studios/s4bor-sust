@@ -53,11 +53,11 @@ export const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-10 sm:py-14 space-y-16">
+    <div className="py-6 sm:py-14 space-y-10 sm:space-y-16">
       {/* Section 1: Apresentação */}
       <section aria-labelledby="about-intro-title">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="neo-box bg-[#FFFFFF] p-7 sm:p-11 relative overflow-hidden">
+          <div className="neo-box bg-[#FFFFFF] p-5 sm:p-11 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-5">
                 <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#B8E36A] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
@@ -155,11 +155,11 @@ export const About: React.FC = () => {
                   />
                 ) : (
                   <div className="w-full aspect-[3/4] bg-[#F7F5ED] p-6 sm:p-10 flex flex-col items-center justify-center text-center">
-                    <div className="flex items-center justify-center gap-4 mb-5">
-                      <TomatoIllustration className="w-14 h-14 animate-float-slow" />
-                      <CitrusIllustration className="w-14 h-14 animate-sway-gentle" />
-                      <CarrotIllustration className="w-14 h-14 animate-float-delayed" />
-                      <LeafClusterIllustration className="w-14 h-14 animate-sway-gentle" />
+                    <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
+                      <TomatoIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-float-slow" />
+                      <CitrusIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-sway-gentle" />
+                      <CarrotIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-float-delayed" />
+                      <LeafClusterIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-sway-gentle" />
                     </div>
                     <p className="font-display font-bold text-lg text-[#20231F]">
                       Turma colaboradora do projeto Sabor Sustentável
@@ -236,14 +236,14 @@ export const About: React.FC = () => {
       {/* Section 4: Nosso propósito */}
       <section aria-labelledby="about-purpose-title">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="neo-box bg-[#FFD66B] p-8 sm:p-12 text-center space-y-6">
+          <div className="neo-box bg-[#FFD66B] p-6 sm:p-12 text-center space-y-5 sm:space-y-6">
             <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FFFFFF] border-2 border-[#20231F] rounded-[14px] shadow-[3px_3px_0px_#20231F]">
               <MaterialIcon name="eco" size={30} filled />
             </div>
 
             <h2
               id="about-purpose-title"
-              className="font-display font-bold text-3xl sm:text-5xl leading-tight text-[#20231F] max-w-2xl mx-auto text-balance"
+              className="font-display font-bold text-2xl sm:text-5xl leading-tight text-[#20231F] max-w-2xl mx-auto text-balance"
             >
               Menos desperdício. Mais consciência. Mais sabor.
             </h2>

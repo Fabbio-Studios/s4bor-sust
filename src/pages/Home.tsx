@@ -218,7 +218,7 @@ export const Home: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleClearFilters}
-                    className="inline-flex items-center gap-1.5 text-sm font-display font-bold text-[#20231F] bg-[#FF8065] hover:bg-[#ff7052] border-2 border-[#20231F] rounded-lg px-3 py-1.5 min-h-[40px] shadow-[2px_2px_0px_#20231F] cursor-pointer transition-transform active:translate-x-[1px] active:translate-y-[1px]"
+                    className="inline-flex items-center gap-1.5 text-sm font-display font-bold text-[#20231F] bg-[#FF8065] hover:bg-[#ff7052] border-2 border-[#20231F] rounded-lg px-3 py-1.5 min-h-[44px] shadow-[2px_2px_0px_#20231F] cursor-pointer transition-transform active:translate-x-[1px] active:translate-y-[1px]"
                   >
                     <MaterialIcon name="close" size={16} />
                     <span>Limpar filtros</span>
@@ -233,7 +233,7 @@ export const Home: React.FC = () => {
                 Explorar por tipo de ingrediente
               </p>
               <div
-                className="flex items-stretch gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x"
+                className="flex items-stretch gap-3 overflow-x-auto pt-1 pb-2.5 px-1 -mx-1 snap-x"
                 role="group"
                 aria-label="Filtrar por tipo de ingrediente"
               >

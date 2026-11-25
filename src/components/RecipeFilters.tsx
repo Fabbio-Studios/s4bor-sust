@@ -18,7 +18,7 @@ export const RecipeFilters: React.FC<RecipeFiltersProps> = ({
     <div
       role="tablist"
       aria-label="Filtrar receitas por categoria"
-      className="flex flex-wrap items-center gap-2.5"
+      className="flex flex-nowrap overflow-x-auto pb-2 pt-0.5 px-0.5 -mx-0.5 gap-2.5 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:pt-0 sm:px-0 sm:mx-0"
     >
       {categories.map((category) => {
         const isActive = selectedCategory === category;
@@ -31,7 +31,7 @@ export const RecipeFilters: React.FC<RecipeFiltersProps> = ({
             type="button"
             aria-selected={isActive}
             onClick={() => onSelectCategory(category)}
-            className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-[11px] border-2 border-[#20231F] font-display text-sm font-bold whitespace-nowrap shrink-0 transition-[transform,box-shadow,background-color] duration-150 cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-3.5 py-2 min-h-[42px] rounded-[11px] border-2 border-[#20231F] font-display text-sm font-bold whitespace-nowrap shrink-0 transition-[transform,box-shadow,background-color] duration-150 cursor-pointer ${
               isActive
                 ? 'bg-[#B8E36A] text-[#20231F] shadow-[2px_2px_0px_#20231F] translate-x-[1px] translate-y-[1px]'
                 : 'bg-[#FFFFFF] text-[#20231F] shadow-[3px_3px_0px_#20231F] hover:bg-[#FFD66B] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_#20231F]'

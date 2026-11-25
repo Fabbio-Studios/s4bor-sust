@@ -308,38 +308,38 @@ export const HeroVisualComposition: React.FC = () => {
       {/* Main framed Neo-brutalist kitchen & harvest board */}
       <div className="neo-box bg-[#FFFFFF] p-4 sm:p-6 relative overflow-visible">
         {/* Top editorial plate header inside artwork */}
-        <div className="flex items-center justify-between border-b-2 border-[#20231F] pb-3 mb-4">
-          <span className="font-display text-sm font-bold tracking-tight text-[#20231F]">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-[#20231F] pb-3 mb-4">
+          <span className="font-display text-xs sm:text-sm font-bold tracking-tight text-[#20231F]">
             Caderno de Cozinha Integral
           </span>
-          <span className="font-display text-xs font-bold bg-[#FFD66B] border-2 border-[#20231F] px-2.5 py-0.5 rounded-md">
+          <span className="font-display text-[11px] sm:text-xs font-bold bg-[#FFD66B] border-2 border-[#20231F] px-2 py-0.5 rounded-md shrink-0">
             Edição Colaborativa
           </span>
         </div>
 
         {/* Harvest Character & Animated Vegetable Duo */}
-        <div className="grid grid-cols-12 gap-3.5 items-stretch">
+        <div className="grid grid-cols-12 gap-3 sm:gap-3.5 items-stretch">
           {/* Main Harvest Scene (inspired by opening app card) */}
-          <div className="col-span-12 sm:col-span-7 bg-[#F7F5ED] border-2 border-[#20231F] rounded-[14px] p-3 flex flex-col items-center justify-center min-h-[190px]">
-            <HarvestCharacterIllustration className="w-full max-w-[220px] h-auto" />
+          <div className="col-span-12 sm:col-span-7 bg-[#F7F5ED] border-2 border-[#20231F] rounded-[14px] p-3 flex flex-col items-center justify-center min-h-[170px] sm:min-h-[190px]">
+            <HarvestCharacterIllustration className="w-full max-w-[200px] sm:max-w-[220px] h-auto" />
           </div>
 
-          {/* Right column inside artwork: Floating Vegetables + Steaming Pot */}
-          <div className="col-span-12 sm:col-span-5 grid grid-cols-2 sm:grid-cols-1 gap-3.5">
-            <div className="bg-[#B8E36A] border-2 border-[#20231F] rounded-[14px] p-3 flex flex-col items-center justify-center">
-              <div className="flex items-center justify-center -space-x-3 animate-float-slow">
-                <CarrotIllustration className="w-16 h-16 sm:w-18 sm:h-18 animate-float-slow transition-transform duration-200 hover:scale-105" />
-                <BroccoliIllustration className="w-16 h-16 sm:w-18 sm:h-18 animate-float-delayed transition-transform duration-200 hover:scale-105" />
+          {/* Right column inside artwork: Floating Vegetables */}
+          <div className="col-span-12 sm:col-span-5 grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-3.5">
+            <div className="bg-[#B8E36A] border-2 border-[#20231F] rounded-[14px] p-2.5 sm:p-3 flex flex-col items-center justify-center">
+              <div className="flex items-center justify-center -space-x-2 animate-float-slow">
+                <CarrotIllustration className="w-13 h-13 sm:w-16 sm:h-16 animate-float-slow transition-transform duration-200 hover:scale-105" />
+                <BroccoliIllustration className="w-13 h-13 sm:w-16 sm:h-16 animate-float-delayed transition-transform duration-200 hover:scale-105" />
               </div>
-              <span className="font-display text-xs font-bold text-[#20231F]">
+              <span className="font-display text-[11px] sm:text-xs font-bold text-[#20231F] text-center">
                 Ramas &amp; Talos
               </span>
             </div>
 
-            <div className="bg-[#FFD66B] border-2 border-[#20231F] rounded-[14px] p-3 flex items-center justify-around gap-1">
-              <TomatoIllustration className="w-12 h-12 animate-float-delayed transition-transform duration-200 hover:scale-105" />
-              <CitrusIllustration className="w-12 h-12 animate-sway-gentle transition-transform duration-200 hover:scale-105" />
-              <EggplantIllustration className="w-12 h-12 animate-float-slow transition-transform duration-200 hover:scale-105" />
+            <div className="bg-[#FFD66B] border-2 border-[#20231F] rounded-[14px] p-2.5 sm:p-3 flex items-center justify-around gap-1">
+              <TomatoIllustration className="w-9 h-9 sm:w-12 sm:h-12 animate-float-delayed transition-transform duration-200 hover:scale-105" />
+              <CitrusIllustration className="w-9 h-9 sm:w-12 sm:h-12 animate-sway-gentle transition-transform duration-200 hover:scale-105" />
+              <EggplantIllustration className="w-9 h-9 sm:w-12 sm:h-12 animate-float-slow transition-transform duration-200 hover:scale-105" />
             </div>
           </div>
         </div>

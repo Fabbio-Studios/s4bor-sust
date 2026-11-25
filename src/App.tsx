@@ -11,7 +11,7 @@ import { NotFound } from './pages/NotFound';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-[#F7F5ED] text-[#20231F]">
+      <div className="min-h-screen flex flex-col bg-[#F7F5ED] text-[#20231F] overflow-x-clip">
         <Header />
         <main className="flex-1">
           <Routes>

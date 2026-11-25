@@ -16,19 +16,19 @@ export const SavedRecipes: React.FC = () => {
   const savedList = recipes.filter((r) => savedIds.includes(r.id));
 
   return (
-    <div className="py-8 sm:py-12">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="py-6 sm:py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         <header className="space-y-3 max-w-2xl">
           <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#FF8065] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
             <MaterialIcon name="bookmark" size={16} filled />
             <span>Favoritas do seu livro</span>
           </div>
 
-          <h1 className="font-display font-bold text-3xl sm:text-4xl text-[#20231F] text-balance">
+          <h1 className="font-display font-bold text-2xl sm:text-4xl text-[#20231F] text-balance">
             Receitas salvas para preparar depois.
           </h1>
 
-          <p className="text-base text-[#20231F]/80">
+          <p className="text-sm sm:text-base text-[#20231F]/80">
             {savedList.length > 0
               ? `Você tem ${savedList.length} ${
                   savedList.length === 1 ? 'receita salva' : 'receitas salvas'
@@ -38,22 +38,22 @@ export const SavedRecipes: React.FC = () => {
         </header>
 
         {savedList.length === 0 ? (
-          <div className="neo-box bg-[#FFFFFF] p-8 sm:p-12 text-center max-w-xl mx-auto space-y-5 animate-fade-up">
+          <div className="neo-box bg-[#FFFFFF] p-6 sm:p-12 text-center max-w-xl mx-auto space-y-5 animate-fade-up">
             <div className="flex items-center justify-center gap-3">
-              <CitrusIllustration className="w-16 h-16 animate-sway-gentle" />
-              <CarrotIllustration className="w-16 h-16 animate-float-slow" />
+              <CitrusIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-sway-gentle" />
+              <CarrotIllustration className="w-14 h-14 sm:w-16 sm:h-16 animate-float-slow" />
             </div>
-            <h2 className="font-display font-bold text-2xl text-[#20231F]">
+            <h2 className="font-display font-bold text-xl sm:text-2xl text-[#20231F]">
               Nenhuma receita salva ainda
             </h2>
-            <p className="text-base text-[#20231F]/80">
+            <p className="text-sm sm:text-base text-[#20231F]/80">
               Explore o livro colaborativo e marque suas receitas favoritas para tê-las sempre à mão
               na cozinha.
             </p>
             <div className="pt-1">
               <Link
                 to="/#recipe-book"
-                className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-6 py-3 text-sm"
+                className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-6 py-3 min-h-[46px] text-sm"
               >
                 <MaterialIcon name="menu_book" size={18} />
                 <span>Explorar receitas</span>

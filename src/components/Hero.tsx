@@ -22,14 +22,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
             </p>
 
             <h1
-              className="font-display font-bold text-3xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-[#20231F] text-balance animate-fade-up"
+              className="font-display font-bold text-[1.75rem] sm:text-5xl lg:text-[3.4rem] leading-[1.14] sm:leading-[1.08] text-[#20231F] text-balance animate-fade-up"
               style={{ animationDelay: '60ms' }}
             >
               Pequenas escolhas.{' '}
-              <span className="inline-block bg-[#B8E36A] border-2 border-[#20231F] px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F] my-1">
+              <span className="inline-block max-w-full bg-[#B8E36A] border-2 border-[#20231F] px-2 sm:px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F] my-1">
                 Grandes transformações
               </span>{' '}
-              <span className="inline-block bg-[#FFD66B] border-2 border-[#20231F] px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F]">
+              <span className="inline-block max-w-full bg-[#FFD66B] border-2 border-[#20231F] px-2 sm:px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F]">
                 à mesa.
               </span>
             </h1>

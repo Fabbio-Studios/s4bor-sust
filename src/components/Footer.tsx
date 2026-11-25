@@ -20,8 +20,8 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t-2 border-[#20231F] bg-[#FFFFFF] mt-16">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 md:py-12">
+    <footer className="border-t-2 border-[#20231F] bg-[#FFFFFF] mt-10 sm:mt-16">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Brand & Description */}
           <div className="md:col-span-6 space-y-3">
