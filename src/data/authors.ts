@@ -1,58 +1,68 @@
 import { Author } from '../types/recipe';
 
 export const authors: Record<string, Author> = {
-  marina: {
-    id: 'marina',
-    name: 'Marina Oliveira',
-    role: 'Estudante de Nutrição',
-    bio: 'Apaixonada por confeitaria caseira e experimentos com cascas e sementes. Acredita que a cozinha escolar e familiar é o melhor laboratório de sustentabilidade.',
-    sharedRecipesCount: 6,
-    initials: 'MO',
+  paulo: {
+    id: 'paulo',
+    name: 'Paulo',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Trouxe uma receita criativa de doce que transforma cascas de banana em brigadeiro.',
+    sharedRecipesCount: 1,
+    initials: 'PA',
     accentColor: 'secondary',
     motif: 'citrus',
   },
-  lucas: {
-    id: 'lucas',
-    name: 'Lucas Ferreira',
-    role: 'Professor de Ciências e Horta Escolar',
-    bio: 'Coordena oficinas de educação ambiental e compostagem com estudantes. Transforma talos, folhas e sobras do dia a dia em preparos nutritivos.',
-    sharedRecipesCount: 8,
-    initials: 'LF',
+  'anna-livia': {
+    id: 'anna-livia',
+    name: 'Anna Lívia',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Selecionou preparos variados — de bolinhos rápidos e carne de casca de banana a pudim de pão e doces sem desperdício.',
+    sharedRecipesCount: 5,
+    initials: 'AL',
     accentColor: 'primary',
     motif: 'sprout',
   },
-  beatriz: {
-    id: 'beatriz',
-    name: 'Beatriz Santos',
-    role: 'Estudante de Gastronomia',
-    bio: 'Pesquisa técnicas tradicionais da cozinha brasileira para evitar o desperdício sem abrir mão de textura, cor e sabor marcante no prato.',
-    sharedRecipesCount: 5,
-    initials: 'BS',
+  geandro: {
+    id: 'geandro',
+    name: 'Geandro',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Compartilhou uma receita refrescante que aproveita frutas maduras e forminhas reutilizáveis.',
+    sharedRecipesCount: 1,
+    initials: 'GE',
     accentColor: 'accent',
+    motif: 'citrus',
+  },
+  'leticia-dias': {
+    id: 'leticia-dias',
+    name: 'Letícia Dias',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Contribuiu com uma receita prática para reaproveitar sobras de arroz cozido no lanche.',
+    sharedRecipesCount: 1,
+    initials: 'LD',
+    accentColor: 'secondary',
     motif: 'pot',
   },
-  rafael: {
-    id: 'rafael',
-    name: 'Rafael Mendes',
-    role: 'Educador Ambiental',
-    bio: 'Organiza feiras de troca de receitas no bairro e adora mostrar para as famílias como ingredientes simples rendem muito mais quando olhamos para o alimento por inteiro.',
-    sharedRecipesCount: 4,
-    initials: 'RM',
+  'guilherme-dias': {
+    id: 'guilherme-dias',
+    name: 'Guilherme Dias',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Compartilhou um petisco crocante feito com cascas de batata assadas no forno.',
+    sharedRecipesCount: 1,
+    initials: 'GD',
     accentColor: 'primary',
     motif: 'carrot',
   },
-  camila: {
-    id: 'camila',
-    name: 'Camila Costa',
-    role: 'Monitora de Culinária Criativa',
-    bio: 'Entusiasta de lanches práticos e cafés da manhã rápidos. Adora testar versões crocantes com partes de frutas e legumes que normalmente iriam para o lixo.',
-    sharedRecipesCount: 7,
-    initials: 'CC',
-    accentColor: 'secondary',
+  girliane: {
+    id: 'girliane',
+    name: 'Girliane',
+    role: 'Estudante · 7º ano A',
+    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Trouxe receitas simples e econômicas para o café da manhã usando cascas de banana e pão amanhecido.',
+    sharedRecipesCount: 2,
+    initials: 'GI',
+    accentColor: 'accent',
     motif: 'leaf',
   },
 };
 
 export function getAuthorById(authorId: string): Author {
-  return authors[authorId] || authors.marina;
+  return authors[authorId] || authors['anna-livia'];
 }

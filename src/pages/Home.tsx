@@ -16,12 +16,26 @@ import {
 import { RECIPE_CATEGORIES, recipes } from '../data/recipes';
 import { Recipe, RecipeCategory } from '../types/recipe';
 
-type IngredientSpotlightId = 'todos' | 'cascas' | 'talos' | 'frutas' | 'raizes';
+type IngredientSpotlightId = 'todos' | 'cascas' | 'frutas' | 'paes-graos' | 'salgados';
 
 interface IngredientSpotlight {
   id: IngredientSpotlightId;
   label: string;
   matcher: (recipe: Recipe) => boolean;
+}
+
+function normalizeText(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+function recipeText(recipe: Recipe): string {
+  return normalizeText(
+    `${recipe.title} ${recipe.description} ${recipe.ingredients.map((i) => i.name).join(' ')}`
+  );
 }
 
 const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
@@ -33,32 +47,35 @@ const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
   {
     id: 'cascas',
     label: 'Cascas',
-    matcher: (r) => ['1', '3', '6', '9'].includes(r.id),
-  },
-  {
-    id: 'talos',
-    label: 'Talos & folhas',
-    matcher: (r) => ['2', '5', '7'].includes(r.id),
+    matcher: (r) => recipeText(r).includes('casca'),
   },
   {
     id: 'frutas',
     label: 'Frutas',
-    matcher: (r) => ['1', '3', '6', '8'].includes(r.id),
+    matcher: (r) => {
+      const text = recipeText(r);
+      return (
+        text.includes('banana') ||
+        text.includes('manga') ||
+        text.includes('melancia') ||
+        text.includes('laranja')
+      );
+    },
   },
   {
-    id: 'raizes',
-    label: 'Raízes & grãos',
-    matcher: (r) => ['4', '5', '7', '9'].includes(r.id),
+    id: 'paes-graos',
+    label: 'Pães & grãos',
+    matcher: (r) => {
+      const text = recipeText(r);
+      return text.includes('pao') || text.includes('arroz') || text.includes('aveia');
+    },
+  },
+  {
+    id: 'salgados',
+    label: 'Salgados',
+    matcher: (r) => r.category === 'Almoço e jantar' || r.category === 'Lanches',
   },
 ];
-
-function normalizeText(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim();
-}
 
 export const Home: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -134,11 +151,11 @@ export const Home: React.FC = () => {
     switch (id) {
       case 'cascas':
         return <CitrusIllustration className="w-12 h-12" />;
-      case 'talos':
-        return <BroccoliIllustration className="w-12 h-12" />;
       case 'frutas':
         return <TomatoIllustration className="w-12 h-12" />;
-      case 'raizes':
+      case 'paes-graos':
+        return <BroccoliIllustration className="w-12 h-12" />;
+      case 'salgados':
         return <CarrotIllustration className="w-12 h-12" />;
       case 'todos':
       default:

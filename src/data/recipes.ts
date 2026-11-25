@@ -1,14 +1,16 @@
 import { Recipe, RecipeCategory } from '../types/recipe';
 
-import boloCascaBananaImg from '../assets/images/bolo_casca_banana_1794609818831.jpg';
-import farofaTalosImg from '../assets/images/farofa_talos_vegetais_1794609819082.jpg';
-import sucoCascaAbacaxiImg from '../assets/images/suco_casca_abacaxi_1794609819672.jpg';
+import brigadeiroCascaBananaImg from '../assets/images/brigadeiro_casca_banana_1795644592280.jpg';
+import bolinhoBananaAveiaImg from '../assets/images/bolinho_banana_aveia_1795644591294.jpg';
+import picoleFrutasImg from '../assets/images/picole_sustentavel_frutas_1795644591908.jpg';
 import bolinhoArrozImg from '../assets/images/bolinho_arroz_reaproveitado_1794609819093.jpg';
-import pestoFolhasCenouraImg from '../assets/images/pesto_folhas_cenoura_1794609819591.jpg';
+import carneCascaBananaImg from '../assets/images/carne_casca_banana_1795644592235.jpg';
+import pudimPaoImg from '../assets/images/pudim_pao_amanhecido_1795644592705.jpg';
+import bolinhoCascaMangaImg from '../assets/images/bolinho_casca_manga_1795644592779.jpg';
 import doceCascaMelanciaImg from '../assets/images/doce_casca_melancia_1794609821527.jpg';
-import sopaLegumesImg from '../assets/images/sopa_legumes_integral_1794609821677.jpg';
-import panquecaBananaImg from '../assets/images/panqueca_banana_aveia_1794609821467.jpg';
 import chipsCascaBatataImg from '../assets/images/chips_casca_batata_1794609822207.jpg';
+import boloCascaBananaImg from '../assets/images/bolo_casca_banana_1794609818831.jpg';
+import torradaPaoImg from '../assets/images/torrada_pao_amanhecido_1795644593515.jpg';
 
 export const RECIPE_CATEGORIES: RecipeCategory[] = [
   'Todas',
@@ -16,470 +18,537 @@ export const RECIPE_CATEGORIES: RecipeCategory[] = [
   'Almoço e jantar',
   'Lanches',
   'Sobremesas',
-  'Bebidas',
   'Aproveitamento integral',
 ];
 
 export const recipes: Recipe[] = [
   {
     id: '1',
-    slug: 'bolo-de-casca-de-banana',
-    title: 'Bolo de casca de banana',
+    slug: 'brigadeiro-de-casca-de-banana',
+    title: 'Brigadeiro de Casca de Banana',
     description:
-      'Fofinho, perfumado com canela e ideal para o café da tarde. As cascas maduras garantem umidade natural e um sabor aconchegante.',
+      'Doce cremoso feito com cascas de banana bem higienizadas, chocolate em pó e um toque de manteiga — uma sobremesa que aproveita o que normalmente iria para o lixo.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
-    image: boloCascaBananaImg,
-    imageAlt: 'Fatias de bolo caseiro de casca de banana polvilhadas com canela em prato de cerâmica',
-    prepTimeMinutes: 40,
+    image: brigadeiroCascaBananaImg,
+    imageAlt: 'Brigadeiros de casca de banana cobertos com granulado em prato de cerâmica',
+    prepTimeMinutes: 30,
     servings: 10,
-    ingredientsCount: 8,
-    authorId: 'marina',
+    servingsLabel: '10 porções',
+    ingredientsCount: 4,
+    authorId: 'paulo',
     sustainabilityInfo:
-      'O aproveitamento da casca da banana permite utilizar uma parte do alimento que frequentemente seria descartada, transformando-a em um ingrediente rico em fibras para uma preparação saborosa e econômica.',
+      'A receita aproveita as cascas de banana, que normalmente seriam descartadas, transformando-as em uma sobremesa saborosa. Assim, evita-se o desperdício de uma parte nutritiva da fruta e reduz-se a quantidade de resíduos orgânicos produzidos na cozinha.',
     ingredients: [
-      { id: '1-1', amount: '4', unit: 'unidades', name: 'cascas de banana madura bem higienizadas' },
-      { id: '1-2', amount: '3', unit: 'unidades', name: 'ovos inteiros' },
-      { id: '1-3', amount: '1/2', unit: 'xícara (chá)', name: 'óleo vegetal' },
-      { id: '1-4', amount: '1 e 1/2', unit: 'xícara (chá)', name: 'açúcar mascavo ou demerara' },
-      { id: '1-5', amount: '2', unit: 'xícaras (chá)', name: 'farinha de trigo' },
-      { id: '1-6', amount: '1', unit: 'colher (sopa)', name: 'fermento químico em pó' },
-      { id: '1-7', amount: '1', unit: 'colher (chá)', name: 'canela em pó' },
-      { id: '1-8', amount: '1', unit: 'pitada', name: 'sal' },
+      { id: '1-1', amount: '4', unit: 'unidades', name: 'Cascas de banana bem higienizadas' },
+      { id: '1-2', amount: '3', unit: 'colheres (sopa)', name: 'Chocolate em pó' },
+      { id: '1-3', amount: '2', unit: 'colheres (sopa)', name: 'Açúcar' },
+      { id: '1-4', amount: '1', unit: 'colher (sopa)', name: 'Manteiga' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Higienizar e picar as cascas',
-        instruction:
-          'Lave as bananas inteiras em água corrente com uma escovinha limpa antes de descascá-las. Retire as pontinhas das cascas e corte-as em pedaços menores para facilitar na hora de bater.',
+        title: 'Cozinhar as cascas',
+        instruction: 'Cozinhe as cascas de banana em água até ficarem bem macias.',
       },
       {
         stepNumber: 2,
-        title: 'Bater a base líquida',
-        instruction:
-          'No liquidificador, bata as cascas picadas, os ovos, o óleo e o açúcar por cerca de 3 minutos, até formar um creme liso e homogêneo sem pedaços grandes.',
+        title: 'Bater',
+        instruction: 'Bata as cascas no liquidificador (ou pique bem fininho).',
       },
       {
         stepNumber: 3,
-        title: 'Incorporar os ingredientes secos',
+        title: 'Levar ao fogo',
         instruction:
-          'Transfira o creme para uma tigela, peneire a farinha de trigo com a canela e o sal aos poucos e misture delicadamente com um batedor de arame ou espátula.',
+          'Leve ao fogo com o chocolate em pó, o açúcar e a manteiga, mexendo até dar o ponto de brigadeiro.',
       },
       {
         stepNumber: 4,
-        title: 'Adicionar o fermento e assar',
-        instruction:
-          'Misture o fermento por último, apenas até incorporar. Despeje em uma forma untada e enfarinhada e asse em forno preaquecido a 180 °C por cerca de 35 a 40 minutos.',
+        title: 'Servir',
+        instruction: 'Deixe esfriar e modele os brigadeiros ou sirva em colheradas.',
       },
     ],
   },
   {
     id: '2',
-    slug: 'farofa-de-talos-de-vegetais',
-    title: 'Farofa de talos de vegetais',
+    slug: 'bolinho-de-banana-com-aveia',
+    title: 'Bolinho de Banana com Aveia',
     description:
-      'Crocante, colorida e cheia de textura. Talos de couve, brócolis e espinafre viram um acompanhamento indispensável para o almoço.',
-    category: 'Almoço e jantar',
-    tags: ['Almoço e jantar', 'Aproveitamento integral'],
-    image: farofaTalosImg,
-    imageAlt: 'Tigela rústica com farofa dourada de mandioca e talos verdes refogados',
-    prepTimeMinutes: 20,
-    servings: 6,
-    ingredientsCount: 7,
-    authorId: 'lucas',
+      'Bolinho fofinho e dourado, feito com bananas bem maduras e aveia, pronto em poucos minutos na frigideira — perfeito para o café da manhã ou lanche.',
+    category: 'Café da manhã',
+    tags: ['Café da manhã', 'Aproveitamento integral'],
+    image: bolinhoBananaAveiaImg,
+    imageAlt: 'Bolinhos dourados de banana com aveia empilhados com rodelas de banana e canela',
+    prepTimeMinutes: 15,
+    servings: 8,
+    servingsLabel: '8 bolinhos',
+    ingredientsCount: 6,
+    authorId: 'anna-livia',
     sustainabilityInfo:
-      'Talos de folhas verdes e floretes costumam ser descartados no pré-preparo, embora concentrem textura firme e sabor fresco. Picados finamente, substituem temperos prontos e evitam desperdício na cozinha diária.',
+      'A receita aproveita bananas maduras que poderiam ser desperdiçadas e usa poucos ingredientes, contribuindo para evitar o desperdício de alimentos em casa.',
     ingredients: [
-      { id: '2-1', amount: '2', unit: 'xícaras (chá)', name: 'talos variados bem picados (couve, brócolis, agrião ou salsa)' },
-      { id: '2-2', amount: '2', unit: 'xícaras (chá)', name: 'farinha de mandioca flocada ou torrada' },
-      { id: '2-3', amount: '1', unit: 'unidade', name: 'cebola média picada em cubinhos' },
-      { id: '2-4', amount: '2', unit: 'dentes', name: 'alho amassados' },
-      { id: '2-5', amount: '3', unit: 'colheres (sopa)', name: 'azeite de oliva ou manteiga' },
-      { id: '2-6', amount: '1/2', unit: 'colher (chá)', name: 'cúrcuma em pó' },
-      { id: '2-7', amount: 'a gosto', unit: '', name: 'sal e pimenta-do-reino' },
+      { id: '2-1', amount: '2', unit: 'unidades', name: 'Bananas bem maduras' },
+      { id: '2-2', amount: '1', unit: 'unidade', name: 'Ovo' },
+      { id: '2-3', amount: '½', unit: 'xícara (chá)', name: 'Aveia' },
+      { id: '2-4', amount: '1', unit: 'colher (chá)', name: 'Fermento em pó' },
+      { id: '2-5', amount: 'a gosto', unit: '', name: 'Canela em pó' },
+      { id: '2-6', amount: 'um pouquinho', unit: '', name: 'Óleo para untar' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Lavar e picar os talos',
-        instruction:
-          'Higienize os talos em água corrente e seque-os bem com um pano limpo. Pique em rodelinhas bem finas para que cozinhem rapidamente e fiquem macios.',
+        title: 'Amassar as bananas',
+        instruction: 'Amasse bem as bananas e misture com o ovo.',
       },
       {
         stepNumber: 2,
-        title: 'Refogar os aromáticos',
-        instruction:
-          'Em uma frigideira larga em fogo médio, aqueça o azeite e refogue a cebola até dourar levemente. Junte o alho e a cúrcuma e mexa por 1 minuto.',
+        title: 'Misturar os secos',
+        instruction: 'Acrescente a aveia e a canela e misture até formar uma massa.',
       },
       {
         stepNumber: 3,
-        title: 'Saltear os talos',
-        instruction:
-          'Adicione os talos picados à frigideira e refogue por 4 minutos até perderem o excesso de umidade e ficarem verde-vibrantes.',
+        title: 'Adicionar o fermento',
+        instruction: 'Junte o fermento e mexa delicadamente.',
       },
       {
         stepNumber: 4,
-        title: 'Tostar a farinha',
+        title: 'Dourar na frigideira',
         instruction:
-          'Abaixe o fogo, acrescente a farinha de mandioca aos poucos e mexa sem parar por 5 minutos até ficar bem crocante. Ajuste o sal e a pimenta antes de servir.',
+          'Coloque pequenas porções em uma frigideira untada, em fogo baixo. Tampe e doure dos dois lados. Sirva quentinho!',
       },
     ],
   },
   {
     id: '3',
-    slug: 'suco-de-casca-de-abacaxi',
-    title: 'Suco de casca de abacaxi',
+    slug: 'picole-sustentavel-de-frutas',
+    title: 'Picolé Sustentável de Frutas',
     description:
-      'Refrescante, aromático e naturalmente adocicado com folhas frescas de hortelã. Uma bebida perfeita para dias quentes.',
-    category: 'Bebidas',
-    tags: ['Bebidas', 'Aproveitamento integral'],
-    image: sucoCascaAbacaxiImg,
-    imageAlt: 'Copo alto de suco dourado de casca de abacaxi com folhas de hortelã e gelo',
-    prepTimeMinutes: 15,
-    servings: 5,
+      'Picolé cremoso de banana, laranja e manga, feito com frutas bem maduras e forminhas reutilizáveis — refrescante e sem desperdício.',
+    category: 'Sobremesas',
+    tags: ['Sobremesas', 'Aproveitamento integral'],
+    image: picoleFrutasImg,
+    imageAlt: 'Picolés naturais de manga, banana e laranja com fatias de frutas frescas',
+    prepTimeMinutes: 10,
+    prepTimeNote: '+ 4h de congelamento',
+    servings: 4,
+    servingsLabel: '4 picolés',
     ingredientsCount: 5,
-    authorId: 'camila',
+    authorId: 'geandro',
     sustainabilityInfo:
-      'A casca do abacaxi representa uma parcela expressiva do peso total da fruta e guarda grande concentração de aroma. Transformá-la em suco ou chá gelado multiplica o rendimento de uma única compra.',
+      'A receita prioriza frutas que já estejam maduras em casa, para que sejam aproveitadas antes de estragar. Além disso, utiliza forminhas reutilizáveis, evitando embalagens descartáveis.',
     ingredients: [
-      { id: '3-1', amount: '1', unit: 'unidade', name: 'casca de abacaxi inteiro bem lavada' },
-      { id: '3-2', amount: '1', unit: 'litro', name: 'água filtrada bem gelada' },
-      { id: '3-3', amount: '1', unit: 'punhado', name: 'folhas frescas de hortelã' },
-      { id: '3-4', amount: '1', unit: 'unidade', name: 'suco de limão tahiti' },
-      { id: '3-5', amount: '2', unit: 'colheres (sopa)', name: 'açúcar demerara ou mel (opcional)' },
+      { id: '3-1', amount: '1', unit: 'unidade', name: 'Banana bem madura' },
+      { id: '3-2', amount: '1', unit: 'unidade', name: 'Laranja bem madura' },
+      { id: '3-3', amount: '½', unit: 'unidade', name: 'Manga bem madura' },
+      { id: '3-4', amount: '½', unit: 'xícara (chá)', name: 'Água' },
+      { id: '3-5', amount: '4', unit: 'unidades', name: 'Forminhas de picolé reutilizáveis' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Higienizar a fruta inteira',
-        instruction:
-          'Antes de cortar o abacaxi, esfregue toda a casca sob água corrente usando uma escova de cozinha limpa para remover impurezas da superfície.',
+        title: 'Aproveitar as frutas',
+        instruction: 'Lave bem as frutas e retire apenas as partes que não podem ser consumidas.',
       },
       {
         stepNumber: 2,
-        title: 'Bater com água e hortelã',
-        instruction:
-          'Coloque as cascas picadas em pedaços médios no liquidificador junto com metade da água gelada e as folhas de hortelã. Bata por 2 minutos.',
+        title: 'Preparar',
+        instruction: 'Esprema a laranja e coloque o suco, a banana e a manga no liquidificador.',
       },
       {
         stepNumber: 3,
-        title: 'Coar e finalizar',
-        instruction:
-          'Passe o líquido por uma peneira fina pressionando bem com as costas de uma colher para extrair todo o sabor. Misture o restante da água, o suco de limão e adoce se desejar.',
+        title: 'Bater',
+        instruction: 'Adicione a água e bata até formar uma mistura cremosa.',
       },
       {
         stepNumber: 4,
-        title: 'Servir bem gelado',
+        title: 'Reutilizar e congelar',
         instruction:
-          'Sirva imediatamente em copos com pedras de gelo e raminhos de hortelã fresca. A polpa coada pode ser aproveitada em compostagem.',
+          'Coloque a mistura em forminhas reutilizáveis, evitando copos ou embalagens descartáveis. Leve ao congelador por aproximadamente 4 horas, até ficar firme. Retire da forma e aproveite!',
       },
     ],
   },
   {
     id: '4',
     slug: 'bolinho-de-arroz-reaproveitado',
-    title: 'Bolinho de arroz reaproveitado',
+    title: 'Bolinho de Arroz Reaproveitado',
     description:
-      'Douradinho por fora e macio por dentro, temperado com cheiro-verde e queijo. A forma mais gostosa de dar vida nova ao arroz de ontem.',
+      'Bolinho dourado e saboroso feito com arroz cozido que sobrou de outra refeição — simples, econômico e sem desperdício.',
     category: 'Lanches',
-    tags: ['Lanches', 'Almoço e jantar'],
+    tags: ['Lanches', 'Aproveitamento integral'],
     image: bolinhoArrozImg,
-    imageAlt: 'Bolinhos de arroz dourados e crocantes servidos com salsinha fresca e limão',
-    prepTimeMinutes: 30,
-    servings: 4,
-    ingredientsCount: 7,
-    authorId: 'beatriz',
+    imageAlt: 'Bolinhos de arroz dourados servidos em prato de cerâmica com cheiro-verde',
+    prepTimeMinutes: 25,
+    servings: 10,
+    servingsLabel: '10 bolinhos',
+    ingredientsCount: 5,
+    authorId: 'leticia-dias',
     sustainabilityInfo:
-      'O arroz cozido é um dos alimentos mais desperdiçados nos lares. Ao combiná-lo com ervas frescas e assar ou dourar em porções individuais, evitamos que sobras seguras acabem descartadas.',
+      'A receita reaproveita o arroz que sobrou de outra refeição, evitando que ele seja descartado. Assim, contribui para diminuir a quantidade de lixo produzido em casa e economiza ingredientes.',
     ingredients: [
-      { id: '4-1', amount: '2', unit: 'xícaras (chá)', name: 'arroz cozido amanhecido' },
-      { id: '4-2', amount: '2', unit: 'unidades', name: 'ovos batidos' },
-      { id: '4-3', amount: '1/2', unit: 'xícara (chá)', name: 'queijo minas padrão ou parmesão ralado' },
-      { id: '4-4', amount: '4', unit: 'colheres (sopa)', name: 'farinha de trigo ou aveia em flocos finos' },
-      { id: '4-5', amount: '1/2', unit: 'xícara (chá)', name: 'salsinha e cebolinha picadas' },
-      { id: '4-6', amount: '1', unit: 'colher (chá)', name: 'fermento químico em pó' },
-      { id: '4-7', amount: '2', unit: 'colheres (sopa)', name: 'azeite de oliva para pincelar ou dourar' },
+      { id: '4-1', amount: '2', unit: 'xícaras (chá)', name: 'Arroz cozido que sobrou' },
+      { id: '4-2', amount: '1', unit: 'unidade', name: 'Ovo' },
+      { id: '4-3', amount: '½', unit: 'xícara (chá)', name: 'Farinha de trigo' },
+      { id: '4-4', amount: 'a gosto', unit: '', name: 'Cheiro-verde' },
+      { id: '4-5', amount: 'a gosto', unit: '', name: 'Temperos' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Soltar o arroz',
+        title: 'Misturar os ingredientes',
         instruction:
-          'Em uma tigela grande, solte os grãos do arroz cozido com um garfo e amasse levemente uma parte dele para ajudar a dar liga natural à massa.',
+          'Misture o arroz cozido, o ovo, a farinha de trigo, o cheiro-verde e os temperos até formar uma massa homogênea.',
       },
       {
         stepNumber: 2,
-        title: 'Misturar os temperos e a liga',
-        instruction:
-          'Acrescente os ovos, o queijo ralado, o cheiro-verde e o azeite. Misture bem até obter uma massa úmida e aromática.',
+        title: 'Modelar',
+        instruction: 'Modele os bolinhos com as mãos ou com o auxílio de duas colheres.',
       },
       {
         stepNumber: 3,
-        title: 'Ajustar a consistência',
-        instruction:
-          'Adicione a farinha ou aveia aos poucos junto com o fermento até conseguir moldar bolinhos firmes com as mãos ou com duas colheres.',
+        title: 'Assar',
+        instruction: 'Disponha os bolinhos em uma assadeira untada e asse até dourarem.',
       },
       {
         stepNumber: 4,
-        title: 'Assar até dourar',
-        instruction:
-          'Disponha os bolinhos em uma assadeira untada, pincele um fio de azeite por cima e leve ao forno preaquecido a 200 °C por cerca de 22 minutos, virando na metade do tempo.',
+        title: 'Servir',
+        instruction: 'Retire do forno e sirva quentinho.',
       },
     ],
   },
   {
     id: '5',
-    slug: 'pesto-de-folhas-de-cenoura',
-    title: 'Pesto de folhas de cenoura',
+    slug: 'carne-de-casca-de-banana',
+    title: 'Carne de Casca de Banana',
     description:
-      'Molho verde vibrante, fresco e versátil feito com a rama da cenoura. Fica incrível em massas, pães tostados e legumes assados.',
+      'Substituto vegano de carne surpreendentemente saboroso, feito com cascas de banana desfiadas e temperos caseiros — ideal para sanduíches, escondidinho ou com arroz.',
     category: 'Almoço e jantar',
     tags: ['Almoço e jantar', 'Aproveitamento integral'],
-    image: pestoFolhasCenouraImg,
-    imageAlt: 'Molho pesto verde intenso de folhas de cenoura com castanhas e pão rústico',
-    prepTimeMinutes: 10,
-    servings: 6,
-    ingredientsCount: 6,
-    authorId: 'rafael',
+    image: carneCascaBananaImg,
+    imageAlt: 'Carne vegetal desfiada de casca de banana refogada com cebola e cheiro-verde',
+    prepTimeMinutes: 25,
+    servings: 4,
+    servingsLabel: '4 porções',
+    ingredientsCount: 5,
+    authorId: 'anna-livia',
     sustainabilityInfo:
-      'Quando compramos cenouras em maço, a rama fresca quase sempre fica esquecida. Suas folhas têm sabor herbáceo suave que lembra salsinha e substituem integralmente o manjericão em molhos frios.',
+      'A receita aproveita as cascas de banana, que normalmente seriam jogadas fora, transformando-as em um substituto vegano de carne. Assim, evita o desperdício de uma parte nutritiva da fruta e reduz os resíduos orgânicos.',
     ingredients: [
-      { id: '5-1', amount: '2', unit: 'xícaras (chá)', name: 'folhas frescas de cenoura lavadas e secas' },
-      { id: '5-2', amount: '1/3', unit: 'xícara (chá)', name: 'castanha-de-caju ou nozes tostadas' },
-      { id: '5-3', amount: '1/2', unit: 'xícara (chá)', name: 'azeite de oliva extravirgem' },
-      { id: '5-4', amount: '1', unit: 'dente', name: 'alho descascado' },
-      { id: '5-5', amount: '1', unit: 'colher (sopa)', name: 'suco de limão' },
-      { id: '5-6', amount: '1/3', unit: 'xícara (chá)', name: 'queijo parmesão ralado (ou levedura nutricional)' },
+      { id: '5-1', amount: '4 a 5', unit: 'unidades', name: 'Cascas de banana bem lavadas' },
+      { id: '5-2', amount: '1', unit: 'unidade', name: 'Cebola picada' },
+      { id: '5-3', amount: '2', unit: 'dentes', name: 'Alho' },
+      { id: '5-4', amount: 'a gosto', unit: '', name: 'Colorau, sal, pimenta e cheiro-verde' },
+      { id: '5-5', amount: '½', unit: 'unidade', name: 'Suco de limão' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Separar apenas as folhas',
-        instruction:
-          'Lave bem a rama da cenoura, seque com papel-toalha ou centrífuga de salada e separe as folhinhas mais tenras dos talos grossos.',
+        title: 'Preparar as cascas',
+        instruction: 'Lave bem as cascas e retire a parte branca interna.',
       },
       {
         stepNumber: 2,
-        title: 'Tostar levemente as castanhas',
-        instruction:
-          'Em uma frigideira seca em fogo baixo, toste as castanhas por 2 minutos até perfumarem. Deixe esfriar um pouco antes de processar.',
+        title: 'Ferver e desfiar',
+        instruction: 'Ferva as cascas por 5 minutos, escorra e desfie com um garfo.',
       },
       {
         stepNumber: 3,
-        title: 'Processar em pulsos',
-        instruction:
-          'Bata as folhas de cenoura, as castanhas, o alho, o suco de limão e metade do azeite no processador ou liquidificador usando a função pulsar.',
+        title: 'Refogar',
+        instruction: 'Refogue a cebola e o alho, adicione as cascas desfiadas e tempere.',
       },
       {
         stepNumber: 4,
-        title: 'Finalizar com queijo e azeite',
+        title: 'Finalizar',
         instruction:
-          'Adicione o queijo ralado e o restante do azeite em fio até formar um molho rústico e brilhante. Ajuste o sal e guarde em pote fechado na geladeira.',
+          'Cozinhe por mais 5 minutos e use em sanduíches, escondidinho ou com arroz.',
       },
     ],
   },
   {
     id: '6',
-    slug: 'doce-de-casca-de-melancia',
-    title: 'Doce de casca de melancia',
+    slug: 'pudim-de-pao-amanhecido',
+    title: 'Pudim de Pão Amanhecido',
     description:
-      'Cubinhos translúcidos em calda perfumada com cravo e canela. Uma receita afetiva que resgata tradições de cozinha sem sobras.',
+      'Clássico pudim de pão que não deixa nada ir para o lixo — cremoso, com calda caramelizada e um toque de baunilha.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
-    image: doceCascaMelanciaImg,
-    imageAlt: 'Compoteira de vidro com cubos dourados de doce de casca de melancia com canela e cravo',
-    prepTimeMinutes: 55,
+    image: pudimPaoImg,
+    imageAlt: 'Pudim caramelizado de pão amanhecido em prato de cerâmica com fatia cortada',
+    prepTimeMinutes: 60,
     servings: 8,
-    ingredientsCount: 6,
-    authorId: 'beatriz',
+    servingsLabel: '8 porções',
+    ingredientsCount: 5,
+    authorId: 'anna-livia',
     sustainabilityInfo:
-      'A parte branca entre a polpa vermelha e a casca verde da melancia é rica em água e possui textura firme perfeita para compotas. Aproveitá-la dobra o rendimento de uma melancia inteira.',
+      'A receita aproveita pães amanhecidos que provavelmente seriam descartados, transformando-os em uma sobremesa deliciosa. Assim, evita o desperdício de alimentos e reduz a quantidade de resíduos orgânicos em casa.',
     ingredients: [
-      { id: '6-1', amount: '4', unit: 'xícaras (chá)', name: 'parte branca da casca de melancia em cubos' },
-      { id: '6-2', amount: '2', unit: 'xícaras (chá)', name: 'açúcar cristal ou demerara' },
-      { id: '6-3', amount: '2', unit: 'xícaras (chá)', name: 'água filtrada' },
-      { id: '6-4', amount: '2', unit: 'paus', name: 'canela em rama' },
-      { id: '6-5', amount: '5', unit: 'unidades', name: 'cravos-da-índia' },
-      { id: '6-6', amount: '1', unit: 'tira', name: 'casca de laranja ou limão sem a parte branca' },
+      { id: '6-1', amount: '3', unit: 'unidades', name: 'Pães amanhecidos' },
+      { id: '6-2', amount: '3', unit: 'xícaras (chá)', name: 'Leite' },
+      { id: '6-3', amount: '3', unit: 'unidades', name: 'Ovos' },
+      { id: '6-4', amount: '1', unit: 'xícara (chá)', name: 'Açúcar' },
+      { id: '6-5', amount: '1', unit: 'colher (chá)', name: 'Essência de baunilha' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Preparar os cubos da casca',
-        instruction:
-          'Lave a melancia por fora. Com uma faca firme, retire a película verde escura mais dura e corte a parte branca (deixando um fio da polpa rosa, se quiser) em cubos regulares.',
+        title: 'Deixar o pão de molho',
+        instruction: 'Quebre os pães e deixe de molho no leite por 10 minutos.',
       },
       {
         stepNumber: 2,
-        title: 'Fervura rápida para amaciar',
-        instruction:
-          'Leve os cubos ao fogo cobertos com água por 10 minutos para pré-cozinhar. Escorra toda a água e reserve os cubinhos.',
+        title: 'Bater',
+        instruction: 'Bata no liquidificador com os ovos, o açúcar e a baunilha.',
       },
       {
         stepNumber: 3,
-        title: 'Cozinhar na calda aromática',
-        instruction:
-          'Em uma panela funda, misture o açúcar, as 2 xícaras de água, a canela, os cravos e a casca cítrica. Junte os cubos de melancia e cozinhe em fogo baixo.',
+        title: 'Caramelizar a forma',
+        instruction: 'Despeje a mistura em uma forma caramelizada.',
       },
       {
         stepNumber: 4,
-        title: 'Apurar até ficar translúcido',
+        title: 'Assar',
         instruction:
-          'Deixe cozinhar por cerca de 35 minutos, mexendo ocasionalmente com cuidado, até os cubos ficarem macios, brilhantes e a calda encorpar. Sirva frio.',
+          'Asse em banho-maria a 180 °C por aproximadamente 40 minutos. Deixe esfriar antes de servir.',
       },
     ],
   },
   {
     id: '7',
-    slug: 'sopa-de-legumes-com-aproveitamento-integral',
-    title: 'Sopa de legumes com aproveitamento integral',
+    slug: 'bolinho-de-casca-de-manga',
+    title: 'Bolinho de Casca de Manga',
     description:
-      'Caldo reconfortante preparado com abóbora com casca, cenoura, talos e folhas verdes. Nutritiva, colorida e prática para qualquer noite.',
-    category: 'Almoço e jantar',
-    tags: ['Almoço e jantar', 'Aproveitamento integral'],
-    image: sopaLegumesImg,
-    imageAlt: 'Tigela de sopa caseira colorida com cubos de abóbora, cenoura e folhas verdes frescas',
-    prepTimeMinutes: 35,
-    servings: 5,
-    ingredientsCount: 8,
-    authorId: 'lucas',
+      'Bolinho que aproveita a polpa que fica grudada na casca da manga — pode ser doce ou salgado, ideal para um lanche rápido.',
+    category: 'Lanches',
+    tags: ['Lanches', 'Aproveitamento integral'],
+    image: bolinhoCascaMangaImg,
+    imageAlt: 'Bolinhos dourados de casca de manga servidos com fatias frescas de manga',
+    prepTimeMinutes: 20,
+    servings: 8,
+    servingsLabel: '8 bolinhos',
+    ingredientsCount: 5,
+    authorId: 'anna-livia',
     sustainabilityInfo:
-      'Manter a casca limpa de abóboras e cenouras e cozinhar talos no caldo inicial adiciona sabor profundo sem depender de caldos industrializados, aproveitando cada vegetal do começo ao fim.',
+      'A receita aproveita a parte que fica na casca da manga, que normalmente seria descartada, transformando-a em um bolinho saboroso. Assim, evita o desperdício de uma parte nutritiva da fruta.',
     ingredients: [
-      { id: '7-1', amount: '2', unit: 'xícaras (chá)', name: 'abóbora cabotiá com casca bem lavada em cubos' },
-      { id: '7-2', amount: '2', unit: 'unidades', name: 'cenouras com casca cortadas em rodelas' },
-      { id: '7-3', amount: '1', unit: 'xícara (chá)', name: 'talos picados de salsão, couve ou espinafre' },
-      { id: '7-4', amount: '1', unit: 'maço pequeno', name: 'folhas verdes rasgadas (couve ou espinafre)' },
-      { id: '7-5', amount: '1', unit: 'unidade', name: 'cebola picada' },
-      { id: '7-6', amount: '2', unit: 'dentes', name: 'alho picados' },
-      { id: '7-7', amount: '1,2', unit: 'litro', name: 'água ou caldo caseiro de aparas de legumes' },
-      { id: '7-8', amount: '2', unit: 'colheres (sopa)', name: 'azeite de oliva e sal a gosto' },
+      { id: '7-1', amount: '3 a 4', unit: 'unidades', name: 'Cascas de manga maduras' },
+      { id: '7-2', amount: '½', unit: 'xícara (chá)', name: 'Farinha de trigo' },
+      { id: '7-3', amount: '1', unit: 'unidade', name: 'Ovo' },
+      { id: '7-4', amount: '¼', unit: 'xícara (chá)', name: 'Água ou leite' },
+      { id: '7-5', amount: 'a gosto', unit: '', name: 'Sal ou açúcar (doce/salgado)' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Refogar a base aromática',
-        instruction:
-          'Aqueça o azeite em uma panela grande e refogue a cebola, o alho e os talos picados por 4 minutos até começarem a amaciar e perfumar.',
+        title: 'Bater as cascas',
+        instruction: 'Lave bem as cascas e bata no liquidificador com um pouquinho de água.',
       },
       {
         stepNumber: 2,
-        title: 'Cozinhar os legumes com casca',
-        instruction:
-          'Adicione os cubos de abóbora e as rodelas de cenoura já escovados e limpos. Cubra com a água ou caldo caseiro e tempere com sal.',
+        title: 'Misturar',
+        instruction: 'Misture com os outros ingredientes até formar uma massa.',
       },
       {
         stepNumber: 3,
-        title: 'Cozimento em fogo médio',
-        instruction:
-          'Tampe parcialmente e deixe cozinhar por cerca de 20 minutos, até que a abóbora e a cenoura fiquem macias ao espetar com um garfo.',
+        title: 'Fritar',
+        instruction: 'Coloque colheradas numa frigideira com um fio de óleo.',
       },
       {
         stepNumber: 4,
-        title: 'Finalizar com as folhas',
-        instruction:
-          'Desligue o fogo e misture as folhas verdes rasgadas para que murchem apenas com o calor residual da sopa, mantendo a cor vibrante.',
+        title: 'Dourar',
+        instruction: 'Doure dos dois lados. Pronto!',
       },
     ],
   },
   {
     id: '8',
-    slug: 'panqueca-de-banana',
-    title: 'Panqueca de banana',
+    slug: 'doce-de-casca-de-melancia',
+    title: 'Doce de Casca de Melancia',
     description:
-      'Pronta em 15 minutos, sem açúcar refinado e perfeita para aproveitar bananas bem maduras que já passaram do ponto na fruteira.',
-    category: 'Café da manhã',
-    tags: ['Café da manhã', 'Lanches'],
-    image: panquecaBananaImg,
-    imageAlt: 'Pilha de panquecas douradas de banana e aveia com rodelas de banana e mel',
-    prepTimeMinutes: 15,
-    servings: 2,
-    ingredientsCount: 5,
-    authorId: 'rafael',
+      'Sobremesa barata e deliciosa feita com a parte branca da casca de melancia, cozida em calda com um toque cítrico de limão.',
+    category: 'Sobremesas',
+    tags: ['Sobremesas', 'Aproveitamento integral'],
+    image: doceCascaMelanciaImg,
+    imageAlt: 'Compoteira de vidro com cubos dourados de doce de casca de melancia em calda',
+    prepTimeMinutes: 40,
+    servings: 10,
+    servingsLabel: '10 porções',
+    ingredientsCount: 4,
+    authorId: 'anna-livia',
     sustainabilityInfo:
-      'Bananas com a casca pintadinha costumam ser deixadas de lado, mas estão no auge de sua doçura natural. Usá-las na panqueca dispensa açúcar adicionado e reduz o descarte de frutas maduras.',
+      'A receita aproveita a parte branca da casca de melancia, que normalmente seria descartada, transformando-a em uma sobremesa barata e deliciosa. Assim, evita o desperdício de uma parte nutritiva da fruta.',
     ingredients: [
-      { id: '8-1', amount: '2', unit: 'unidades', name: 'bananas bem maduras amassadas' },
-      { id: '8-2', amount: '2', unit: 'unidades', name: 'ovos' },
-      { id: '8-3', amount: '1/2', unit: 'xícara (chá)', name: 'aveia em flocos finos' },
-      { id: '8-4', amount: '1', unit: 'colher (chá)', name: 'canela em pó' },
-      { id: '8-5', amount: '1', unit: 'colher (chá)', name: 'óleo de coco ou manteiga para grelhar' },
+      { id: '8-1', amount: '500', unit: 'g', name: 'Casca de melancia (parte branca)' },
+      { id: '8-2', amount: '2', unit: 'xícaras (chá)', name: 'Açúcar' },
+      { id: '8-3', amount: '3', unit: 'xícaras (chá)', name: 'Água' },
+      { id: '8-4', amount: '1', unit: 'unidade', name: 'Casca ralada de limão' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Amassar as bananas',
-        instruction:
-          'Em um prato fundo, amasse bem as bananas maduras com um garfo até virarem um purê cremoso e docinho.',
+        title: 'Preparar a casca',
+        instruction: 'Lave a casca e corte em cubinhos, retirando a parte verde dura.',
       },
       {
         stepNumber: 2,
-        title: 'Incorporar ovos e aveia',
-        instruction:
-          'Bata os ovos junto com o purê de banana, acrescente a aveia e a canela e deixe a massa descansar por 3 minutos para hidratar os flocos.',
+        title: 'Cozinhar',
+        instruction: 'Cozinhe em água por aproximadamente 10 minutos até amaciar, escorra.',
       },
       {
         stepNumber: 3,
-        title: 'Dourar em fogo baixo',
-        instruction:
-          'Aqueça levemente uma frigideira antiaderente untada. Despeje pequenas conchas de massa e cozinhe por 2 minutos até surgirem bolhinhas nas bordas.',
+        title: 'Fazer a calda',
+        instruction: 'Faça uma calda com o açúcar e a água.',
       },
       {
         stepNumber: 4,
-        title: 'Virar e servir',
+        title: 'Finalizar',
         instruction:
-          'Vire com uma espátula e doure o outro lado por mais 1 minuto. Sirva empilhadas com rodelas de banana, castanhas ou um fio de mel.',
+          'Junte a casca e cozinhe em fogo baixo até engrossar. Adicione a raspa de limão. Deixe esfriar e sirva.',
       },
     ],
   },
   {
     id: '9',
     slug: 'chips-de-casca-de-batata',
-    title: 'Chips de casca de batata',
+    title: 'Chips de Casca de Batata',
     description:
-      'Petisco sequinho, assado e perfumado com alecrim e sal marinho. Transforma o que sobraria do preparo do purê em snack crocante.',
+      'Chips crocantes e temperados feitos com cascas de batata bem lavadas — um petisco sustentável e fácil de fazer no forno.',
     category: 'Lanches',
     tags: ['Lanches', 'Aproveitamento integral'],
     image: chipsCascaBatataImg,
-    imageAlt: 'Tigela com chips dourados e crocantes de casca de batata com alecrim e flor de sal',
-    prepTimeMinutes: 25,
-    servings: 3,
-    ingredientsCount: 5,
-    authorId: 'camila',
+    imageAlt: 'Tigela de cerâmica com chips dourados e crocantes de casca de batata temperados',
+    prepTimeMinutes: 30,
+    servings: 4,
+    servingsLabel: '4 porções',
+    ingredientsCount: 4,
+    authorId: 'guilherme-dias',
     sustainabilityInfo:
-      'Ao preparar purês ou escondidinhos, as cascas da batata quase sempre vão direto para o lixo. Assadas com um fio de azeite e ervas, tornam-se um lanche crocante em poucos minutos.',
+      'A receita aproveita as cascas de batata, que normalmente seriam descartadas, transformando-as em um petisco crocante. Assim, evita o desperdício de uma parte nutritiva do alimento e reduz os resíduos orgânicos.',
     ingredients: [
-      { id: '9-1', amount: '3', unit: 'xícaras (chá)', name: 'cascas de batata lavadas com escova e bem secas' },
-      { id: '9-2', amount: '1 e 1/2', unit: 'colher (sopa)', name: 'azeite de oliva' },
-      { id: '9-3', amount: '1', unit: 'ramo', name: 'alecrim fresco debulhado' },
-      { id: '9-4', amount: '1/2', unit: 'colher (chá)', name: 'páprica doce ou defumada' },
-      { id: '9-5', amount: '1/2', unit: 'colher (chá)', name: 'sal marinho' },
+      { id: '9-1', amount: '3', unit: 'unidades', name: 'Cascas de batata bem lavadas' },
+      { id: '9-2', amount: '1', unit: 'colher (sopa)', name: 'Azeite' },
+      { id: '9-3', amount: 'a gosto', unit: '', name: 'Sal' },
+      { id: '9-4', amount: 'a gosto', unit: '', name: 'Páprica' },
     ],
     steps: [
       {
         stepNumber: 1,
-        title: 'Secar muito bem as cascas',
-        instruction:
-          'Após lavar bem as batatas e descascá-las, lave as cascas rapidamente e seque-as completamente com um pano de prato limpo. Quanto mais secas, mais crocantes ficam.',
+        title: 'Lavar as batatas',
+        instruction: 'Lave muito bem as batatas antes de descascá-las.',
       },
       {
         stepNumber: 2,
-        title: 'Temperar uniformemente',
-        instruction:
-          'Em uma tigela, misture as cascas secas com o azeite, a páprica, o sal e as folhinhas de alecrim até todas ficarem levemente envolvidas.',
+        title: 'Temperar',
+        instruction: 'Misture as cascas com o azeite e os temperos.',
       },
       {
         stepNumber: 3,
-        title: 'Espalhar sem sobrepor',
-        instruction:
-          'Distribua as cascas em uma assadeira grande em uma única camada, evitando que fiquem amontoadas para que assem por igual.',
+        title: 'Distribuir',
+        instruction: 'Distribua em uma assadeira, sem amontoar.',
       },
       {
         stepNumber: 4,
-        title: 'Assar até ficarem crocantes',
+        title: 'Assar',
         instruction:
-          'Leve ao forno preaquecido a 200 °C por 15 a 20 minutos, mexendo na metade do tempo, até ficarem douradas e firmes ao esfriar.',
+          'Asse a 200 °C por aproximadamente 15 a 25 minutos, mexendo na metade do tempo. Retire quando estiverem douradas e crocantes.',
+      },
+    ],
+  },
+  {
+    id: '10',
+    slug: 'bolo-de-casca-de-banana',
+    title: 'Bolo de Casca de Banana',
+    description:
+      'Bolo fofinho e aromático feito com cascas de banana maduras, perfeito para o café da manhã ou lanche da tarde — e sem desperdício.',
+    category: 'Café da manhã',
+    tags: ['Café da manhã', 'Aproveitamento integral'],
+    image: boloCascaBananaImg,
+    imageAlt: 'Fatias de bolo fofinho de casca de banana polvilhadas com canela em prato de cerâmica',
+    prepTimeMinutes: 15,
+    prepTimeNote: '+ 35 a 45 min de forno',
+    servings: 10,
+    servingsLabel: '8 a 10 fatias',
+    ingredientsCount: 8,
+    authorId: 'girliane',
+    sustainabilityInfo:
+      'A receita evita desperdício ao aproveitar as cascas de banana que normalmente seriam jogadas fora. Além disso, economiza, pois utiliza ingredientes simples e baratos, e ajuda o meio ambiente ao diminuir a quantidade de resíduos orgânicos.',
+    ingredients: [
+      { id: '10-1', amount: '4', unit: 'unidades', name: 'Cascas de banana maduras' },
+      { id: '10-2', amount: '2', unit: 'unidades', name: 'Ovos' },
+      { id: '10-3', amount: '1', unit: 'xícara (chá)', name: 'Açúcar' },
+      { id: '10-4', amount: '2', unit: 'xícaras (chá)', name: 'Farinha de trigo' },
+      { id: '10-5', amount: '½', unit: 'xícara (chá)', name: 'Óleo' },
+      { id: '10-6', amount: '1', unit: 'xícara (chá)', name: 'Leite' },
+      { id: '10-7', amount: '1', unit: 'colher (sopa)', name: 'Fermento em pó' },
+      { id: '10-8', amount: '1', unit: 'pitada', name: 'Canela em pó (opcional)' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Lavar as cascas',
+        instruction:
+          'Lave muito bem as cascas das bananas em água corrente. Retire as pontas e corte as cascas em pedaços.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Bater os ingredientes',
+        instruction:
+          'No liquidificador, coloque as cascas, os ovos, o leite, o óleo e o açúcar. Bata até ficar uma mistura homogênea.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Misturar a farinha',
+        instruction:
+          'Despeje a mistura em uma tigela, acrescente a farinha aos poucos e mexa bem. Por último, coloque o fermento e misture delicadamente.',
+      },
+      {
+        stepNumber: 4,
+        title: 'Assar o bolo',
+        instruction:
+          'Coloque a massa em uma forma untada e enfarinhada. Peça ajuda a um adulto para levar ao forno preaquecido a 180 °C por aproximadamente 35 a 45 minutos. Espete um palito no centro: se sair limpo, o bolo está pronto. Espere amornar antes de desenformar.',
+      },
+    ],
+  },
+  {
+    id: '11',
+    slug: 'torrada-de-pao-amanhecido',
+    title: 'Torrada de Pão Amanhecido',
+    description:
+      'Torrada crocante e simples que dá nova vida ao pão amanhecido — perfeita para o café da manhã ou lanche.',
+    category: 'Café da manhã',
+    tags: ['Café da manhã', 'Aproveitamento integral'],
+    image: torradaPaoImg,
+    imageAlt: 'Fatias douradas e crocantes de torrada de pão amanhecido sobre tábua com café',
+    prepTimeMinutes: 10,
+    servings: 4,
+    servingsLabel: '4 porções',
+    ingredientsCount: 3,
+    authorId: 'girliane',
+    sustainabilityInfo:
+      'A receita aproveita o pão amanhecido que normalmente seria descartado, transformando-o em uma torrada crocante e saborosa. Assim, evita o desperdício de alimentos e reduz os resíduos orgânicos em casa.',
+    ingredients: [
+      { id: '11-1', amount: '4', unit: 'fatias', name: 'Pão amanhecido' },
+      { id: '11-2', amount: 'a gosto', unit: '', name: 'Manteiga ou azeite' },
+      { id: '11-3', amount: 'a gosto', unit: '', name: 'Temperos (opcional)' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Preparar o pão',
+        instruction: 'Corte o pão amanhecido em fatias.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Temperar',
+        instruction: 'Passe manteiga ou azeite nas fatias e tempere a gosto.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Torrar',
+        instruction: 'Leve ao forno ou à frigideira até dourar dos dois lados.',
+      },
+      {
+        stepNumber: 4,
+        title: 'Servir',
+        instruction: 'Sirva quentinha.',
       },
     ],
   },

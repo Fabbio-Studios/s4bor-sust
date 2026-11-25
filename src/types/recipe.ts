@@ -4,7 +4,6 @@ export type RecipeCategory =
   | 'Almoço e jantar'
   | 'Lanches'
   | 'Sobremesas'
-  | 'Bebidas'
   | 'Aproveitamento integral';
 
 export interface Ingredient {
@@ -42,7 +41,9 @@ export interface Recipe {
   image: string;
   imageAlt: string;
   prepTimeMinutes: number;
+  prepTimeNote?: string;
   servings: number;
+  servingsLabel?: string;
   ingredientsCount: number;
   ingredients: Ingredient[];
   steps: PreparationStep[];

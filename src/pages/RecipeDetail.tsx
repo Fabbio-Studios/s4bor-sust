@@ -136,13 +136,18 @@ export const RecipeDetail: React.FC = () => {
                   <p className="font-display font-bold text-sm sm:text-base text-[#20231F] tabular-nums">
                     {recipe.prepTimeMinutes} min
                   </p>
+                  {recipe.prepTimeNote && (
+                    <p className="text-[11px] font-medium text-[#20231F]/70 leading-tight mt-0.5">
+                      {recipe.prepTimeNote}
+                    </p>
+                  )}
                 </div>
 
                 <div className="neo-box-sm bg-[#FFFFFF] p-3.5 text-center">
                   <MaterialIcon name="local_dining" size={22} className="text-[#20231F] mb-1" />
                   <p className="text-xs font-medium text-[#20231F]/70">Rendimento</p>
                   <p className="font-display font-bold text-sm sm:text-base text-[#20231F] tabular-nums">
-                    {recipe.servings} porções
+                    {recipe.servingsLabel ?? `${recipe.servings} porções`}
                   </p>
                 </div>
 
