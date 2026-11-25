@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChefHat } from 'lucide-react';
 import { Recipe } from '../types/recipe';
 import { getAuthorById } from '../data/authors';
 import { MaterialIcon } from './MaterialIcon';
@@ -96,7 +97,9 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
             </span>
 
             <span className="inline-flex items-center gap-1.5">
-              <MaterialIcon name="restaurant" size={18} className="text-[#20231F]" />
+              <span className="inline-flex items-center justify-center text-[#20231F]" aria-hidden="true">
+                <ChefHat size={18} strokeWidth={2.1} />
+              </span>
               <span>{recipe.ingredientsCount} ingredientes</span>
             </span>
           </div>

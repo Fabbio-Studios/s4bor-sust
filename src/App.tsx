@@ -24,7 +24,7 @@ const AppShell: React.FC = () => {
   }, [location.pathname, location.search]);
 
   return (
-    <div className="h-[100dvh] md:h-auto md:min-h-screen flex flex-col bg-[#F7F5ED] text-[#20231F] overflow-hidden md:overflow-x-clip">
+    <div className="h-[100dvh] md:h-auto md:min-h-screen flex flex-col bg-[#F7F5ED] text-[#20231F] overflow-clip md:overflow-x-clip">
       <Header />
       <main
         ref={mainRef}

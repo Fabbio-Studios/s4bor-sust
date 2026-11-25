@@ -227,7 +227,7 @@ export const RecipeDetail: React.FC = () => {
                 return (
                   <li key={ingredient.id}>
                     <label
-                      className={`flex items-start gap-3 p-3.5 min-h-[48px] rounded-[12px] border-2 transition-colors duration-150 cursor-pointer select-none ${
+                      className={`relative flex items-start gap-3 p-3.5 min-h-[48px] rounded-[12px] border-2 transition-colors duration-150 cursor-pointer select-none focus-within:outline-3 focus-within:outline-[#20231F] focus-within:outline-offset-2 ${
                         isChecked
                           ? 'bg-[#B8E36A]/35 border-[#20231F]'
                           : 'bg-[#F7F5ED]/65 border-[#20231F]/25 hover:border-[#20231F]'
@@ -237,7 +237,7 @@ export const RecipeDetail: React.FC = () => {
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleIngredient(ingredient.id)}
-                        className="sr-only"
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer m-0"
                       />
                       <span
                         className={`mt-0.5 w-5 h-5 rounded-md border-2 border-[#20231F] flex items-center justify-center shrink-0 transition-colors ${
