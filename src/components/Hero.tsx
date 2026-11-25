@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { HeroVisualComposition } from './FoodIllustrations';
 import { MaterialIcon } from './MaterialIcon';
 
 interface HeroProps {
   onExploreClick: () => void;
+  onTutorialClick: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreClick, onTutorialClick }) => {
   return (
-    <section className="relative pt-6 pb-8 sm:pt-10 sm:pb-12 border-b-2 border-[#20231F]">
+    <section className="relative w-full py-6 sm:py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
-          {/* Left Column: Direct Editorial Headline & Actions */}
+          {/* Left Column: Opening Screen Headline & Actions */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             <p
               className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/80 animate-fade-up"
@@ -49,17 +49,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                 onClick={onExploreClick}
                 className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
               >
+                <MaterialIcon name="explore" size={20} />
                 <span>Explorar receitas</span>
-                <MaterialIcon name="arrow_forward" size={20} />
               </button>
 
-              <Link
-                to="/sobre"
-                className="neo-btn bg-[#FFFFFF] hover:bg-[#F7F5ED] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
+              <button
+                type="button"
+                onClick={onTutorialClick}
+                className="neo-btn bg-[#FFFFFF] hover:bg-[#FFD66B] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
               >
-                <MaterialIcon name="groups" size={20} />
-                <span>Conheça a turma</span>
-              </Link>
+                <MaterialIcon name="help" size={20} />
+                <span>Ver tutorial do app</span>
+              </button>
             </div>
           </div>
 

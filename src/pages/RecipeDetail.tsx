@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getRecipeBySlug, recipes } from '../data/recipes';
+import { getRecipeBySlug } from '../data/recipes';
 import { getAuthorById } from '../data/authors';
 import { AuthorProfile } from '../components/AuthorProfile';
-import { RecipeCard } from '../components/RecipeCard';
 import { MaterialIcon } from '../components/MaterialIcon';
 import { CitrusIllustration } from '../components/FoodIllustrations';
 
@@ -62,8 +61,6 @@ export const RecipeDetail: React.FC = () => {
   };
 
   const checkedCount = recipe.ingredients.filter((ing) => checkedIngredients[ing.id]).length;
-
-  const relatedRecipes = recipes.filter((r) => r.id !== recipe.id).slice(0, 3);
 
   return (
     <article className="py-6 sm:py-12">
@@ -344,27 +341,6 @@ export const RecipeDetail: React.FC = () => {
 
         {/* Author Presentation */}
         <AuthorProfile author={author} />
-
-        {/* Related Recipes */}
-        <section aria-labelledby="related-heading" className="pt-4 space-y-6">
-          <div className="flex items-center justify-between gap-4">
-            <h2 id="related-heading" className="font-display font-bold text-2xl sm:text-3xl">
-              Outras receitas para experimentar
-            </h2>
-            <Link
-              to="/receitas"
-              className="font-display font-bold text-sm inline-flex items-center gap-1 hover:underline underline-offset-4 whitespace-nowrap shrink-0"
-            >
-              <span>Ver todas</span>
-              <MaterialIcon name="arrow_forward" size={16} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            {relatedRecipes.map((rel) => (
-              <RecipeCard key={rel.id} recipe={rel} />
-            ))}
-          </div>
-        </section>
       </div>
     </article>
   );

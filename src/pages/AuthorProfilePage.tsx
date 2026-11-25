@@ -38,9 +38,6 @@ export const AuthorProfilePage: React.FC = () => {
   }
 
   const authorRecipes = recipes.filter((r) => r.authorId === author.id);
-  const integralCount = authorRecipes.filter((r) =>
-    r.tags.includes('Aproveitamento integral')
-  ).length;
   const otherAuthors = authorsList.filter((a) => a.id !== author.id);
 
   return (
@@ -80,8 +77,8 @@ export const AuthorProfilePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
             <AuthorAvatar author={author} size="xl" rounded="full" />
 
-            <div className="grid grid-cols-3 gap-2 sm:gap-5 w-full flex-1 min-w-0 text-center">
-              <div className="bg-[#F7F5ED] border-2 border-[#20231F] rounded-[12px] px-1.5 py-2.5 sm:p-3 min-w-0 overflow-hidden flex flex-col items-center justify-center">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 w-full flex-1 min-w-0 text-center">
+              <div className="bg-[#F7F5ED] border-2 border-[#20231F] rounded-[12px] px-2 py-2.5 sm:p-3 min-w-0 overflow-hidden flex flex-col items-center justify-center">
                 <p className="font-display font-bold text-lg sm:text-2xl text-[#20231F] tabular-nums leading-tight">
                   {authorRecipes.length}
                 </p>
@@ -90,16 +87,7 @@ export const AuthorProfilePage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-[#F7F5ED] border-2 border-[#20231F] rounded-[12px] px-1.5 py-2.5 sm:p-3 min-w-0 overflow-hidden flex flex-col items-center justify-center">
-                <p className="font-display font-bold text-lg sm:text-2xl text-[#20231F] tabular-nums leading-tight">
-                  {integralCount}
-                </p>
-                <p className="w-full truncate text-[11px] sm:text-xs font-medium text-[#20231F]/75 leading-tight mt-0.5">
-                  {integralCount === 1 ? 'Integral' : 'Integrais'}
-                </p>
-              </div>
-
-              <div className="bg-[#B8E36A] border-2 border-[#20231F] rounded-[12px] px-1.5 py-2.5 sm:p-3 min-w-0 overflow-hidden flex flex-col items-center justify-center">
+              <div className="bg-[#B8E36A] border-2 border-[#20231F] rounded-[12px] px-2 py-2.5 sm:p-3 min-w-0 overflow-hidden flex flex-col items-center justify-center">
                 <p className="font-display font-bold text-lg sm:text-2xl text-[#20231F] leading-tight">
                   7º A
                 </p>

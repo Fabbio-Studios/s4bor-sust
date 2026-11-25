@@ -2,24 +2,21 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SearchBar } from '../components/SearchBar';
 import { RecipeFilters } from '../components/RecipeFilters';
-import { RecipeGrid } from '../components/RecipeGrid';
-import { MaterialIcon } from '../components/MaterialIcon';
 import {
-  BroccoliIllustration,
-  CarrotIllustration,
-  CitrusIllustration,
-  LeafClusterIllustration,
-  PotIllustration,
-  TomatoIllustration,
-} from '../components/FoodIllustrations';
+  FilterSheet,
+  IngredientOption,
+  IngredientSpotlightId,
+} from '../components/FilterSheet';
+import { RecipeGrid } from '../components/RecipeGrid';
+import { Pagination } from '../components/Pagination';
+import { MaterialIcon } from '../components/MaterialIcon';
+import { LeafClusterIllustration, TomatoIllustration } from '../components/FoodIllustrations';
 import { RECIPE_CATEGORIES, recipes } from '../data/recipes';
 import { Recipe, RecipeCategory } from '../types/recipe';
 
-type IngredientSpotlightId = 'todos' | 'cascas' | 'frutas' | 'paes-graos' | 'salgados';
+const PAGE_SIZE = 3;
 
-interface IngredientSpotlight {
-  id: IngredientSpotlightId;
-  label: string;
+interface IngredientSpotlight extends IngredientOption {
   matcher: (recipe: Recipe) => boolean;
 }
 
@@ -37,20 +34,23 @@ function recipeText(recipe: Recipe): string {
   );
 }
 
-const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
+const INGREDIENT_OPTIONS: IngredientSpotlight[] = [
   {
     id: 'todos',
-    label: 'Tudo',
+    label: 'Todos',
+    icon: 'restaurant',
     matcher: () => true,
   },
   {
     id: 'cascas',
     label: 'Cascas',
+    icon: 'eco',
     matcher: (r) => recipeText(r).includes('casca'),
   },
   {
     id: 'frutas',
     label: 'Frutas',
+    icon: 'nutrition',
     matcher: (r) => {
       const text = recipeText(r);
       return (
@@ -63,7 +63,8 @@ const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
   },
   {
     id: 'paes-graos',
-    label: 'Pães & grãos',
+    label: 'Pães e grãos',
+    icon: 'bakery_dining',
     matcher: (r) => {
       const text = recipeText(r);
       return text.includes('pao') || text.includes('arroz') || text.includes('aveia');
@@ -72,6 +73,7 @@ const INGREDIENT_SPOTLIGHTS: IngredientSpotlight[] = [
   {
     id: 'salgados',
     label: 'Salgados',
+    icon: 'local_dining',
     matcher: (r) => r.category === 'Almoço e jantar' || r.category === 'Lanches',
   },
 ];
@@ -88,7 +90,9 @@ export const Recipes: React.FC = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<RecipeCategory>(validInitialCategory);
-  const [selectedSpotlight, setSelectedSpotlight] = useState<IngredientSpotlightId>('todos');
+  const [selectedIngredient, setSelectedIngredient] = useState<IngredientSpotlightId>('todos');
+  const [isFilterSheetOpen, setIsFilterSheetOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     if (shouldFocusSearch) {
@@ -115,8 +119,8 @@ export const Recipes: React.FC = () => {
 
   const filteredRecipes = useMemo(() => {
     const normalizedQuery = normalizeText(searchQuery);
-    const activeSpotlight =
-      INGREDIENT_SPOTLIGHTS.find((s) => s.id === selectedSpotlight) ?? INGREDIENT_SPOTLIGHTS[0];
+    const activeIngredient =
+      INGREDIENT_OPTIONS.find((s) => s.id === selectedIngredient) ?? INGREDIENT_OPTIONS[0];
 
     return recipes.filter((recipe) => {
       const matchesCategory =
@@ -128,36 +132,45 @@ export const Recipes: React.FC = () => {
         normalizedQuery.length === 0 ||
         normalizeText(recipe.title).includes(normalizedQuery);
 
-      const matchesSpotlight = activeSpotlight.matcher(recipe);
+      const matchesIngredient = activeIngredient.matcher(recipe);
 
-      return matchesCategory && matchesSearch && matchesSpotlight;
+      return matchesCategory && matchesSearch && matchesIngredient;
     });
-  }, [searchQuery, selectedCategory, selectedSpotlight]);
+  }, [searchQuery, selectedCategory, selectedIngredient]);
 
-  const hasActiveFilters =
-    searchQuery.trim().length > 0 ||
-    selectedCategory !== 'Todas' ||
-    selectedSpotlight !== 'todos';
+  // Reset to page 1 whenever filters or search change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, selectedIngredient]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredRecipes.length / PAGE_SIZE));
+  const safePage = Math.min(currentPage, totalPages);
+
+  const paginatedRecipes = useMemo(() => {
+    const start = (safePage - 1) * PAGE_SIZE;
+    return filteredRecipes.slice(start, start + PAGE_SIZE);
+  }, [filteredRecipes, safePage]);
+
+  const activeFiltersCount =
+    (selectedCategory !== 'Todas' ? 1 : 0) + (selectedIngredient !== 'todos' ? 1 : 0);
+
+  const hasActiveFilters = searchQuery.trim().length > 0 || activeFiltersCount > 0;
+
+  const activeIngredientLabel =
+    INGREDIENT_OPTIONS.find((o) => o.id === selectedIngredient)?.label ?? '';
 
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('Todas');
-    setSelectedSpotlight('todos');
+    setSelectedIngredient('todos');
+    setCurrentPage(1);
   };
 
-  const renderSpotlightIllustration = (id: IngredientSpotlightId) => {
-    switch (id) {
-      case 'cascas':
-        return <CitrusIllustration className="w-11 h-11 sm:w-12 sm:h-12" />;
-      case 'frutas':
-        return <TomatoIllustration className="w-11 h-11 sm:w-12 sm:h-12" />;
-      case 'paes-graos':
-        return <BroccoliIllustration className="w-11 h-11 sm:w-12 sm:h-12" />;
-      case 'salgados':
-        return <CarrotIllustration className="w-11 h-11 sm:w-12 sm:h-12" />;
-      case 'todos':
-      default:
-        return <PotIllustration className="w-11 h-11 sm:w-12 sm:h-12" />;
+  const handlePageChange = (nextPage: number) => {
+    setCurrentPage(nextPage);
+    const section = document.getElementById('recipe-book');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -165,114 +178,115 @@ export const Recipes: React.FC = () => {
     <section
       id="recipe-book"
       aria-labelledby="recipe-book-title"
-      className="py-6 sm:py-12"
+      className="py-5 sm:py-10"
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-        {/* Section Header */}
-        <header className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
-          <div className="space-y-2 max-w-2xl">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6">
+        {/* Compact Page Header */}
+        <header className="flex items-end justify-between gap-4">
+          <div className="space-y-1 max-w-2xl">
             <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
               Livro de receitas digital
             </p>
-
             <h1
               id="recipe-book-title"
               className="font-display font-bold text-2xl sm:text-4xl leading-tight text-[#20231F] text-balance"
             >
               Todas as receitas da turma
             </h1>
-
-            <p className="text-sm sm:text-lg text-[#20231F]/80">
-              Pesquise pelo nome, filtre por categoria ou escolha o ingrediente que você quer
-              reaproveitar.
-            </p>
           </div>
 
           <div className="hidden md:flex items-center gap-2 shrink-0" aria-hidden="true">
-            <TomatoIllustration className="w-14 h-14 animate-float-slow" />
-            <LeafClusterIllustration className="w-14 h-14 animate-sway-gentle" />
+            <TomatoIllustration className="w-12 h-12 animate-float-slow" />
+            <LeafClusterIllustration className="w-12 h-12 animate-sway-gentle" />
           </div>
         </header>
 
-        {/* Search, Ingredient Spotlight Cards & Category Filters */}
-        <div
-          data-tour="recipes-search"
-          className="neo-box bg-[#FFFFFF] p-4 sm:p-6 space-y-5"
-        >
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        {/* Streamlined Search + Filter Trigger + Single-Row Category Strip */}
+        <div data-tour="recipes-search" className="space-y-3">
+          <div className="flex items-center gap-2.5">
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
 
-            <div className="flex items-center justify-between sm:justify-end gap-4 shrink-0">
-              <p
-                aria-live="polite"
-                className="font-display text-sm font-bold text-[#20231F] tabular-nums"
-              >
-                {filteredRecipes.length}{' '}
-                {filteredRecipes.length === 1 ? 'receita encontrada' : 'receitas encontradas'}
-              </p>
-
-              {hasActiveFilters && (
-                <button
-                  type="button"
-                  onClick={handleClearFilters}
-                  className="inline-flex items-center gap-1.5 text-sm font-display font-bold text-[#20231F] bg-[#FF8065] hover:bg-[#ff7052] border-2 border-[#20231F] rounded-lg px-3 py-1.5 min-h-[44px] shadow-[2px_2px_0px_#20231F] cursor-pointer transition-transform active:translate-x-[1px] active:translate-y-[1px]"
-                >
-                  <MaterialIcon name="close" size={16} />
-                  <span>Limpar filtros</span>
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Horizontal Ingredient Spotlight Cards */}
-          <div className="space-y-2">
-            <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
-              Explorar por tipo de ingrediente
-            </p>
-            <div
-              className="flex items-stretch gap-3 overflow-x-auto pt-1 pb-2.5 px-1 -mx-1 snap-x"
-              role="group"
-              aria-label="Filtrar por tipo de ingrediente"
+            <button
+              type="button"
+              onClick={() => setIsFilterSheetOpen(true)}
+              aria-label="Abrir filtros de categoria e ingrediente"
+              className={`inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-4 min-w-[46px] min-h-[46px] rounded-[13px] border-2 border-[#20231F] font-display text-xs sm:text-sm font-bold shrink-0 cursor-pointer transition-[transform,box-shadow,background-color] duration-150 active:translate-x-[1px] active:translate-y-[1px] ${
+                activeFiltersCount > 0
+                  ? 'bg-[#FFD66B] text-[#20231F] shadow-[3px_3px_0px_#20231F]'
+                  : 'bg-[#FFFFFF] text-[#20231F] shadow-[3px_3px_0px_#20231F] hover:bg-[#FFD66B]'
+              }`}
             >
-              {INGREDIENT_SPOTLIGHTS.map((item) => {
-                const isActive = selectedSpotlight === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setSelectedSpotlight(item.id)}
-                    aria-pressed={isActive}
-                    className={`snap-start shrink-0 min-w-[98px] sm:min-w-[116px] flex flex-col items-center justify-between gap-2 p-2.5 sm:p-3 rounded-[14px] border-2 border-[#20231F] transition-[transform,box-shadow,background-color] duration-150 cursor-pointer ${
-                      isActive
-                        ? 'bg-[#FF8065] text-[#20231F] shadow-[2px_2px_0px_#20231F] translate-x-[1px] translate-y-[1px]'
-                        : 'bg-[#F7F5ED] text-[#20231F] shadow-[3px_3px_0px_#20231F] hover:bg-[#FFD66B]'
-                    }`}
-                  >
-                    <div className="bg-[#FFFFFF] border-2 border-[#20231F] rounded-xl p-1.5 flex items-center justify-center">
-                      {renderSpotlightIllustration(item.id)}
-                    </div>
-                    <span className="font-display text-xs font-bold whitespace-nowrap">
-                      {item.label}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+              <MaterialIcon name="tune" size={20} />
+              <span className="hidden sm:inline">Filtros</span>
+              {activeFiltersCount > 0 && (
+                <span className="min-w-[19px] h-[19px] px-1 rounded-full bg-[#20231F] text-[#FFFFFF] text-[11px] font-bold flex items-center justify-center tabular-nums">
+                  {activeFiltersCount}
+                </span>
+              )}
+            </button>
           </div>
 
-          <div className="pt-2 border-t-2 border-[#20231F]/10">
-            <RecipeFilters
-              categories={RECIPE_CATEGORIES}
-              selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-              countsByCategory={countsByCategory}
-            />
+          <RecipeFilters
+            categories={RECIPE_CATEGORIES}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+            countsByCategory={countsByCategory}
+          />
+
+          {/* Subtle Results & Active Filter Summary */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-0.5 text-xs sm:text-sm">
+            <p aria-live="polite" className="font-display font-bold text-[#20231F]/80 tabular-nums">
+              {filteredRecipes.length}{' '}
+              {filteredRecipes.length === 1 ? 'receita encontrada' : 'receitas encontradas'}
+              {selectedIngredient !== 'todos' && (
+                <span className="font-medium text-[#20231F]/70">
+                  {' '}
+                  · Ingrediente: {activeIngredientLabel}
+                </span>
+              )}
+            </p>
+
+            {hasActiveFilters && (
+              <button
+                type="button"
+                onClick={handleClearFilters}
+                className="inline-flex items-center gap-1 font-display text-xs font-bold text-[#20231F] underline underline-offset-4 hover:text-[#20231F]/75 min-h-[36px] px-1 cursor-pointer"
+              >
+                <MaterialIcon name="close" size={15} />
+                <span>Limpar filtros</span>
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Recipe Grid */}
-        <RecipeGrid recipes={filteredRecipes} onClearFilters={handleClearFilters} />
+        {/* Paginated Recipe Grid */}
+        <RecipeGrid recipes={paginatedRecipes} onClearFilters={handleClearFilters} />
+
+        {/* Neo-Brutalist Pagination */}
+        <Pagination
+          currentPage={safePage}
+          totalPages={totalPages}
+          totalItems={filteredRecipes.length}
+          pageSize={PAGE_SIZE}
+          onPageChange={handlePageChange}
+        />
       </div>
+
+      {/* Mobile Bottom Sheet / Desktop Filter Modal */}
+      <FilterSheet
+        isOpen={isFilterSheetOpen}
+        onClose={() => setIsFilterSheetOpen(false)}
+        categories={RECIPE_CATEGORIES}
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+        countsByCategory={countsByCategory}
+        ingredientOptions={INGREDIENT_OPTIONS}
+        selectedIngredient={selectedIngredient}
+        onSelectIngredient={setSelectedIngredient}
+        totalMatches={filteredRecipes.length}
+        hasActiveFilters={hasActiveFilters}
+        onClearAll={handleClearFilters}
+      />
     </section>
   );
 };
