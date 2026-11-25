@@ -312,14 +312,14 @@ export const HeroVisualComposition: React.FC = () => {
           <span className="font-display text-xs sm:text-sm font-bold tracking-tight text-[#20231F]">
             Caderno de Cozinha Integral
           </span>
-          <span className="font-display text-[11px] sm:text-xs font-bold bg-[#FFD66B] border-2 border-[#20231F] px-2 py-0.5 rounded-md shrink-0">
-            Edição Colaborativa
+          <span className="font-display text-xs font-bold text-[#20231F]/70 shrink-0">
+            7º ano A
           </span>
         </div>
 
         {/* Harvest Character & Animated Vegetable Duo */}
         <div className="grid grid-cols-12 gap-3 sm:gap-3.5 items-stretch">
-          {/* Main Harvest Scene (inspired by opening app card) */}
+          {/* Main Harvest Scene */}
           <div className="col-span-12 sm:col-span-7 bg-[#F7F5ED] border-2 border-[#20231F] rounded-[14px] p-3 flex flex-col items-center justify-center min-h-[170px] sm:min-h-[190px]">
             <HarvestCharacterIllustration className="w-full max-w-[200px] sm:max-w-[220px] h-auto" />
           </div>
@@ -343,38 +343,6 @@ export const HeroVisualComposition: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Graphic floating sticker tags extending slightly past edges on sm+ */}
-        <div
-          className="hidden sm:inline-flex items-center gap-1.5 bg-[#FF8065] text-[#20231F] border-2 border-[#20231F] shadow-[3px_3px_0px_#20231F] rounded-lg px-3 py-1.5 font-display text-xs font-bold -rotate-3 absolute -top-4 -right-3"
-        >
-          100% criatividade
-        </div>
-
-        <div
-          className="hidden sm:inline-flex items-center gap-1.5 bg-[#B8E36A] text-[#20231F] border-2 border-[#20231F] shadow-[3px_3px_0px_#20231F] rounded-lg px-3 py-1.5 font-display text-xs font-bold rotate-2 absolute -bottom-4 -left-3"
-        >
-          Menos desperdício
-        </div>
-
-        <div
-          className="hidden sm:inline-flex items-center gap-1.5 bg-[#FFFFFF] text-[#20231F] border-2 border-[#20231F] shadow-[3px_3px_0px_#20231F] rounded-lg px-3 py-1.5 font-display text-xs font-bold -rotate-2 absolute -bottom-4 right-6"
-        >
-          Mais possibilidades
-        </div>
-      </div>
-
-      {/* Mobile-friendly sticker row inside container */}
-      <div className="flex flex-wrap gap-2 mt-4 sm:hidden justify-center">
-        <span className="bg-[#FF8065] text-[#20231F] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] rounded-lg px-2.5 py-1 font-display text-xs font-bold">
-          100% criatividade
-        </span>
-        <span className="bg-[#B8E36A] text-[#20231F] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] rounded-lg px-2.5 py-1 font-display text-xs font-bold">
-          Menos desperdício
-        </span>
-        <span className="bg-[#FFFFFF] text-[#20231F] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] rounded-lg px-2.5 py-1 font-display text-xs font-bold">
-          Mais possibilidades
-        </span>
       </div>
     </div>
   );

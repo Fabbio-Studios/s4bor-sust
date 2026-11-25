@@ -170,21 +170,21 @@ export const Recipes: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
         {/* Section Header */}
         <header className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
-          <div className="space-y-2.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider text-[#20231F] bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-              <MaterialIcon name="menu_book" size={16} />
-              <span>Livro de Receitas Digital</span>
-            </div>
+          <div className="space-y-2 max-w-2xl">
+            <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
+              Livro de receitas digital
+            </p>
 
             <h1
               id="recipe-book-title"
               className="font-display font-bold text-2xl sm:text-4xl leading-tight text-[#20231F] text-balance"
             >
-              Um mundo de sabores, sem desperdício.
+              Todas as receitas da turma
             </h1>
 
             <p className="text-sm sm:text-lg text-[#20231F]/80">
-              Explore receitas que mostram como pequenos ingredientes podem render grandes ideias.
+              Pesquise pelo nome, filtre por categoria ou escolha o ingrediente que você quer
+              reaproveitar.
             </p>
           </div>
 

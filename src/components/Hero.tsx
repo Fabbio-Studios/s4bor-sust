@@ -12,34 +12,32 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
     <section className="relative pt-6 pb-8 sm:pt-10 sm:pb-12 border-b-2 border-[#20231F]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-10 items-center">
-          {/* Left Column: Editorial Headline & Actions */}
+          {/* Left Column: Direct Editorial Headline & Actions */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             <p
-              className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/85 animate-fade-up"
+              className="font-display text-xs sm:text-sm font-bold tracking-wider uppercase text-[#20231F]/80 animate-fade-up"
               style={{ animationDelay: '0ms' }}
             >
-              Alimentação consciente • Criatividade • Sustentabilidade
+              Livro colaborativo · Turma do 7º ano A
             </p>
 
             <h1
-              className="font-display font-bold text-[1.75rem] sm:text-5xl lg:text-[3.4rem] leading-[1.14] sm:leading-[1.08] text-[#20231F] text-balance animate-fade-up"
+              className="font-display font-bold text-[1.75rem] sm:text-5xl lg:text-[3.35rem] leading-[1.14] sm:leading-[1.08] text-[#20231F] text-balance animate-fade-up"
               style={{ animationDelay: '60ms' }}
             >
-              Pequenas escolhas.{' '}
+              Receitas para{' '}
               <span className="inline-block max-w-full bg-[#B8E36A] border-2 border-[#20231F] px-2 sm:px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F] my-1">
-                Grandes transformações
+                aproveitar o alimento
               </span>{' '}
-              <span className="inline-block max-w-full bg-[#FFD66B] border-2 border-[#20231F] px-2 sm:px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F]">
-                à mesa.
-              </span>
+              do início ao fim.
             </h1>
 
             <p
               className="text-base sm:text-lg text-[#20231F]/85 max-w-xl leading-relaxed animate-fade-up"
               style={{ animationDelay: '120ms' }}
             >
-              Descubra receitas criativas, aproveite melhor os alimentos e transforme ingredientes
-              simples em novas possibilidades.
+              Reunimos pratos doces e salgados feitos com cascas de frutas, pão amanhecido, arroz
+              que sobrou e ingredientes simples de casa.
             </p>
 
             <div
@@ -60,12 +58,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                 className="neo-btn bg-[#FFFFFF] hover:bg-[#F7F5ED] text-[#20231F] px-6 py-3.5 text-base min-h-[48px]"
               >
                 <MaterialIcon name="groups" size={20} />
-                <span>Conheça o projeto</span>
+                <span>Conheça a turma</span>
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Asymmetric Food & Harvest Illustrations Composition */}
+          {/* Right Column: Food & Harvest Illustrations */}
           <div className="lg:col-span-5 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <HeroVisualComposition />
           </div>

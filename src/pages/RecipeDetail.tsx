@@ -106,15 +106,16 @@ export const RecipeDetail: React.FC = () => {
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="font-display text-xs font-bold uppercase tracking-wider bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-                  {recipe.category}
-                </span>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-display font-bold uppercase tracking-wider text-[#20231F]/75">
+                <span>{recipe.category}</span>
                 {recipe.tags.includes('Aproveitamento integral') && (
-                  <span className="inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wider bg-[#B8E36A] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-                    <MaterialIcon name="spa" size={14} filled />
-                    <span>Aproveitamento integral</span>
-                  </span>
+                  <>
+                    <span aria-hidden="true">·</span>
+                    <span className="inline-flex items-center gap-1 text-[#20231F]">
+                      <MaterialIcon name="spa" size={14} filled />
+                      <span>Aproveitamento integral</span>
+                    </span>
+                  </>
                 )}
               </div>
 

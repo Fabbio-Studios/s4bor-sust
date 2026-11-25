@@ -33,10 +33,10 @@ export const Home: React.FC = () => {
                   id="home-explore-heading"
                   className="font-display font-bold text-xl sm:text-3xl text-[#20231F]"
                 >
-                  Explore cada área do aplicativo
+                  Por onde começar
                 </h2>
                 <p className="text-sm sm:text-base text-[#20231F]/75">
-                  Cada seção tem sua própria tela para facilitar o uso no dia a dia.
+                  Acesse o catálogo completo, suas receitas guardadas ou a história da turma.
                 </p>
               </div>
 

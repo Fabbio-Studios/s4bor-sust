@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
         <Link
           to="/"
           className="inline-flex items-center gap-2 sm:gap-2.5 whitespace-nowrap shrink-0 group min-w-0"
-          aria-label="Sabor Sustentável — Página inicial"
+          aria-label="Sabor Sustentável, página inicial"
         >
           <BrandLogoMark className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 transition-transform duration-150 group-hover:-rotate-6 shrink-0" />
           <span className="font-display font-bold text-base sm:text-lg md:text-xl tracking-tight text-[#20231F] truncate">

@@ -15,33 +15,33 @@ import {
 const PROCESS_STEPS = [
   {
     number: '01',
-    title: 'Pesquisa e planejamento.',
+    title: 'Pesquisa de receitas',
     description:
-      'Identificamos a importância da alimentação consciente e pensamos em maneiras de conectar tecnologia e sustentabilidade.',
+      'Os alunos buscaram preparos caseiros que aproveitam cascas, pães amanhecidos, frutas maduras e sobras de refeições.',
     color: 'bg-[#B8E36A]',
     illustration: 'leaf' as const,
   },
   {
     number: '02',
-    title: 'Organização das ideias.',
+    title: 'Padronização das fichas',
     description:
-      'Definimos a estrutura do livro digital, os tipos de receitas e as funcionalidades que fariam parte da demonstração.',
+      'Organizamos ingredientes, tempos de preparo, rendimento e o motivo sustentável de cada prato em um modelo único.',
     color: 'bg-[#FFD66B]',
     illustration: 'carrot' as const,
   },
   {
     number: '03',
-    title: 'Desenvolvimento.',
+    title: 'Desenvolvimento do aplicativo',
     description:
-      'Construímos a interface, organizamos as receitas e criamos uma experiência digital para apresentar a proposta do projeto.',
+      'A parte de programação estruturou a navegação para celular, busca por ingrediente, checklist de cozinha e perfis da turma.',
     color: 'bg-[#FF8065]',
     illustration: 'pot' as const,
   },
   {
     number: '04',
-    title: 'Apresentação.',
+    title: 'Alimentação e revisão',
     description:
-      'Reunimos o resultado em uma demonstração navegável, mostrando como a tecnologia pode tornar o conhecimento mais acessível e interessante.',
+      'Os estudantes preencheram o livro com 11 receitas testadas e revisaram os passos com orientação docente.',
     color: 'bg-[#FFFFFF]',
     illustration: 'tomato' as const,
   },
@@ -61,33 +61,27 @@ export const About: React.FC = () => {
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="neo-box bg-[#FFFFFF] p-5 sm:p-11 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-5">
-                <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#B8E36A] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-                  <MaterialIcon name="spa" size={16} filled />
-                  <span>Sobre o projeto</span>
-                </div>
+              <div className="lg:col-span-8 space-y-4">
+                <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
+                  Sobre o projeto
+                </p>
 
                 <h1
                   id="about-intro-title"
                   className="font-display font-bold text-3xl sm:text-5xl leading-[1.1] text-[#20231F] text-balance"
                 >
-                  Uma ideia que nasceu da vontade de transformar.
+                  Um livro de receitas feito pela turma para evitar desperdício.
                 </h1>
 
                 <div className="space-y-4 text-base sm:text-lg text-[#20231F]/85 leading-relaxed max-w-2xl">
                   <p>
-                    O Sabor Sustentável é uma iniciativa que une tecnologia, criatividade e educação
-                    ambiental.
+                    O Sabor Sustentável reúne 11 receitas enviadas pelos alunos do 7º ano A com
+                    foco no aproveitamento integral dos alimentos.
                   </p>
                   <p>
-                    Nossa proposta é mostrar que a sustentabilidade também pode começar na cozinha,
-                    por meio de pequenas mudanças nos hábitos alimentares e de novas maneiras de
-                    aproveitar os alimentos.
-                  </p>
-                  <p>
-                    Mais do que reunir receitas, queremos valorizar a criatividade, o
-                    compartilhamento de conhecimentos e a construção de uma relação mais consciente
-                    com aquilo que consumimos.
+                    Em vez de descartar cascas de banana, batata, manga e melancia, pão amanhecido
+                    ou arroz que sobrou, cada receita mostra como usar esses ingredientes em doces,
+                    lanches e refeições rápidas.
                   </p>
                 </div>
               </div>
@@ -99,7 +93,7 @@ export const About: React.FC = () => {
                     <BroccoliIllustration className="w-20 h-20 animate-float-slow" />
                   </div>
                   <p className="font-display font-bold text-sm text-center text-[#20231F]">
-                    Educação ambiental &amp; culinária afetiva
+                    Culinária escolar e aproveitamento integral
                   </p>
                 </div>
               </div>
@@ -113,33 +107,30 @@ export const About: React.FC = () => {
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-6 space-y-5">
-              <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#FFD66B] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
-                <MaterialIcon name="groups" size={16} />
-                <span>Construção coletiva</span>
-              </div>
+              <p className="font-display text-xs font-bold uppercase tracking-wider text-[#20231F]/70">
+                Construção coletiva
+              </p>
 
               <h2
                 id="about-team-title"
                 className="font-display font-bold text-3xl sm:text-4xl leading-tight text-[#20231F] text-balance"
               >
-                Por trás dessa ideia, existe uma turma inteira.
+                Quem participou do 7º ano A
               </h2>
 
               <p className="text-base sm:text-lg text-[#20231F]/85 leading-relaxed">
-                Este projeto foi desenvolvido de forma colaborativa, reunindo estudantes e
-                educadores interessados em pesquisar receitas, organizar conteúdos e testar soluções
-                digitais para incentivar o aproveitamento integral nas cozinhas escolares e
-                familiares.
+                O projeto dividiu o trabalho entre desenvolvimento técnico e curadoria culinária,
+                unindo programação e pesquisa de receitas escolares em um único aplicativo.
               </p>
 
               <div className="neo-box-sm bg-[#B8E36A] p-4 sm:p-5 space-y-1.5">
                 <p className="font-display font-bold text-sm sm:text-base text-[#20231F]">
-                  Trabalho em equipe na prática
+                  Divisão de papéis
                 </p>
                 <p className="text-sm text-[#20231F]/85 leading-relaxed">
-                  Enquanto a parte de programação deu vida à interface para celular, os estudantes
-                  pesquisaram, organizaram e alimentaram o livro com receitas reais de
-                  aproveitamento integral, sob orientação docente.
+                  A programação construiu a interface para celular, a busca e os perfis; os
+                  estudantes pesquisaram, testaram e enviaram as receitas com orientação do
+                  professor.
                 </p>
               </div>
             </div>
@@ -150,7 +141,7 @@ export const About: React.FC = () => {
                 {!groupPhotoMissing ? (
                   <img
                     src="/assets/aistudio/31f8e28d-1996-4993-bcbf-8493d9e5ffdd.jpg_fd9b29bd_2K_c3e34fd9.jpg"
-                    alt="Fotografia da turma responsável pelo projeto Sabor Sustentável"
+                    alt="Fotografia da turma do 7º ano A responsável pelo projeto Sabor Sustentável"
                     referrerPolicy="no-referrer"
                     onError={() => setGroupPhotoMissing(true)}
                     className="w-full aspect-[3/4] object-cover object-center"
@@ -164,14 +155,14 @@ export const About: React.FC = () => {
                       <LeafClusterIllustration className="w-12 h-12 sm:w-14 sm:h-14 animate-sway-gentle" />
                     </div>
                     <p className="font-display font-bold text-lg text-[#20231F]">
-                      Turma colaboradora do projeto Sabor Sustentável
+                      Turma do 7º ano A no projeto Sabor Sustentável
                     </p>
                   </div>
                 )}
                 <figcaption className="px-5 py-3.5 bg-[#FFFFFF] border-t-2 border-[#20231F] text-sm font-medium text-[#20231F]/80 flex items-center justify-between gap-4 flex-wrap">
-                  <span>Turma colaboradora do Sabor Sustentável</span>
+                  <span>Turma do 7º ano A</span>
                   <span className="font-display text-xs font-bold text-[#20231F]">
-                    Educação • Tecnologia • Sustentabilidade
+                    Sabor Sustentável
                   </span>
                 </figcaption>
               </figure>
@@ -188,11 +179,10 @@ export const About: React.FC = () => {
               id="about-process-title"
               className="font-display font-bold text-3xl sm:text-4xl text-[#20231F]"
             >
-              Como tudo foi feito
+              Etapas do desenvolvimento
             </h2>
             <p className="text-base sm:text-lg text-[#20231F]/80">
-              Do levantamento de ideias à criação da demonstração navegável, cada etapa valorizou a
-              colaboração.
+              Da escolha das receitas na sala de aula até a publicação do aplicativo.
             </p>
           </div>
 
@@ -246,8 +236,7 @@ export const About: React.FC = () => {
               Colaboradores que alimentaram o livro
             </h2>
             <p className="text-sm sm:text-base text-[#20231F]/80">
-              Toque em qualquer perfil para conhecer a história e as receitas enviadas por cada
-              estudante do 7º ano A.
+              Toque em qualquer perfil para ver a bio e as receitas enviadas por cada estudante.
             </p>
           </div>
 
@@ -280,7 +269,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 4: Nosso propósito */}
+      {/* Section 4: Chamada para as receitas */}
       <section aria-labelledby="about-purpose-title">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="neo-box bg-[#FFD66B] p-6 sm:p-12 text-center space-y-5 sm:space-y-6">
@@ -290,9 +279,9 @@ export const About: React.FC = () => {
 
             <h2
               id="about-purpose-title"
-              className="font-display font-bold text-2xl sm:text-5xl leading-tight text-[#20231F] max-w-2xl mx-auto text-balance"
+              className="font-display font-bold text-2xl sm:text-4xl leading-tight text-[#20231F] max-w-2xl mx-auto text-balance"
             >
-              Menos desperdício. Mais consciência. Mais sabor.
+              Quer testar alguma receita da turma hoje?
             </h2>
 
             <div className="pt-2">

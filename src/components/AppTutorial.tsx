@@ -31,9 +31,9 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     mobileTargetSelector: '[data-tour="bottom-nav"]',
     badge: 'Tela Inicial · Navegação',
     icon: 'home',
-    title: 'Bem-vindo ao Sabor Sustentável!',
+    title: 'Bem-vindo ao Sabor Sustentável',
     description:
-      'Este é o nosso livro digital e colaborativo. Cada função fica em uma tela própria: use a barra de navegação fixa embaixo para ir de Início, Receitas, Salvas até Sobre.',
+      'Cada área do livro fica em uma tela própria. Use a barra fixa embaixo no celular (ou o menu do topo no computador) para alternar entre Início, Receitas, Salvas e Sobre.',
     accentBg: 'bg-[#B8E36A]',
   },
   {
@@ -44,7 +44,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     icon: 'menu_book',
     title: 'Busque e filtre por ingredientes',
     description:
-      'Na tela de Receitas você pesquisa pelo nome do prato, filtra por ingredientes reaproveitados (como cascas, frutas e pães) ou escolhe a categoria desejada.',
+      'Na tela de Receitas você procura pelo nome do prato, filtra por tipo de ingrediente (cascas, frutas, pães) ou escolhe a categoria.',
     accentBg: 'bg-[#FFD66B]',
   },
   {
@@ -55,7 +55,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     icon: 'checklist',
     title: 'Ingredientes interativos e preparo',
     description:
-      'Ao abrir uma receita, você pode marcar os ingredientes já separados na cozinha, seguir o modo de preparo numerado e ler por que ela evita o desperdício.',
+      'Dentro de cada receita você marca os ingredientes que já separou, segue o modo de preparo numerado e confere como o prato evita o desperdício.',
     accentBg: 'bg-[#B8E36A]',
   },
   {
@@ -64,9 +64,9 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     targetSelector: '[data-tour="author-profile-card"]',
     badge: 'Perfil do Colaborador',
     icon: 'account_circle',
-    title: 'Perfil estilo bio do Instagram',
+    title: 'Perfil de quem compartilhou',
     description:
-      'Ao clicar em quem compartilhou qualquer receita, você visita o perfil do estudante com foto ilustrada, bio sobre ele e todas as receitas que enviou.',
+      'Ao tocar no nome ou na foto de quem enviou uma receita, você abre o perfil do estudante com a seção Sobre e todas as receitas compartilhadas por ele.',
     accentBg: 'bg-[#FF8065]',
   },
   {
@@ -75,9 +75,9 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     targetSelector: '[data-tour="saved-page-header"]',
     badge: 'Aba Salvas',
     icon: 'bookmark',
-    title: 'Guarde suas favoritas',
+    title: 'Suas receitas favoritas',
     description:
-      'Toque no ícone de marcador em qualquer receita para salvá-la neste dispositivo e acessar rapidinho sempre que for cozinhar.',
+      'Toque no ícone de marcador em qualquer receita para guardá-la neste aparelho e abrir direto na aba Salvas.',
     accentBg: 'bg-[#FF8065]',
   },
   {
@@ -88,7 +88,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     icon: 'groups',
     title: 'Conheça a turma do 7º ano A',
     description:
-      'Aqui você confere a foto da turma, como o projeto foi construído em etapas e todos os colaboradores que alimentaram o sistema.',
+      'Aqui ficam a foto da turma, as etapas de desenvolvimento do aplicativo e a lista completa dos colaboradores.',
     accentBg: 'bg-[#FFD66B]',
   },
 ];

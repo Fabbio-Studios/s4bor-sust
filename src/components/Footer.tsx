@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-sm sm:text-base text-[#20231F]/80 max-w-md leading-relaxed">
-              Um livro digital e colaborativo que valoriza o aproveitamento integral dos
-              alimentos e mostra como escolhas simples na cozinha ajudam a reduzir o desperdício.
+              Livro digital colaborativo do 7º ano A com 11 receitas que aproveitam cascas, pães
+              amanhecidos, frutas maduras e sobras do dia a dia.
             </p>
           </div>
 
@@ -67,26 +67,26 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Sustainability Closing Highlight */}
+          {/* Project Info Box */}
           <div className="md:col-span-3">
             <div className="bg-[#B8E36A] border-2 border-[#20231F] shadow-[3px_3px_0px_#20231F] rounded-[14px] p-4">
               <div className="flex items-center gap-2 mb-1.5">
                 <MaterialIcon name="eco" size={20} filled />
                 <span className="font-display text-xs font-bold uppercase tracking-wide">
-                  Propósito
+                  Turma 7º ano A
                 </span>
               </div>
               <p className="font-display font-bold text-base leading-snug text-[#20231F]">
-                Transformando ingredientes em possibilidades.
+                11 receitas testadas para aproveitar alimentos por inteiro.
               </p>
             </div>
           </div>
         </div>
 
         <div className="border-t-2 border-[#20231F]/15 mt-10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-[#20231F]/70">
-          <p>Sabor Sustentável — Demonstração educacional e colaborativa.</p>
+          <p>Sabor Sustentável, projeto escolar de alimentação consciente.</p>
           <p className="font-display font-medium text-[#20231F]/85">
-            Alimentação consciente para todos os dias.
+            6 estudantes colaboradores · 7º ano A
           </p>
         </div>
       </div>

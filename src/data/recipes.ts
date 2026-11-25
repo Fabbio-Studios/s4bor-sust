@@ -27,7 +27,7 @@ export const recipes: Recipe[] = [
     slug: 'brigadeiro-de-casca-de-banana',
     title: 'Brigadeiro de Casca de Banana',
     description:
-      'Doce cremoso feito com cascas de banana bem higienizadas, chocolate em pó e um toque de manteiga — uma sobremesa que aproveita o que normalmente iria para o lixo.',
+      'Doce cremoso feito com cascas de banana bem higienizadas, chocolate em pó e um toque de manteiga para aproveitar o que iria para o lixo.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
     image: brigadeiroCascaBananaImg,
@@ -38,7 +38,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 4,
     authorId: 'paulo',
     sustainabilityInfo:
-      'A receita aproveita as cascas de banana, que normalmente seriam descartadas, transformando-as em uma sobremesa saborosa. Assim, evita-se o desperdício de uma parte nutritiva da fruta e reduz-se a quantidade de resíduos orgânicos produzidos na cozinha.',
+      'Em vez de descartar as cascas de banana, o preparo aproveita essa parte nutritiva da fruta na massa do brigadeiro e reduz o lixo orgânico produzido na cozinha.',
     ingredients: [
       { id: '1-1', amount: '4', unit: 'unidades', name: 'Cascas de banana bem higienizadas' },
       { id: '1-2', amount: '3', unit: 'colheres (sopa)', name: 'Chocolate em pó' },
@@ -74,7 +74,7 @@ export const recipes: Recipe[] = [
     slug: 'bolinho-de-banana-com-aveia',
     title: 'Bolinho de Banana com Aveia',
     description:
-      'Bolinho fofinho e dourado, feito com bananas bem maduras e aveia, pronto em poucos minutos na frigideira — perfeito para o café da manhã ou lanche.',
+      'Bolinho fofinho e dourado feito com bananas bem maduras e aveia na frigideira, pronto em 15 minutos para o café da manhã ou lanche.',
     category: 'Café da manhã',
     tags: ['Café da manhã', 'Aproveitamento integral'],
     image: bolinhoBananaAveiaImg,
@@ -85,7 +85,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 6,
     authorId: 'anna-livia',
     sustainabilityInfo:
-      'A receita aproveita bananas maduras que poderiam ser desperdiçadas e usa poucos ingredientes, contribuindo para evitar o desperdício de alimentos em casa.',
+      'Usa bananas bem maduras que acabariam estragando na fruteira, com poucos ingredientes básicos de despensa.',
     ingredients: [
       { id: '2-1', amount: '2', unit: 'unidades', name: 'Bananas bem maduras' },
       { id: '2-2', amount: '1', unit: 'unidade', name: 'Ovo' },
@@ -123,7 +123,7 @@ export const recipes: Recipe[] = [
     slug: 'picole-sustentavel-de-frutas',
     title: 'Picolé Sustentável de Frutas',
     description:
-      'Picolé cremoso de banana, laranja e manga, feito com frutas bem maduras e forminhas reutilizáveis — refrescante e sem desperdício.',
+      'Picolé cremoso de banana, laranja e manga feito com frutas bem maduras e forminhas reutilizáveis.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
     image: picoleFrutasImg,
@@ -135,7 +135,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 5,
     authorId: 'geandro',
     sustainabilityInfo:
-      'A receita prioriza frutas que já estejam maduras em casa, para que sejam aproveitadas antes de estragar. Além disso, utiliza forminhas reutilizáveis, evitando embalagens descartáveis.',
+      'Prioriza frutas maduras que já estão em casa antes de passarem do ponto e substitui embalagens ou copos descartáveis por forminhas reutilizáveis.',
     ingredients: [
       { id: '3-1', amount: '1', unit: 'unidade', name: 'Banana bem madura' },
       { id: '3-2', amount: '1', unit: 'unidade', name: 'Laranja bem madura' },
@@ -172,7 +172,7 @@ export const recipes: Recipe[] = [
     slug: 'bolinho-de-arroz-reaproveitado',
     title: 'Bolinho de Arroz Reaproveitado',
     description:
-      'Bolinho dourado e saboroso feito com arroz cozido que sobrou de outra refeição — simples, econômico e sem desperdício.',
+      'Bolinho dourado e assado feito com arroz cozido que sobrou de outra refeição, simples e econômico.',
     category: 'Lanches',
     tags: ['Lanches', 'Aproveitamento integral'],
     image: bolinhoArrozImg,
@@ -183,7 +183,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 5,
     authorId: 'leticia-dias',
     sustainabilityInfo:
-      'A receita reaproveita o arroz que sobrou de outra refeição, evitando que ele seja descartado. Assim, contribui para diminuir a quantidade de lixo produzido em casa e economiza ingredientes.',
+      'Reaproveita o arroz cozido que sobrou do almoço ou jantar, evitando o descarte de comida pronta e economizando ingredientes no preparo do lanche.',
     ingredients: [
       { id: '4-1', amount: '2', unit: 'xícaras (chá)', name: 'Arroz cozido que sobrou' },
       { id: '4-2', amount: '1', unit: 'unidade', name: 'Ovo' },
@@ -220,7 +220,7 @@ export const recipes: Recipe[] = [
     slug: 'carne-de-casca-de-banana',
     title: 'Carne de Casca de Banana',
     description:
-      'Substituto vegano de carne surpreendentemente saboroso, feito com cascas de banana desfiadas e temperos caseiros — ideal para sanduíches, escondidinho ou com arroz.',
+      'Substituto vegano de carne desfiada feito com cascas de banana e temperos caseiros, bom para sanduíches, escondidinho ou com arroz.',
     category: 'Almoço e jantar',
     tags: ['Almoço e jantar', 'Aproveitamento integral'],
     image: carneCascaBananaImg,
@@ -231,7 +231,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 5,
     authorId: 'anna-livia',
     sustainabilityInfo:
-      'A receita aproveita as cascas de banana, que normalmente seriam jogadas fora, transformando-as em um substituto vegano de carne. Assim, evita o desperdício de uma parte nutritiva da fruta e reduz os resíduos orgânicos.',
+      'Dá uso culinário às cascas de banana cozidas e desfiadas como prato salgado vegano, reduzindo o volume de restos orgânicos descartados após o consumo da fruta.',
     ingredients: [
       { id: '5-1', amount: '4 a 5', unit: 'unidades', name: 'Cascas de banana bem lavadas' },
       { id: '5-2', amount: '1', unit: 'unidade', name: 'Cebola picada' },
@@ -268,7 +268,7 @@ export const recipes: Recipe[] = [
     slug: 'pudim-de-pao-amanhecido',
     title: 'Pudim de Pão Amanhecido',
     description:
-      'Clássico pudim de pão que não deixa nada ir para o lixo — cremoso, com calda caramelizada e um toque de baunilha.',
+      'Pudim cremoso feito com pães amanhecidos, calda caramelizada e essência de baunilha.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
     image: pudimPaoImg,
@@ -279,7 +279,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 5,
     authorId: 'anna-livia',
     sustainabilityInfo:
-      'A receita aproveita pães amanhecidos que provavelmente seriam descartados, transformando-os em uma sobremesa deliciosa. Assim, evita o desperdício de alimentos e reduz a quantidade de resíduos orgânicos em casa.',
+      'Recupera pães amanhecidos que endureceram na despensa e seriam jogados fora, transformando sobras de padaria em uma sobremesa inteira para a família.',
     ingredients: [
       { id: '6-1', amount: '3', unit: 'unidades', name: 'Pães amanhecidos' },
       { id: '6-2', amount: '3', unit: 'xícaras (chá)', name: 'Leite' },
@@ -316,7 +316,7 @@ export const recipes: Recipe[] = [
     slug: 'bolinho-de-casca-de-manga',
     title: 'Bolinho de Casca de Manga',
     description:
-      'Bolinho que aproveita a polpa que fica grudada na casca da manga — pode ser doce ou salgado, ideal para um lanche rápido.',
+      'Bolinho de frigideira que aproveita as cascas e a polpa que fica grudada na casca da manga, em versão doce ou salgada.',
     category: 'Lanches',
     tags: ['Lanches', 'Aproveitamento integral'],
     image: bolinhoCascaMangaImg,
@@ -327,7 +327,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 5,
     authorId: 'anna-livia',
     sustainabilityInfo:
-      'A receita aproveita a parte que fica na casca da manga, que normalmente seria descartada, transformando-a em um bolinho saboroso. Assim, evita o desperdício de uma parte nutritiva da fruta.',
+      'Usa cascas de manga madura batidas no liquidificador para aproveitar a fibra e a polpa que normalmente vão direto para o lixo após descascar a fruta.',
     ingredients: [
       { id: '7-1', amount: '3 a 4', unit: 'unidades', name: 'Cascas de manga maduras' },
       { id: '7-2', amount: '½', unit: 'xícara (chá)', name: 'Farinha de trigo' },
@@ -363,7 +363,7 @@ export const recipes: Recipe[] = [
     slug: 'doce-de-casca-de-melancia',
     title: 'Doce de Casca de Melancia',
     description:
-      'Sobremesa barata e deliciosa feita com a parte branca da casca de melancia, cozida em calda com um toque cítrico de limão.',
+      'Doce em calda feito com a parte branca da casca de melancia cozida em fogo baixo e raspas de limão.',
     category: 'Sobremesas',
     tags: ['Sobremesas', 'Aproveitamento integral'],
     image: doceCascaMelanciaImg,
@@ -374,7 +374,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 4,
     authorId: 'anna-livia',
     sustainabilityInfo:
-      'A receita aproveita a parte branca da casca de melancia, que normalmente seria descartada, transformando-a em uma sobremesa barata e deliciosa. Assim, evita o desperdício de uma parte nutritiva da fruta.',
+      'Aproveita os 500 g da parte branca da casca de melancia, uma das porções mais pesadas e comumente desperdiçadas da fruta, em um doce econômico.',
     ingredients: [
       { id: '8-1', amount: '500', unit: 'g', name: 'Casca de melancia (parte branca)' },
       { id: '8-2', amount: '2', unit: 'xícaras (chá)', name: 'Açúcar' },
@@ -410,7 +410,7 @@ export const recipes: Recipe[] = [
     slug: 'chips-de-casca-de-batata',
     title: 'Chips de Casca de Batata',
     description:
-      'Chips crocantes e temperados feitos com cascas de batata bem lavadas — um petisco sustentável e fácil de fazer no forno.',
+      'Chips crocantes feitos no forno com cascas de batata bem lavadas, azeite, sal e páprica.',
     category: 'Lanches',
     tags: ['Lanches', 'Aproveitamento integral'],
     image: chipsCascaBatataImg,
@@ -421,7 +421,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 4,
     authorId: 'guilherme-dias',
     sustainabilityInfo:
-      'A receita aproveita as cascas de batata, que normalmente seriam descartadas, transformando-as em um petisco crocante. Assim, evita o desperdício de uma parte nutritiva do alimento e reduz os resíduos orgânicos.',
+      'Garante aproveitamento completo das batatas usadas no almoço ao assar as cascas bem lavadas como petisco, evitando descartar uma parte rica em fibras.',
     ingredients: [
       { id: '9-1', amount: '3', unit: 'unidades', name: 'Cascas de batata bem lavadas' },
       { id: '9-2', amount: '1', unit: 'colher (sopa)', name: 'Azeite' },
@@ -457,7 +457,7 @@ export const recipes: Recipe[] = [
     slug: 'bolo-de-casca-de-banana',
     title: 'Bolo de Casca de Banana',
     description:
-      'Bolo fofinho e aromático feito com cascas de banana maduras, perfeito para o café da manhã ou lanche da tarde — e sem desperdício.',
+      'Bolo fofinho feito no liquidificador com cascas de banana maduras e um toque opcional de canela.',
     category: 'Café da manhã',
     tags: ['Café da manhã', 'Aproveitamento integral'],
     image: boloCascaBananaImg,
@@ -469,7 +469,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 8,
     authorId: 'girliane',
     sustainabilityInfo:
-      'A receita evita desperdício ao aproveitar as cascas de banana que normalmente seriam jogadas fora. Além disso, economiza, pois utiliza ingredientes simples e baratos, e ajuda o meio ambiente ao diminuir a quantidade de resíduos orgânicos.',
+      'Substitui a polpa por quatro cascas de banana batidas na massa, aproveitando integralmente a fruta com ingredientes simples e baratos.',
     ingredients: [
       { id: '10-1', amount: '4', unit: 'unidades', name: 'Cascas de banana maduras' },
       { id: '10-2', amount: '2', unit: 'unidades', name: 'Ovos' },
@@ -512,7 +512,7 @@ export const recipes: Recipe[] = [
     slug: 'torrada-de-pao-amanhecido',
     title: 'Torrada de Pão Amanhecido',
     description:
-      'Torrada crocante e simples que dá nova vida ao pão amanhecido — perfeita para o café da manhã ou lanche.',
+      'Torrada crocante feita com fatias de pão amanhecido douradas no forno ou na frigideira.',
     category: 'Café da manhã',
     tags: ['Café da manhã', 'Aproveitamento integral'],
     image: torradaPaoImg,
@@ -523,7 +523,7 @@ export const recipes: Recipe[] = [
     ingredientsCount: 3,
     authorId: 'girliane',
     sustainabilityInfo:
-      'A receita aproveita o pão amanhecido que normalmente seria descartado, transformando-o em uma torrada crocante e saborosa. Assim, evita o desperdício de alimentos e reduz os resíduos orgânicos em casa.',
+      'Prolonga o consumo do pão de dias anteriores sem precisar comprar pão novo nem descartar as sobras no lixo orgânico.',
     ingredients: [
       { id: '11-1', amount: '4', unit: 'fatias', name: 'Pão amanhecido' },
       { id: '11-2', amount: 'a gosto', unit: '', name: 'Manteiga ou azeite' },
