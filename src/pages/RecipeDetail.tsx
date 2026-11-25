@@ -36,7 +36,7 @@ export const RecipeDetail: React.FC = () => {
             catálogo para descobrir outras preparações sustentáveis.
           </p>
           <Link
-            to="/#recipe-book"
+            to="/receitas"
             className="neo-btn bg-[#B8E36A] text-[#20231F] px-5 py-3 text-sm"
           >
             <MaterialIcon name="arrow_back" size={18} />
@@ -80,7 +80,7 @@ export const RecipeDetail: React.FC = () => {
               <li aria-hidden="true">/</li>
               <li>
                 <Link
-                  to="/#recipe-book"
+                  to="/receitas"
                   className="hover:underline underline-offset-4 text-[#20231F]"
                 >
                   Receitas
@@ -94,7 +94,7 @@ export const RecipeDetail: React.FC = () => {
           </nav>
 
           <Link
-            to="/#recipe-book"
+            to="/receitas"
             className="neo-btn bg-[#FFFFFF] hover:bg-[#FFD66B] text-[#20231F] px-4 py-2 min-h-[44px] text-sm"
           >
             <MaterialIcon name="arrow_back" size={18} />
@@ -204,6 +204,7 @@ export const RecipeDetail: React.FC = () => {
           {/* Interactive Ingredients Checklist */}
           <section
             aria-labelledby="ingredients-heading"
+            data-tour="recipe-ingredients"
             className="lg:col-span-5 neo-box bg-[#FFFFFF] p-5 sm:p-7 space-y-5"
           >
             <div className="flex items-center justify-between gap-3 border-b-2 border-[#20231F] pb-3.5">
@@ -350,7 +351,7 @@ export const RecipeDetail: React.FC = () => {
               Outras receitas para experimentar
             </h2>
             <Link
-              to="/#recipe-book"
+              to="/receitas"
               className="font-display font-bold text-sm inline-flex items-center gap-1 hover:underline underline-offset-4 whitespace-nowrap shrink-0"
             >
               <span>Ver todas</span>

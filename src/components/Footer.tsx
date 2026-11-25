@@ -1,27 +1,12 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BrandLogoMark } from './FoodIllustrations';
 import { MaterialIcon } from './MaterialIcon';
 
 export const Footer: React.FC = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleRecipesClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (location.pathname === '/') {
-      const target = document.getElementById('recipe-book');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-    }
-    navigate('/#recipe-book');
-  };
-
   return (
-    <footer className="border-t-2 border-[#20231F] bg-[#FFFFFF] mt-10 sm:mt-16">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28 md:py-12">
+    <footer className="hidden md:block border-t-2 border-[#20231F] bg-[#FFFFFF] mt-16">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Brand & Description */}
           <div className="md:col-span-6 space-y-3">
@@ -53,14 +38,13 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/#recipe-book"
-                  onClick={handleRecipesClick}
+                <Link
+                  to="/receitas"
                   className="inline-flex items-center gap-1.5 text-[#20231F]/80 hover:text-[#20231F] hover:underline underline-offset-4"
                 >
                   <MaterialIcon name="menu_book" size={17} />
                   <span>Receitas</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

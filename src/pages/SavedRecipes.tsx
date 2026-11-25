@@ -18,7 +18,7 @@ export const SavedRecipes: React.FC = () => {
   return (
     <div className="py-6 sm:py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-        <header className="space-y-3 max-w-2xl">
+        <header data-tour="saved-page-header" className="space-y-3 max-w-2xl">
           <div className="inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider bg-[#FF8065] border-2 border-[#20231F] px-3 py-1 rounded-lg shadow-[2px_2px_0px_#20231F]">
             <MaterialIcon name="bookmark" size={16} filled />
             <span>Favoritas do seu livro</span>
@@ -52,7 +52,7 @@ export const SavedRecipes: React.FC = () => {
             </p>
             <div className="pt-1">
               <Link
-                to="/#recipe-book"
+                to="/receitas"
                 className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-6 py-3 min-h-[46px] text-sm"
               >
                 <MaterialIcon name="menu_book" size={18} />

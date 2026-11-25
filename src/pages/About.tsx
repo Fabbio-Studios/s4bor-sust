@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MaterialIcon } from '../components/MaterialIcon';
+import { AuthorAvatar } from '../components/AuthorAvatar';
+import { authorsList } from '../data/authors';
 import {
   BroccoliIllustration,
   CarrotIllustration,
@@ -107,7 +109,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Section 2: A turma por trás do projeto */}
-      <section aria-labelledby="about-team-title">
+      <section aria-labelledby="about-team-title" data-tour="about-team">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-6 space-y-5">
@@ -233,6 +235,51 @@ export const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Section 3b: Perfis dos colaboradores */}
+      <section aria-labelledby="about-collaborators-title">
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="space-y-2 max-w-2xl">
+            <h2
+              id="about-collaborators-title"
+              className="font-display font-bold text-2xl sm:text-3xl text-[#20231F]"
+            >
+              Colaboradores que alimentaram o livro
+            </h2>
+            <p className="text-sm sm:text-base text-[#20231F]/80">
+              Toque em qualquer perfil para conhecer a história e as receitas enviadas por cada
+              estudante do 7º ano A.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {authorsList.map((person) => (
+              <Link
+                key={person.id}
+                to={`/perfil/${person.id}`}
+                className="neo-card-interactive bg-[#FFFFFF] p-4 sm:p-5 flex items-center gap-4"
+              >
+                <AuthorAvatar author={person} size="md" rounded="full" />
+                <div className="min-w-0 flex-1 space-y-0.5">
+                  <p className="font-display font-bold text-base sm:text-lg text-[#20231F] truncate">
+                    {person.name}
+                  </p>
+                  <p className="text-xs font-display font-bold text-[#20231F]/70 truncate">
+                    {person.handle}
+                  </p>
+                  <p className="text-xs text-[#20231F]/80 tabular-nums">
+                    {person.sharedRecipesCount}{' '}
+                    {person.sharedRecipesCount === 1
+                      ? 'receita publicada'
+                      : 'receitas publicadas'}
+                  </p>
+                </div>
+                <MaterialIcon name="arrow_forward" size={18} className="shrink-0 text-[#20231F]" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Section 4: Nosso propósito */}
       <section aria-labelledby="about-purpose-title">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,7 +297,7 @@ export const About: React.FC = () => {
 
             <div className="pt-2">
               <Link
-                to="/#recipe-book"
+                to="/receitas"
                 className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-7 py-3.5 text-base"
               >
                 <span>Explorar receitas</span>

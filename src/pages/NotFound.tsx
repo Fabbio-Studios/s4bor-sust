@@ -26,7 +26,7 @@ export const NotFound: React.FC = () => {
             <MaterialIcon name="home" size={18} />
             <span>Ir para o início</span>
           </Link>
-          <Link to="/#recipe-book" className="neo-btn bg-[#FFD66B] text-[#20231F] px-5 py-3 min-h-[44px] text-sm">
+          <Link to="/receitas" className="neo-btn bg-[#FFD66B] text-[#20231F] px-5 py-3 min-h-[44px] text-sm">
             <MaterialIcon name="menu_book" size={18} />
             <span>Explorar receitas</span>
           </Link>

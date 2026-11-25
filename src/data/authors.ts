@@ -4,8 +4,11 @@ export const authors: Record<string, Author> = {
   paulo: {
     id: 'paulo',
     name: 'Paulo',
+    handle: '@paulo.7a',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Trouxe uma receita criativa de doce que transforma cascas de banana em brigadeiro.',
+    bio: 'Apaixonado por doces caseiros e ideias criativas na cozinha. No Sabor Sustentável, mostro que até a casca da banana pode virar sobremesa de festa sem ir para o lixo.',
+    specialty: 'Doces criativos com cascas',
+    favoriteIngredient: 'Casca de banana',
     sharedRecipesCount: 1,
     initials: 'PA',
     accentColor: 'secondary',
@@ -14,8 +17,11 @@ export const authors: Record<string, Author> = {
   'anna-livia': {
     id: 'anna-livia',
     name: 'Anna Lívia',
+    handle: '@anna.livia',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Selecionou preparos variados — de bolinhos rápidos e carne de casca de banana a pudim de pão e doces sem desperdício.',
+    bio: 'Curiosa por novas combinações e fã de receitas práticas para o dia a dia. Reuni preparos que vão do café da manhã ao jantar reaproveitando pães, frutas e cascas.',
+    specialty: 'Aproveitamento integral completo',
+    favoriteIngredient: 'Bananas maduras e pães',
     sharedRecipesCount: 5,
     initials: 'AL',
     accentColor: 'primary',
@@ -24,8 +30,11 @@ export const authors: Record<string, Author> = {
   geandro: {
     id: 'geandro',
     name: 'Geandro',
+    handle: '@geandro.7a',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Compartilhou uma receita refrescante que aproveita frutas maduras e forminhas reutilizáveis.',
+    bio: 'Acredito que pequenas atitudes fazem diferença no meio ambiente. Compartilhei uma receita refrescante que aproveita frutas maduras e troca descartáveis por formas reutilizáveis.',
+    specialty: 'Sobremesas naturais e zero lixo',
+    favoriteIngredient: 'Frutas maduras da estação',
     sharedRecipesCount: 1,
     initials: 'GE',
     accentColor: 'accent',
@@ -34,8 +43,11 @@ export const authors: Record<string, Author> = {
   'leticia-dias': {
     id: 'leticia-dias',
     name: 'Letícia Dias',
+    handle: '@leticia.dias',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Contribuiu com uma receita prática para reaproveitar sobras de arroz cozido no lanche.',
+    bio: 'Gosto de receitas rápidas, econômicas e cheias de sabor para dividir com a família. Trouxe uma forma prática de dar vida nova ao arroz que sobrou do almoço.',
+    specialty: 'Lanches rápidos sem desperdício',
+    favoriteIngredient: 'Arroz cozido reaproveitado',
     sharedRecipesCount: 1,
     initials: 'LD',
     accentColor: 'secondary',
@@ -44,8 +56,11 @@ export const authors: Record<string, Author> = {
   'guilherme-dias': {
     id: 'guilherme-dias',
     name: 'Guilherme Dias',
+    handle: '@guilherme.dias',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaborador do Sabor Sustentável pelo 7º ano A. Compartilhou um petisco crocante feito com cascas de batata assadas no forno.',
+    bio: 'Fã de petiscos crocantes e receitas fáceis de testar em casa. Mostrei como cascas de batata bem lavadas podem se transformar em chips temperados no forno.',
+    specialty: 'Petiscos crocantes no forno',
+    favoriteIngredient: 'Cascas de batata',
     sharedRecipesCount: 1,
     initials: 'GD',
     accentColor: 'primary',
@@ -54,14 +69,19 @@ export const authors: Record<string, Author> = {
   girliane: {
     id: 'girliane',
     name: 'Girliane',
+    handle: '@girliane.7a',
     role: 'Estudante · 7º ano A',
-    bio: 'Colaboradora do Sabor Sustentável pelo 7º ano A. Trouxe receitas simples e econômicas para o café da manhã usando cascas de banana e pão amanhecido.',
+    bio: 'Adoro café da manhã caprichado e receitas que economizam ingredientes simples. Compartilhei preparos fáceis com pão amanhecido e casca de banana para evitar desperdício.',
+    specialty: 'Café da manhã sustentável',
+    favoriteIngredient: 'Pão amanhecido e canela',
     sharedRecipesCount: 2,
     initials: 'GI',
     accentColor: 'accent',
     motif: 'leaf',
   },
 };
+
+export const authorsList: Author[] = Object.values(authors);
 
 export function getAuthorById(authorId: string): Author {
   return authors[authorId] || authors['anna-livia'];

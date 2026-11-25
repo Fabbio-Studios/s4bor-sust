@@ -22,8 +22,11 @@ export interface PreparationStep {
 export interface Author {
   id: string;
   name: string;
+  handle: string;
   role: string;
   bio: string;
+  specialty: string;
+  favoriteIngredient: string;
   sharedRecipesCount: number;
   avatarUrl?: string;
   initials: string;

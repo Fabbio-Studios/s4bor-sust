@@ -3,64 +3,42 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BrandLogoMark } from './FoodIllustrations';
 import { MaterialIcon } from './MaterialIcon';
 import { useSavedRecipes } from '../hooks/useSavedRecipes';
+import { useTutorial } from './AppTutorial';
 
 export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { savedIds } = useSavedRecipes();
+  const { startTutorial } = useTutorial();
 
-  const handleExploreRecipes = (e?: React.MouseEvent) => {
-    if (e) e.preventDefault();
-    if (location.pathname === '/') {
-      const target = document.getElementById('recipe-book');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-    }
-    navigate('/#recipe-book');
-  };
-
-  const handleQuickSearch = () => {
-    if (location.pathname === '/') {
-      const input = document.getElementById('recipe-search');
-      const section = document.getElementById('recipe-book');
-      if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (input) {
-        setTimeout(() => input.focus(), 250);
-      }
-      return;
-    }
-    navigate('/#recipe-book');
-  };
-
-  const handleHomeClick = (e: React.MouseEvent) => {
-    if (location.pathname === '/') {
-      e.preventDefault();
-      navigate('/', { replace: true });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const isHome = location.pathname === '/' && location.hash !== '#recipe-book';
+  const isHome = location.pathname === '/';
   const isRecipes =
-    location.pathname.startsWith('/receitas') ||
-    (location.pathname === '/' && location.hash === '#recipe-book');
+    location.pathname.startsWith('/receitas') || location.pathname.startsWith('/perfil');
   const isSaved = location.pathname === '/salvas';
   const isAbout = location.pathname === '/sobre';
 
+  const handleQuickSearch = () => {
+    if (location.pathname === '/receitas') {
+      const input = document.getElementById('recipe-search');
+      if (input) {
+        input.focus();
+      }
+      return;
+    }
+    navigate('/receitas?foco=busca');
+  };
+
   return (
-    <header className="md:sticky md:top-0 z-40 bg-[#F7F5ED]/95 backdrop-blur-xs border-b-2 border-[#20231F]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-14 md:h-[72px] flex items-center justify-between gap-4">
+    <header className="shrink-0 md:sticky md:top-0 z-40 bg-[#F7F5ED]/95 backdrop-blur-xs border-b-2 border-[#20231F]">
+      <div className="max-w-[1200px] mx-auto px-3.5 sm:px-6 lg:px-8 h-[52px] md:h-[72px] flex items-center justify-between gap-3 md:gap-8">
         {/* Zone 1: Brand Mark */}
         <Link
           to="/"
-          onClick={handleHomeClick}
-          className="inline-flex items-center gap-2.5 whitespace-nowrap shrink-0 group"
+          className="inline-flex items-center gap-2 sm:gap-2.5 whitespace-nowrap shrink-0 group min-w-0"
           aria-label="Sabor Sustentável — Página inicial"
         >
-          <BrandLogoMark className="w-8 h-8 md:w-9 md:h-9 transition-transform duration-150 group-hover:-rotate-6" />
-          <span className="font-display font-bold text-lg md:text-xl tracking-tight text-[#20231F]">
+          <BrandLogoMark className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 transition-transform duration-150 group-hover:-rotate-6 shrink-0" />
+          <span className="font-display font-bold text-base sm:text-lg md:text-xl tracking-tight text-[#20231F] truncate">
             Sabor Sustentável
           </span>
         </Link>
@@ -68,11 +46,11 @@ export const Header: React.FC = () => {
         {/* Zone 2: Desktop Navigation */}
         <nav
           aria-label="Navegação principal"
+          data-tour="desktop-nav"
           className="hidden md:flex items-center gap-7"
         >
           <Link
             to="/"
-            onClick={handleHomeClick}
             className={`font-display text-sm font-bold whitespace-nowrap shrink-0 py-1 border-b-2 transition-colors ${
               isHome
                 ? 'border-[#20231F] text-[#20231F]'
@@ -82,9 +60,8 @@ export const Header: React.FC = () => {
             Início
           </Link>
 
-          <a
-            href="/#recipe-book"
-            onClick={handleExploreRecipes}
+          <Link
+            to="/receitas"
             className={`font-display text-sm font-bold whitespace-nowrap shrink-0 py-1 border-b-2 transition-colors ${
               isRecipes
                 ? 'border-[#20231F] text-[#20231F]'
@@ -92,7 +69,7 @@ export const Header: React.FC = () => {
             }`}
           >
             Receitas
-          </a>
+          </Link>
 
           <Link
             to="/salvas"
@@ -122,24 +99,34 @@ export const Header: React.FC = () => {
           </Link>
         </nav>
 
-        {/* Zone 3: Desktop Primary Action + Mobile Quick Search Trigger */}
+        {/* Zone 3: Desktop Primary Actions + Mobile Quick Triggers */}
         <div className="flex items-center gap-2 shrink-0">
           <button
             type="button"
-            onClick={handleExploreRecipes}
+            onClick={() => startTutorial(0)}
+            aria-label="Abrir tutorial passo a passo"
+            title="Tutorial do app"
+            className="inline-flex items-center justify-center w-10 h-10 md:w-auto md:h-10 md:px-3 rounded-[10px] bg-[#FFFFFF] hover:bg-[#FFD66B] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] text-[#20231F] gap-1.5 font-display text-xs font-bold cursor-pointer active:translate-x-[1px] active:translate-y-[1px]"
+          >
+            <MaterialIcon name="help" size={19} />
+            <span className="hidden md:inline">Tutorial</span>
+          </button>
+
+          <Link
+            to="/receitas"
             className="hidden md:inline-flex neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-4 py-2 text-sm whitespace-nowrap shrink-0"
           >
             <span>Explorar receitas</span>
             <MaterialIcon name="arrow_forward" size={18} />
-          </button>
+          </Link>
 
           <button
             type="button"
             onClick={handleQuickSearch}
             aria-label="Buscar receitas"
-            className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-[11px] bg-[#FFFFFF] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] text-[#20231F] active:translate-x-[1px] active:translate-y-[1px]"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-[10px] bg-[#FFD66B] border-2 border-[#20231F] shadow-[2px_2px_0px_#20231F] text-[#20231F] active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
           >
-            <MaterialIcon name="search" size={22} />
+            <MaterialIcon name="search" size={20} />
           </button>
         </div>
       </div>
