@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getRecipeBySlug } from '../data/recipes';
 import { getAuthorById } from '../data/authors';
 import { AuthorProfile } from '../components/AuthorProfile';
 import { MaterialIcon } from '../components/MaterialIcon';
 import { CitrusIllustration } from '../components/FoodIllustrations';
+import { PrepTransitionOverlay } from '../components/PrepTransitionOverlay';
 
 import { useSavedRecipes } from '../hooks/useSavedRecipes';
 
@@ -14,13 +15,77 @@ export const RecipeDetail: React.FC = () => {
 
   const [checkedIngredients, setCheckedIngredients] = useState<Record<string, boolean>>({});
   const [imageFailed, setImageFailed] = useState(false);
+  const [transitionPhase, setTransitionPhase] = useState<
+    'idle' | 'closing' | 'showing' | 'opening'
+  >('idle');
+  const [highlightSteps, setHighlightSteps] = useState(false);
+
+  const stepsSectionRef = useRef<HTMLElement>(null);
+  const timersRef = useRef<number[]>([]);
   const { isSaved: checkSaved, toggleSave } = useSavedRecipes();
 
+  const clearTransitionTimers = useCallback(() => {
+    timersRef.current.forEach((id) => window.clearTimeout(id));
+    timersRef.current = [];
+  }, []);
+
   useEffect(() => {
+    clearTransitionTimers();
     window.scrollTo({ top: 0, behavior: 'auto' });
     setCheckedIngredients({});
     setImageFailed(false);
-  }, [slug]);
+    setTransitionPhase('idle');
+    setHighlightSteps(false);
+    return clearTransitionTimers;
+  }, [slug, clearTransitionTimers]);
+
+  const scrollToSteps = useCallback((behavior: ScrollBehavior = 'auto') => {
+    stepsSectionRef.current?.scrollIntoView({ behavior, block: 'start' });
+  }, []);
+
+  const triggerPrepTransition = useCallback(() => {
+    clearTransitionTimers();
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      scrollToSteps('auto');
+      setHighlightSteps(true);
+      const id = window.setTimeout(() => setHighlightSteps(false), 1100);
+      timersRef.current.push(id);
+      return;
+    }
+
+    setTransitionPhase('closing');
+
+    timersRef.current.push(
+      window.setTimeout(() => {
+        setTransitionPhase('showing');
+      }, 260),
+      window.setTimeout(() => {
+        scrollToSteps('auto');
+      }, 650),
+      window.setTimeout(() => {
+        setTransitionPhase('opening');
+        setHighlightSteps(true);
+      }, 1450),
+      window.setTimeout(() => {
+        setTransitionPhase('idle');
+      }, 1750),
+      window.setTimeout(() => {
+        setHighlightSteps(false);
+      }, 2650),
+    );
+  }, [clearTransitionTimers, scrollToSteps]);
+
+  const skipTransition = useCallback(() => {
+    clearTransitionTimers();
+    scrollToSteps('auto');
+    setTransitionPhase('opening');
+    setHighlightSteps(true);
+    timersRef.current.push(
+      window.setTimeout(() => setTransitionPhase('idle'), 280),
+      window.setTimeout(() => setHighlightSteps(false), 1200),
+    );
+  }, [clearTransitionTimers, scrollToSteps]);
 
   if (!recipe) {
     return (
@@ -54,16 +119,29 @@ export const RecipeDetail: React.FC = () => {
   };
 
   const toggleIngredient = (id: string) => {
-    setCheckedIngredients((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+    const prevCheckedCount = recipe.ingredients.filter((ing) => checkedIngredients[ing.id]).length;
+    const nextState = {
+      ...checkedIngredients,
+      [id]: !checkedIngredients[id],
+    };
+    const nextCheckedCount = recipe.ingredients.filter((ing) => nextState[ing.id]).length;
+
+    setCheckedIngredients(nextState);
+
+    if (
+      recipe.ingredients.length > 0 &&
+      prevCheckedCount < recipe.ingredients.length &&
+      nextCheckedCount === recipe.ingredients.length
+    ) {
+      triggerPrepTransition();
+    }
   };
 
   const checkedCount = recipe.ingredients.filter((ing) => checkedIngredients[ing.id]).length;
 
   return (
     <article className="py-6 sm:py-12">
+      <PrepTransitionOverlay phase={transitionPhase} onSkip={skipTransition} />
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-7 sm:space-y-10">
         {/* Top Breadcrumb & Back Action */}
         <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
@@ -277,8 +355,11 @@ export const RecipeDetail: React.FC = () => {
 
           {/* Preparation Steps */}
           <section
+            ref={stepsSectionRef}
             aria-labelledby="steps-heading"
-            className="lg:col-span-7 neo-box bg-[#FFFFFF] p-5 sm:p-8 space-y-6"
+            className={`lg:col-span-7 neo-box bg-[#FFFFFF] p-5 sm:p-8 space-y-6 scroll-mt-4 sm:scroll-mt-6 ${
+              highlightSteps ? 'animate-steps-highlight' : ''
+            }`}
           >
             <div className="flex items-center justify-between gap-3 border-b-2 border-[#20231F] pb-3.5">
               <div className="flex items-center gap-2">

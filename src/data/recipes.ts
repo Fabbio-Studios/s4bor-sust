@@ -12,6 +12,8 @@ import chipsCascaBatataImg from '../assets/images/chips_casca_batata_17946098222
 import boloCascaBananaImg from '../assets/images/bolo_casca_banana_1794609818831.jpg';
 import torradaPaoImg from '../assets/images/torrada_pao_amanhecido_1795644593515.jpg';
 import saladaFrutasImg from '../assets/images/salada_de_frutas_1795706216779.jpg';
+import boloCascaLaranjaImg from '../assets/images/bolo_casca_laranja_1795733438764.jpg';
+import farofaCascaBananaImg from '../assets/images/farofa_casca_banana_1795733438792.jpg';
 
 export const RECIPE_CATEGORIES: RecipeCategory[] = [
   'Todas',
@@ -608,6 +610,115 @@ export const recipes: Recipe[] = [
         title: 'Finalizar e gelar',
         instruction:
           'Se quiser, misture leite condensado e polvilhe canela em pó. Leve à geladeira por cerca de 20 minutos antes de servir.',
+      },
+    ],
+  },
+  {
+    id: '13',
+    slug: 'bolo-de-casca-de-laranja',
+    title: 'Bolo de Casca de Laranja',
+    description:
+      'Bolo fofinho de liquidificador preparado com cascas de laranja bem lavadas, sem a parte branca para não amargar.',
+    category: 'Café da manhã',
+    tags: ['Café da manhã', 'Aproveitamento integral'],
+    image: boloCascaLaranjaImg,
+    imageAlt:
+      'Fatia dourada de bolo de casca de laranja em prato de cerâmica com raspas e rodelas de laranja fresca',
+    prepTimeMinutes: 15,
+    prepTimeNote: '+ 35 min de forno',
+    servings: 10,
+    servingsLabel: '10 fatias',
+    ingredientsCount: 7,
+    authorId: 'ana-clara',
+    sustainabilityInfo:
+      'Usa as cascas de duas laranjas que iriam para o lixo, aproveitando o sabor cítrico natural da fruta na massa do bolo.',
+    ingredients: [
+      {
+        id: '13-1',
+        amount: '2',
+        unit: 'unidades',
+        name: 'Cascas de laranja bem lavadas (sem a parte branca)',
+      },
+      { id: '13-2', amount: '2', unit: 'unidades', name: 'Ovos' },
+      { id: '13-3', amount: '1', unit: 'xícara (chá)', name: 'Açúcar' },
+      { id: '13-4', amount: '½', unit: 'xícara (chá)', name: 'Óleo' },
+      { id: '13-5', amount: '1', unit: 'xícara (chá)', name: 'Leite' },
+      { id: '13-6', amount: '2', unit: 'xícaras (chá)', name: 'Farinha de trigo' },
+      { id: '13-7', amount: '1', unit: 'colher (sopa)', name: 'Fermento em pó' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Lavar e descascar',
+        instruction:
+          'Lave bem as laranjas e retire só a casca alaranjada, sem a parte branca que amarga.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Bater no liquidificador',
+        instruction: 'Bata no liquidificador a casca, os ovos, o açúcar, o óleo e o leite.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Misturar a farinha e o fermento',
+        instruction:
+          'Despeje em uma tigela e misture a farinha de trigo. Por último, coloque o fermento e mexa devagar.',
+      },
+      {
+        stepNumber: 4,
+        title: 'Assar',
+        instruction: 'Coloque em uma forma untada e asse por 35 minutos até dourar.',
+      },
+    ],
+  },
+  {
+    id: '14',
+    slug: 'farofa-de-casca-de-banana',
+    title: 'Farofa de Casca de Banana',
+    description:
+      'Farofa sequinha feita com tirinhas finas de casca de banana refogadas com cebola, alho e cheiro-verde.',
+    category: 'Almoço e jantar',
+    tags: ['Almoço e jantar', 'Aproveitamento integral'],
+    image: farofaCascaBananaImg,
+    imageAlt:
+      'Tigela de cerâmica com farofa de mandioca dourada misturada com tirinhas de casca de banana, cebola e cheiro-verde',
+    prepTimeMinutes: 20,
+    servings: 6,
+    servingsLabel: '6 porções',
+    ingredientsCount: 7,
+    authorId: 'ana-clara',
+    sustainabilityInfo:
+      'Usa as cascas de três bananas que iriam para o lixo, transformando uma parte descartada da fruta em acompanhamento salgado.',
+    ingredients: [
+      { id: '14-1', amount: '3', unit: 'unidades', name: 'Cascas de banana bem lavadas' },
+      { id: '14-2', amount: '1', unit: 'unidade', name: 'Cebola pequena picada' },
+      { id: '14-3', amount: '1', unit: 'dente', name: 'Alho picado' },
+      { id: '14-4', amount: '2', unit: 'colheres (sopa)', name: 'Óleo' },
+      { id: '14-5', amount: '1', unit: 'xícara (chá)', name: 'Farinha de mandioca' },
+      { id: '14-6', amount: 'a gosto', unit: '', name: 'Sal' },
+      { id: '14-7', amount: 'a gosto', unit: '', name: 'Cheiro-verde' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Lavar e cortar as cascas',
+        instruction: 'Lave bem as cascas da banana e corte em tirinhas bem fininhas.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Dourar o tempero',
+        instruction: 'Em uma panela, esquente o óleo e frite a cebola e o alho até dourar.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Refogar as cascas',
+        instruction: 'Coloque as cascas na panela e mexa por 5 minutos.',
+      },
+      {
+        stepNumber: 4,
+        title: 'Finalizar a farofa',
+        instruction:
+          'Coloque a farinha de mandioca, o sal e o cheiro-verde. Mexa tudo até ficar sequinha e desligue.',
       },
     ],
   },

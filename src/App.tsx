@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { TutorialProvider } from './components/AppTutorial';
+import { AppLoader } from './components/AppLoader';
 import { Home } from './pages/Home';
 import { Recipes } from './pages/Recipes';
 import { RecipeDetail } from './pages/RecipeDetail';
@@ -47,9 +48,13 @@ const AppShell: React.FC = () => {
 };
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoadingComplete = useCallback(() => setIsLoading(false), []);
+
   return (
     <BrowserRouter>
-      <TutorialProvider>
+      <TutorialProvider isAppReady={!isLoading}>
+        {isLoading && <AppLoader onComplete={handleLoadingComplete} />}
         <AppShell />
       </TutorialProvider>
     </BrowserRouter>

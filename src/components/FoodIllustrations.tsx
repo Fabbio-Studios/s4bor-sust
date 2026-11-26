@@ -221,6 +221,288 @@ export const EggplantIllustration: React.FC<{ className?: string }> = ({ classNa
   </svg>
 );
 
+export const PotLidIllustration: React.FC<{ className?: string }> = ({ className = 'w-28 h-20' }) => (
+  <svg viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    {/* Rising steam wisps above the lid */}
+    <path className="animate-steam-1" d="M46 26C43 19 49 14 46 7" stroke="#20231F" strokeWidth="3" strokeLinecap="round" />
+    <path className="animate-steam-2" d="M94 26C91 19 97 14 94 7" stroke="#20231F" strokeWidth="3" strokeLinecap="round" />
+
+    {/* Top knob handle */}
+    <rect x="57" y="18" width="26" height="11" rx="5.5" fill="#FF8065" stroke="#20231F" strokeWidth="3.5" />
+    <rect x="65" y="29" width="10" height="7" fill="#FFD66B" stroke="#20231F" strokeWidth="3" />
+
+    {/* Domed pot lid body */}
+    <path
+      d="M20 58C22 41 43 34 70 34C97 34 118 41 120 58H20Z"
+      fill="#FFFFFF"
+      stroke="#20231F"
+      strokeWidth="3.5"
+      strokeLinejoin="round"
+    />
+
+    {/* Highlight arc on dome */}
+    <path d="M36 48C44 42 54 40 62 40" stroke="#FFD66B" strokeWidth="4" strokeLinecap="round" />
+
+    {/* Lid rim */}
+    <rect x="12" y="57" width="116" height="10" rx="5" fill="#FFD66B" stroke="#20231F" strokeWidth="3.5" />
+  </svg>
+);
+
+export const BananaIllustration: React.FC<{ className?: string }> = ({ className = 'w-16 h-16' }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    <path
+      d="M72 20C76 23 79 34 76 50C71 71 51 84 26 83C19 82 15 77 18 72C23 66 37 64 49 52C59 42 63 29 64 21C65 17 69 17 72 20Z"
+      fill="#FFD66B"
+      stroke="#20231F"
+      strokeWidth="3.5"
+      strokeLinejoin="round"
+    />
+    <path d="M67 18L70 12" stroke="#20231F" strokeWidth="3.5" strokeLinecap="round" />
+    <path d="M35 72C47 69 59 58 65 44" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
+  </svg>
+);
+
+export const StrawberryIllustration: React.FC<{ className?: string }> = ({ className = 'w-16 h-16' }) => (
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    <path
+      d="M50 86C35 84 23 64 25 45C27 32 37 26 50 26C63 26 73 32 75 45C77 64 65 84 50 86Z"
+      fill="#FF8065"
+      stroke="#20231F"
+      strokeWidth="3.5"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M50 28C43 20 34 19 30 25C36 28 42 29 50 28Z"
+      fill="#B8E36A"
+      stroke="#20231F"
+      strokeWidth="3"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M50 28C57 20 66 19 70 25C64 28 58 29 50 28Z"
+      fill="#B8E36A"
+      stroke="#20231F"
+      strokeWidth="3"
+      strokeLinejoin="round"
+    />
+    <path d="M50 27V15" stroke="#20231F" strokeWidth="3.5" strokeLinecap="round" />
+    <circle cx="40" cy="46" r="2.2" fill="#FFD66B" />
+    <circle cx="58" cy="46" r="2.2" fill="#FFD66B" />
+    <circle cx="49" cy="57" r="2.2" fill="#FFD66B" />
+    <circle cx="41" cy="67" r="2.2" fill="#FFD66B" />
+    <circle cx="57" cy="67" r="2.2" fill="#FFD66B" />
+  </svg>
+);
+
+export const RoadSceneryTree: React.FC<{ className?: string; variant?: 'tall' | 'round' }> = ({
+  className = 'w-16 h-20',
+  variant = 'tall',
+}) => (
+  <svg viewBox="0 0 110 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    {/* Tree trunk */}
+    <path d="M40 78V105" stroke="#20231F" strokeWidth="3.5" strokeLinecap="round" />
+    {/* Foliage canopy */}
+    {variant === 'tall' ? (
+      <path
+        d="M40 14C52 14 63 39 62 63C61 77 51 82 40 82C29 82 19 77 18 63C17 39 28 14 40 14Z"
+        fill="#6B9B4B"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+    ) : (
+      <path
+        d="M40 20C55 20 65 40 63 62C61 75 51 81 40 81C29 81 19 75 17 62C15 40 25 20 40 20Z"
+        fill="#B8E36A"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+    )}
+    {/* Inner tree branches */}
+    <path d="M40 81V42" stroke="#20231F" strokeWidth="2.6" strokeLinecap="round" />
+    <path d="M40 60L51 49" stroke="#20231F" strokeWidth="2.4" strokeLinecap="round" />
+    <path d="M40 53L29 44" stroke="#20231F" strokeWidth="2.4" strokeLinecap="round" />
+
+    {/* Side bush */}
+    <path
+      d="M54 106C54 96 62 90 70 92C73 85 83 84 89 91C97 91 102 98 100 106H54Z"
+      fill="#76A753"
+      stroke="#20231F"
+      strokeWidth="2.8"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const IsometricMarketTruckIllustration: React.FC<{
+  className?: string;
+  isMoving?: boolean;
+}> = ({ className = 'w-56 h-44 sm:w-72 sm:h-56', isMoving = true }) => (
+  <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+    {/* Animated wind / speed trails behind the truck */}
+    <g className={isMoving ? 'animate-truck-wind' : 'opacity-60'}>
+      <path d="M16 156L46 144" stroke="#20231F" strokeWidth="2.8" strokeLinecap="round" />
+      <path d="M26 167L62 153" stroke="#20231F" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M42 175L70 164" stroke="#20231F" strokeWidth="2.4" strokeLinecap="round" />
+    </g>
+
+    {/* Ground shadow anchored directly along the -20.8deg road plane */}
+    <polygon
+      points="66,138 164,100 226,121 128,162"
+      fill="#20231F"
+      fillOpacity="0.16"
+    />
+
+    {/* Far rear-left tire edge subtly tucked under back-left corner */}
+    <ellipse cx="77" cy="133" rx="7" ry="9.5" fill="#20231F" />
+
+    {/* Sprung Truck Body (pitches/bounces smoothly on suspension) */}
+    <g className={isMoving ? 'animate-truck-body' : ''}>
+      {/* Rear bumper (gold) */}
+      <path
+        d="M58 128L116 149C120 151 124 148 125 143L62 120C58 121 56 125 58 128Z"
+        fill="#FFD66B"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+
+      {/* Back body panel (cream top + sage green bottom) */}
+      <path
+        d="M65 69C65 58 73 50 86 46L118 35V142L65 123V69Z"
+        fill="#F7F5ED"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M65 102L118 121V142L65 123V102Z"
+        fill="#7FA958"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+
+      {/* Rear window */}
+      <path
+        d="M74 73L108 85V106L74 94V73Z"
+        fill="#D7E6D5"
+        stroke="#20231F"
+        strokeWidth="2.8"
+        strokeLinejoin="round"
+      />
+      <path d="M78 90L104 99" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" />
+
+      {/* Roof */}
+      <path
+        d="M68 61C72 51 86 43 106 36L146 22C165 16 184 21 193 33L118 61C99 68 78 69 68 61Z"
+        fill="#F7F5ED"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+      {/* Roof panel */}
+      <polygon
+        points="92,50 146,30 174,39 120,59"
+        fill="#666963"
+        stroke="#20231F"
+        strokeWidth="2.6"
+        strokeLinejoin="round"
+      />
+
+      {/* Side body wall (cream upper + bright green lower skirt with clean wheel-well arches) */}
+      <path
+        d="M118 61L193 33C203 37 210 48 212 66L221 78V105L118 144V61Z"
+        fill="#F7F5ED"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M118 117L221 78V105L210 109C209 98 190 105 189 117L155 130C154 119 134 126 133 138L118 144V117Z"
+        fill="#B8E36A"
+        stroke="#20231F"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+
+      {/* Dark recessed wheel wells */}
+      <path d="M132 138C133 125 154 118 155 130L132 138Z" fill="#20231F" />
+      <path d="M188 117C189 104 209 97 210 109L188 117Z" fill="#20231F" />
+
+      {/* Open Market Window */}
+      <polygon
+        points="126,70 179,50 179,93 126,113"
+        fill="#FFFDF5"
+        stroke="#20231F"
+        strokeWidth="2.8"
+        strokeLinejoin="round"
+      />
+
+      {/* Produce Counter inside window */}
+      <polygon
+        points="125,111 180,90 189,96 132,118"
+        fill="#FFD66B"
+        stroke="#20231F"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      <circle cx="136" cy="105" r="4.3" fill="#FF8065" stroke="#20231F" strokeWidth="1.8" />
+      <circle cx="144" cy="102" r="4.3" fill="#FF8065" stroke="#20231F" strokeWidth="1.8" />
+      <circle cx="154" cy="98" r="4.3" fill="#FFB347" stroke="#20231F" strokeWidth="1.8" />
+      <circle cx="162" cy="95" r="4.3" fill="#FFB347" stroke="#20231F" strokeWidth="1.8" />
+      <circle cx="171" cy="91" r="4.8" fill="#6B9B4B" stroke="#20231F" strokeWidth="1.8" />
+      <circle cx="178" cy="89" r="4.3" fill="#B8E36A" stroke="#20231F" strokeWidth="1.8" />
+
+      {/* Striped Green & White Awning */}
+      <polygon points="122,66 181,44 195,53 134,76" fill="#FFFFFF" stroke="#20231F" strokeWidth="2.6" strokeLinejoin="round" />
+      <polygon points="128,64 137,60 149,70 139,74" fill="#6B9B4B" stroke="#20231F" strokeWidth="1.6" />
+      <polygon points="147,57 156,53 168,63 158,67" fill="#6B9B4B" stroke="#20231F" strokeWidth="1.6" />
+      <polygon points="166,49 175,46 187,56 177,59" fill="#6B9B4B" stroke="#20231F" strokeWidth="1.6" />
+
+      {/* Cab windshield & side window */}
+      <polygon
+        points="187,48 206,42 214,64 187,74"
+        fill="#D7E6D5"
+        stroke="#20231F"
+        strokeWidth="2.6"
+        strokeLinejoin="round"
+      />
+
+      {/* Front bumper & headlight */}
+      <path
+        d="M211 99L225 94C229 93 230 100 225 103L211 108V99Z"
+        fill="#FFD66B"
+        stroke="#20231F"
+        strokeWidth="2.8"
+        strokeLinejoin="round"
+      />
+      <circle cx="219" cy="85" r="4" fill="#FFD66B" stroke="#20231F" strokeWidth="2.2" />
+    </g>
+
+    {/* Right-side Rear Wheel seated cleanly in arch on the road line (y=137) */}
+    <g>
+      <ellipse cx="144" cy="136" rx="11" ry="13" fill="#20231F" />
+      <ellipse cx="144" cy="136" rx="5.5" ry="6.5" fill="#F7F5ED" />
+      <g className={isMoving ? 'animate-truck-wheel' : ''} style={{ transformOrigin: '144px 136px' }}>
+        <line x1="144" y1="131.5" x2="144" y2="140.5" stroke="#20231F" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="139.5" y1="136" x2="148.5" y2="136" stroke="#20231F" strokeWidth="1.8" strokeLinecap="round" />
+      </g>
+    </g>
+
+    {/* Right-side Front Wheel seated cleanly in arch on the road line (y=115) */}
+    <g>
+      <ellipse cx="199" cy="115" rx="10.5" ry="12.5" fill="#20231F" />
+      <ellipse cx="199" cy="115" rx="5.2" ry="6.2" fill="#F7F5ED" />
+      <g className={isMoving ? 'animate-truck-wheel' : ''} style={{ transformOrigin: '199px 115px' }}>
+        <line x1="199" y1="110.8" x2="199" y2="119.2" stroke="#20231F" strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="194.8" y1="115" x2="203.2" y2="115" stroke="#20231F" strokeWidth="1.8" strokeLinecap="round" />
+      </g>
+    </g>
+  </svg>
+);
+
 export const HarvestCharacterIllustration: React.FC<{ className?: string }> = ({
   className = 'w-full max-w-[260px] h-auto',
 }) => (

@@ -114,7 +114,10 @@ interface SpotlightRect {
   height: number;
 }
 
-export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const TutorialProvider: React.FC<{
+  children: React.ReactNode;
+  isAppReady?: boolean;
+}> = ({ children, isAppReady = true }) => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
@@ -123,8 +126,9 @@ export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     typeof window !== 'undefined' ? window.innerWidth < 768 : true
   );
 
-  // Check first visit on mount
+  // Check first visit on mount once app splash loader finishes
   useEffect(() => {
+    if (!isAppReady) return;
     try {
       const seen = window.localStorage.getItem(TUTORIAL_STORAGE_KEY);
       if (!seen) {
@@ -137,7 +141,7 @@ export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     } catch {
       // Ignore storage errors
     }
-  }, []);
+  }, [isAppReady]);
 
   const markTutorialSeen = useCallback(() => {
     try {

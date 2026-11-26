@@ -228,6 +228,272 @@
   animation: subtleFadeIn 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Prep Mode Curtain Transition Animations */
+@keyframes prepCurtainTopIn {
+  0% {
+    transform: translateY(-102%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes prepCurtainTopOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-102%);
+  }
+}
+
+@keyframes prepCurtainBottomIn {
+  0% {
+    transform: translateY(102%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes prepCurtainBottomOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(102%);
+  }
+}
+
+@keyframes prepTitlePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.84) translateY(14px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes prepLidFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2.5deg);
+  }
+}
+
+@keyframes prepShadowPulse {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: 0.28;
+  }
+  50% {
+    transform: scaleX(0.76);
+    opacity: 0.14;
+  }
+}
+
+@keyframes prepFoodJump {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(-4deg);
+  }
+  30% {
+    transform: translateY(-24px) scale(1.07) rotate(6deg);
+  }
+  55% {
+    transform: translateY(2px) scale(0.95) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-11px) scale(1.03) rotate(3deg);
+  }
+}
+
+@keyframes prepStepsHighlight {
+  0% {
+    box-shadow: 4px 4px 0px 0px #20231F;
+  }
+  35% {
+    box-shadow: 0px 0px 0px 4px #B8E36A, 6px 6px 0px 0px #20231F;
+  }
+  100% {
+    box-shadow: 4px 4px 0px 0px #20231F;
+  }
+}
+
+.prep-title-shadow {
+  text-shadow:
+    -2px -2px 0 #20231F,
+     2px -2px 0 #20231F,
+    -2px  2px 0 #20231F,
+     2px  2px 0 #20231F,
+     0px  3px 0 #20231F,
+     5px  6px 0 #20231F;
+}
+
+.animate-prep-top-in {
+  animation: prepCurtainTopIn 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-prep-top-out {
+  animation: prepCurtainTopOut 300ms cubic-bezier(0.55, 0, 0.85, 0.35) forwards;
+}
+
+.animate-prep-bottom-in {
+  animation: prepCurtainBottomIn 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-prep-bottom-out {
+  animation: prepCurtainBottomOut 300ms cubic-bezier(0.55, 0, 0.85, 0.35) forwards;
+}
+
+.animate-prep-title {
+  animation: prepTitlePop 340ms cubic-bezier(0.16, 1, 0.3, 1) 140ms both;
+}
+
+.animate-prep-lid {
+  animation: prepLidFloat 900ms ease-in-out infinite;
+}
+
+.animate-prep-lid-shadow {
+  animation: prepShadowPulse 900ms ease-in-out infinite;
+}
+
+.animate-prep-jump {
+  animation: prepFoodJump 820ms cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.animate-steps-highlight {
+  animation: prepStepsHighlight 1100ms ease-out;
+}
+
+/* App Splash Loader Animations (< 5s total) */
+@keyframes loaderPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loaderTruckEnter {
+  0% {
+    transform: translate(calc(-55vw - 160px), calc(20.9vw + 61px)) rotate(-1.8deg);
+  }
+  70% {
+    transform: translate(12px, -4.5px) rotate(-0.4deg);
+  }
+  84% {
+    transform: translate(3px, 1px) rotate(2.1deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes loaderTruckExit {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  18% {
+    transform: translate(-12px, 4.5px) rotate(-2.6deg);
+  }
+  42% {
+    transform: translate(14vw, -5.3vw) rotate(-1.4deg);
+  }
+  100% {
+    transform: translate(calc(55vw + 170px), calc(-20.9vw - 65px)) rotate(-0.6deg);
+  }
+}
+
+@keyframes loaderTruckBodyBounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-2px) rotate(-0.4deg);
+  }
+  50% {
+    transform: translateY(0.8px) rotate(0.3deg);
+  }
+  75% {
+    transform: translateY(-1.5px) rotate(-0.2deg);
+  }
+}
+
+@keyframes loaderWheelSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderWindTrail {
+  0%, 100% {
+    opacity: 0.45;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-5px, 2px);
+  }
+}
+
+.animate-loader-logo {
+  animation: loaderPopIn 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-loader-name {
+  animation: loaderSlideUp 240ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-loader-truck-in {
+  animation: loaderTruckEnter 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-loader-truck-out {
+  animation: loaderTruckExit 760ms cubic-bezier(0.45, 0, 0.85, 0.35) forwards;
+}
+
+.animate-truck-body {
+  animation: loaderTruckBodyBounce 420ms ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.animate-truck-wheel {
+  animation: loaderWheelSpin 420ms linear infinite;
+}
+
+.animate-truck-wind {
+  animation: loaderWindTrail 380ms ease-in-out infinite;
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -247,7 +513,23 @@
   .animate-sway-gentle,
   .animate-steam-1,
   .animate-steam-2,
-  .animate-fade-up {
+  .animate-fade-up,
+  .animate-prep-top-in,
+  .animate-prep-top-out,
+  .animate-prep-bottom-in,
+  .animate-prep-bottom-out,
+  .animate-prep-title,
+  .animate-prep-lid,
+  .animate-prep-lid-shadow,
+  .animate-prep-jump,
+  .animate-steps-highlight,
+  .animate-loader-logo,
+  .animate-loader-name,
+  .animate-loader-truck-in,
+  .animate-loader-truck-out,
+  .animate-truck-body,
+  .animate-truck-wheel,
+  .animate-truck-wind {
     animation: none !important;
   }
 
