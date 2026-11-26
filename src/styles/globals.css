@@ -327,16 +327,6 @@
   }
 }
 
-.prep-title-shadow {
-  text-shadow:
-    -2px -2px 0 #20231F,
-     2px -2px 0 #20231F,
-    -2px  2px 0 #20231F,
-     2px  2px 0 #20231F,
-     0px  3px 0 #20231F,
-     5px  6px 0 #20231F;
-}
-
 .animate-prep-top-in {
   animation: prepCurtainTopIn 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

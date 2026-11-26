@@ -68,9 +68,12 @@ export const PrepTransitionOverlay: React.FC<PrepTransitionOverlayProps> = ({ ph
           ))}
         </div>
 
-        {/* Neo-brutalist Bold White Headline with Physical Shadow */}
-        <h2 className="animate-prep-title font-display font-bold uppercase text-[1.95rem] sm:text-5xl leading-[1.04] tracking-tight text-[#FFFFFF] prep-title-shadow text-balance px-2">
-          TÁ NA HORA DO MODO DE PREPARO!
+        {/* Hero-style Centered Headline (no text-shadow, compact balanced wrap) */}
+        <h2 className="animate-prep-title font-display font-bold text-[1.75rem] sm:text-4xl lg:text-[2.75rem] leading-[1.14] tracking-tight text-[#20231F] text-center text-balance max-w-[300px] sm:max-w-[500px] mx-auto px-2">
+          Tá na hora do{' '}
+          <span className="inline-block bg-[#FFD66B] border-2 border-[#20231F] px-2.5 py-0.5 rounded-[10px] shadow-[3px_3px_0px_#20231F] mt-1">
+            modo de preparo!
+          </span>
         </h2>
 
         {/* Floating Pot Lid Underneath */}
