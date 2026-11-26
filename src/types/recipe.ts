@@ -30,6 +30,7 @@ export interface Author {
   sharedRecipesCount: number;
   avatarUrl?: string;
   avatarObjectPosition?: string;
+  avatarScale?: number;
   initials: string;
   accentColor: 'primary' | 'secondary' | 'accent';
   motif: 'leaf' | 'carrot' | 'pot' | 'citrus' | 'sprout';

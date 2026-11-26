@@ -180,7 +180,21 @@ export const AuthorProfilePage: React.FC = () => {
             </div>
           </div>
 
-          {viewMode === 'grid' ? (
+          {authorRecipes.length === 0 ? (
+            <div className="neo-box bg-[#FFFFFF] p-6 sm:p-10 text-center space-y-4">
+              <MaterialIcon name="menu_book" size={36} className="text-[#20231F]" />
+              <p className="font-display font-bold text-lg text-[#20231F]">
+                Nenhuma receita publicada neste perfil ainda.
+              </p>
+              <Link
+                to="/receitas"
+                className="neo-btn bg-[#B8E36A] hover:bg-[#a9da55] text-[#20231F] px-5 py-2.5 min-h-[44px] text-sm"
+              >
+                <span>Ver livro de receitas</span>
+                <MaterialIcon name="arrow_forward" size={18} />
+              </Link>
+            </div>
+          ) : viewMode === 'grid' ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 animate-fade-up">
               {authorRecipes.map((recipe) => (
                 <Link

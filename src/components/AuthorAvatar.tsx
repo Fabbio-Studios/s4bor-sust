@@ -106,14 +106,21 @@ export const AuthorAvatar: React.FC<AuthorAvatarProps> = ({
 
   if (author.avatarUrl && !imgFailed) {
     return (
-      <img
-        src={author.avatarUrl}
-        alt={`Foto de perfil de ${author.name}`}
-        referrerPolicy="no-referrer"
-        onError={() => setImgFailed(true)}
-        style={{ objectPosition: author.avatarObjectPosition ?? 'center' }}
-        className={`${sizeClasses[size]} ${shapeClass} ${borderClass} object-cover bg-[#F7F5ED] shrink-0 ${className}`}
-      />
+      <div
+        className={`${sizeClasses[size]} ${shapeClass} ${borderClass} overflow-hidden shrink-0 bg-[#F7F5ED] ${className}`}
+      >
+        <img
+          src={author.avatarUrl}
+          alt={`Foto de perfil de ${author.name}`}
+          referrerPolicy="no-referrer"
+          onError={() => setImgFailed(true)}
+          style={{
+            objectPosition: author.avatarObjectPosition ?? 'center',
+            transform: author.avatarScale ? `scale(${author.avatarScale})` : undefined,
+          }}
+          className="w-full h-full object-cover"
+        />
+      </div>
     );
   }
 
