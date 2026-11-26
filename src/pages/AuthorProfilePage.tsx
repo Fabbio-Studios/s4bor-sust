@@ -231,7 +231,7 @@ export const AuthorProfilePage: React.FC = () => {
               <Link
                 key={person.id}
                 to={`/perfil/${person.id}`}
-                className="neo-card-interactive shrink-0 min-w-[128px] p-3 flex flex-col items-center text-center gap-2 bg-[#FFFFFF] hover:bg-[#F7F5ED]"
+                className="neo-card-interactive shrink-0 w-[136px] sm:w-[150px] p-3 flex flex-col items-center text-center gap-2 bg-[#FFFFFF] hover:bg-[#F7F5ED]"
               >
                 <AuthorAvatar author={person} size="md" rounded="full" />
                 <div className="min-w-0 w-full">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MaterialIcon } from '../components/MaterialIcon';
 import { AuthorAvatar } from '../components/AuthorAvatar';
 import { authorsList } from '../data/authors';
+import { recipes } from '../data/recipes';
 import {
   BroccoliIllustration,
   CarrotIllustration,
@@ -40,8 +41,7 @@ const PROCESS_STEPS = [
   {
     number: '04',
     title: 'Alimentação e revisão',
-    description:
-      'Os estudantes preencheram o livro com 11 receitas testadas e revisaram os passos com orientação docente.',
+    description: `Os estudantes preencheram o livro com ${recipes.length} receitas testadas e revisaram os passos com orientação docente.`,
     color: 'bg-[#FFFFFF]',
     illustration: 'tomato' as const,
   },
@@ -75,8 +75,8 @@ export const About: React.FC = () => {
 
                 <div className="space-y-4 text-base sm:text-lg text-[#20231F]/85 leading-relaxed max-w-2xl">
                   <p>
-                    O Sabor Sustentável reúne 11 receitas enviadas pelos alunos do 7º ano A com
-                    foco no aproveitamento integral dos alimentos.
+                    O Sabor Sustentável reúne {recipes.length} receitas enviadas pelos alunos do 7º
+                    ano A com foco no aproveitamento integral dos alimentos.
                   </p>
                   <p>
                     Em vez de descartar cascas de banana, batata, manga e melancia, pão amanhecido

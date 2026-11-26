@@ -11,6 +11,7 @@ import doceCascaMelanciaImg from '../assets/images/doce_casca_melancia_179460982
 import chipsCascaBatataImg from '../assets/images/chips_casca_batata_1794609822207.jpg';
 import boloCascaBananaImg from '../assets/images/bolo_casca_banana_1794609818831.jpg';
 import torradaPaoImg from '../assets/images/torrada_pao_amanhecido_1795644593515.jpg';
+import saladaFrutasImg from '../assets/images/salada_de_frutas_1795706216779.jpg';
 
 export const RECIPE_CATEGORIES: RecipeCategory[] = [
   'Todas',
@@ -549,6 +550,64 @@ export const recipes: Recipe[] = [
         stepNumber: 4,
         title: 'Servir',
         instruction: 'Sirva quentinha.',
+      },
+    ],
+  },
+  {
+    id: '12',
+    slug: 'salada-de-frutas',
+    title: 'Salada de Frutas',
+    description:
+      'Mistura fresca de mamão, banana, maçã com casca, morango, laranja e uva regada com suco natural de laranja e limão.',
+    category: 'Sobremesas',
+    tags: ['Sobremesas', 'Aproveitamento integral'],
+    image: saladaFrutasImg,
+    imageAlt:
+      'Tigela de cerâmica com salada de frutas frescas picadas em cubos de mamão, banana, maçã com casca, morangos, laranja e uvas',
+    prepTimeMinutes: 15,
+    prepTimeNote: '+ 20 min de geladeira',
+    servings: 6,
+    servingsLabel: '6 porções',
+    ingredientsCount: 10,
+    authorId: 'sheldon-christyan',
+    sustainabilityInfo:
+      'A receita mantém a casca da maçã para aproveitar fibras e reduzir sobras e aceita qualquer fruta madura disponível em casa, como manga, melão ou pêssego, evitando que estraguem na fruteira.',
+    ingredients: [
+      { id: '12-1', amount: '1', unit: 'unidade', name: 'Mamão papaia médio cortado em cubos' },
+      { id: '12-2', amount: '2', unit: 'unidades', name: 'Bananas cortadas em rodelas' },
+      { id: '12-3', amount: '1', unit: 'unidade', name: 'Maçã picada com casca' },
+      { id: '12-4', amount: '1', unit: 'xícara (chá)', name: 'Morangos cortados ao meio' },
+      { id: '12-5', amount: '1', unit: 'unidade', name: 'Laranja descascada e em pedaços' },
+      { id: '12-6', amount: '10', unit: 'unidades', name: 'Uvas inteiras ou cortadas' },
+      { id: '12-7', amount: '½', unit: 'unidade', name: 'Suco de limão' },
+      { id: '12-8', amount: '2', unit: 'unidades', name: 'Suco de laranjas' },
+      { id: '12-9', amount: 'a gosto', unit: '', name: 'Leite condensado (opcional)' },
+      { id: '12-10', amount: 'a gosto', unit: '', name: 'Canela em pó (opcional)' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Higienizar e picar as frutas',
+        instruction:
+          'Lave bem todas as frutas em água corrente, inclusive a maçã que vai com casca. Corte tudo em pedaços de tamanho parecido e substitua ou adicione outras frutas que tiver em casa, como manga, melão, melancia ou pêssego.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Evitar que escureçam',
+        instruction:
+          'Coloque primeiro a maçã e a banana em uma tigela e despeje o suco de limão por cima para que não escureçam.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Misturar e regar',
+        instruction:
+          'Junte o mamão, os morangos, a laranja e as uvas na tigela. Regue todas as frutas com o suco das duas laranjas.',
+      },
+      {
+        stepNumber: 4,
+        title: 'Finalizar e gelar',
+        instruction:
+          'Se quiser, misture leite condensado e polvilhe canela em pó. Leve à geladeira por cerca de 20 minutos antes de servir.',
       },
     ],
   },

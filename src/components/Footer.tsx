@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BrandLogoMark } from './FoodIllustrations';
 import { MaterialIcon } from './MaterialIcon';
+import { recipes } from '../data/recipes';
+import { authorsList } from '../data/authors';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,8 +19,8 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-sm sm:text-base text-[#20231F]/80 max-w-md leading-relaxed">
-              Livro digital colaborativo do 7º ano A com 11 receitas que aproveitam cascas, pães
-              amanhecidos, frutas maduras e sobras do dia a dia.
+              Livro digital colaborativo do 7º ano A com {recipes.length} receitas que aproveitam
+              cascas, pães amanhecidos, frutas maduras e sobras do dia a dia.
             </p>
           </div>
 
@@ -77,7 +79,7 @@ export const Footer: React.FC = () => {
                 </span>
               </div>
               <p className="font-display font-bold text-base leading-snug text-[#20231F]">
-                11 receitas testadas para aproveitar alimentos por inteiro.
+                {recipes.length} receitas testadas para aproveitar alimentos por inteiro.
               </p>
             </div>
           </div>
@@ -86,7 +88,7 @@ export const Footer: React.FC = () => {
         <div className="border-t-2 border-[#20231F]/15 mt-10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-[#20231F]/70">
           <p>Sabor Sustentável, projeto escolar de alimentação consciente.</p>
           <p className="font-display font-medium text-[#20231F]/85">
-            6 estudantes colaboradores · 7º ano A
+            {authorsList.length} estudantes colaboradores · 7º ano A
           </p>
         </div>
       </div>

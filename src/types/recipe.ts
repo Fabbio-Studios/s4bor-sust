@@ -29,6 +29,7 @@ export interface Author {
   favoriteIngredient: string;
   sharedRecipesCount: number;
   avatarUrl?: string;
+  avatarObjectPosition?: string;
   initials: string;
   accentColor: 'primary' | 'secondary' | 'accent';
   motif: 'leaf' | 'carrot' | 'pot' | 'citrus' | 'sprout';

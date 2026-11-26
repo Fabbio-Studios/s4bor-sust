@@ -80,6 +80,14 @@ const avatarVisuals: Record<string, AvatarVisualConfig> = {
     hairStyle: 'bob',
     accessory: 'glasses',
   },
+  'sheldon-christyan': {
+    bg: '#B8E36A',
+    shirt: '#FF8065',
+    skin: '#C88962',
+    hair: '#20231F',
+    hairStyle: 'curly',
+    accessory: 'leaf',
+  },
 };
 
 export const AuthorAvatar: React.FC<AuthorAvatarProps> = ({
@@ -103,7 +111,8 @@ export const AuthorAvatar: React.FC<AuthorAvatarProps> = ({
         alt={`Foto de perfil de ${author.name}`}
         referrerPolicy="no-referrer"
         onError={() => setImgFailed(true)}
-        className={`${sizeClasses[size]} ${shapeClass} ${borderClass} object-cover shrink-0 ${className}`}
+        style={{ objectPosition: author.avatarObjectPosition ?? 'center' }}
+        className={`${sizeClasses[size]} ${shapeClass} ${borderClass} object-cover bg-[#F7F5ED] shrink-0 ${className}`}
       />
     );
   }
