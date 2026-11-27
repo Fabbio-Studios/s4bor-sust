@@ -70,7 +70,7 @@ export const authors: Record<string, Author> = {
     bio: 'Mostrei como transformar cascas de batata bem lavadas, azeite e páprica em chips crocantes assados no forno.',
     specialty: 'Petiscos crocantes no forno',
     favoriteIngredient: 'Cascas de batata',
-    sharedRecipesCount: 1,
+    sharedRecipesCount: 3,
     avatarUrl: '/assets/aistudio/IMG_0627_-_Guilherme_Dias_80fb153c.jpeg',
     avatarObjectPosition: '50% 50%',
     avatarScale: 1.07,

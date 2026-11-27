@@ -14,6 +14,8 @@ import torradaPaoImg from '../assets/images/torrada_pao_amanhecido_1795644593515
 import saladaFrutasImg from '../assets/images/salada_de_frutas_1795706216779.jpg';
 import boloCascaLaranjaImg from '../assets/images/bolo_casca_laranja_1795733438764.jpg';
 import farofaCascaBananaImg from '../assets/images/farofa_casca_banana_1795733438792.jpg';
+import sorveteBananaImg from '../assets/images/sorvete_de_banana_1795748526283.jpg';
+import sopaLegumesImg from '../assets/images/sopa_legumes_integral_1794609821677.jpg';
 
 export const RECIPE_CATEGORIES: RecipeCategory[] = [
   'Todas',
@@ -719,6 +721,95 @@ export const recipes: Recipe[] = [
         title: 'Finalizar a farofa',
         instruction:
           'Coloque a farinha de mandioca, o sal e o cheiro-verde. Mexa tudo até ficar sequinha e desligue.',
+      },
+    ],
+  },
+  {
+    id: '15',
+    slug: 'sorvete-de-banana',
+    title: 'Sorvete de Banana',
+    description:
+      'Sorvete cremoso preparado com bananas maduras congeladas em rodelas e batidas no liquidificador ou processador.',
+    category: 'Sobremesas',
+    tags: ['Sobremesas', 'Aproveitamento integral'],
+    image: sorveteBananaImg,
+    imageAlt:
+      'Tigela de cerâmica com bolas de sorvete cremoso de banana acompanhadas de rodelas frescas da fruta',
+    prepTimeMinutes: 10,
+    prepTimeNote: '+ congelamento',
+    servings: 3,
+    servingsLabel: '3 porções',
+    ingredientsCount: 2,
+    authorId: 'guilherme-dias',
+    sustainabilityInfo:
+      'Aproveita bananas bem maduras antes que estraguem na fruteira, rendendo uma sobremesa gelada sem desperdício e sem embalagens.',
+    ingredients: [
+      { id: '15-1', amount: '3', unit: 'unidades', name: 'Bananas maduras' },
+      { id: '15-2', amount: '2', unit: 'colheres (sopa)', name: 'Leite (se necessário)' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Cortar e congelar',
+        instruction:
+          'Descasque as bananas, corte em rodelas e congele em um recipiente adequado.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Bater até ficar cremoso',
+        instruction:
+          'Bata as rodelas no liquidificador ou processador, em pequenas porções, até ficarem cremosas. Se necessário, acrescente um pouquinho de leite.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Servir',
+        instruction:
+          'Sirva imediatamente ou leve ao congelador por mais alguns minutos para firmar.',
+      },
+    ],
+  },
+  {
+    id: '16',
+    slug: 'sopa-sustentavel-de-legumes',
+    title: 'Sopa Sustentável de Legumes',
+    description:
+      'Sopa caseira feita com batata, cenoura, abobrinha e talos de verduras bem lavados cozidos em caldo temperado.',
+    category: 'Almoço e jantar',
+    tags: ['Almoço e jantar', 'Aproveitamento integral'],
+    image: sopaLegumesImg,
+    imageAlt:
+      'Tigela de cerâmica com sopa quente de legumes em cubos, cenoura, batata e talos verdes com colher de madeira',
+    prepTimeMinutes: 30,
+    servings: 4,
+    servingsLabel: '4 porções',
+    ingredientsCount: 6,
+    authorId: 'guilherme-dias',
+    sustainabilityInfo:
+      'Usa talos de verduras próprios para consumo junto aos legumes, aproveitando partes nutritivas que normalmente seriam descartadas.',
+    ingredients: [
+      { id: '16-1', amount: '1', unit: 'unidade', name: 'Batata' },
+      { id: '16-2', amount: '1', unit: 'unidade', name: 'Cenoura' },
+      { id: '16-3', amount: '½', unit: 'unidade', name: 'Abobrinha' },
+      { id: '16-4', amount: 'a gosto', unit: '', name: 'Talos de verduras próprios para consumo' },
+      { id: '16-5', amount: '1', unit: 'litro', name: 'Água' },
+      { id: '16-6', amount: 'a gosto', unit: '', name: 'Sal e temperos' },
+    ],
+    steps: [
+      {
+        stepNumber: 1,
+        title: 'Lavar e picar',
+        instruction: 'Lave os vegetais e os talos em água corrente e corte em pedaços.',
+      },
+      {
+        stepNumber: 2,
+        title: 'Cozinhar na panela',
+        instruction:
+          'Coloque tudo em uma panela com a água e os temperos e cozinhe até os legumes ficarem macios.',
+      },
+      {
+        stepNumber: 3,
+        title: 'Servir',
+        instruction: 'Sirva com os pedaços ou bata parte da sopa para deixá-la cremosa.',
       },
     ],
   },
